@@ -1,0 +1,61 @@
+import { Zap, ShieldAlert, BadgeCheck, Lock } from "lucide-react";
+
+const features = [
+    {
+        name: 'Built for GenAI',
+        description:
+            'Designed specifically for the unique security challenges of Large Language Models and generative applications.',
+        icon: Zap,
+    },
+    {
+        name: 'Zero-Config Integation',
+        description:
+            'Drop our SDK into your codebase and get protected instantly. No complex configuration files required.',
+        icon: Lock,
+    },
+    {
+        name: 'Real-time Protection',
+        description:
+            'We monitor every prompt and response in real-time, blocking malicious injections and data exfiltration.',
+        icon: ShieldAlert,
+    },
+    {
+        name: 'Compliance Certified',
+        description:
+            'Automatically generating the evidence you need for SOC2, ISO 27001, and HIPAA audits.',
+        icon: BadgeCheck,
+    },
+];
+
+export default function WhyUs() {
+    return (
+        <section id="why-us" className="py-24 sm:py-32">
+            <div className="container mx-auto px-4 md:px-6">
+                <div className="mx-auto max-w-2xl lg:text-center">
+                    <h2 className="text-base font-semibold leading-7 text-indigo-600 dark:text-indigo-400">Why IronHide?</h2>
+                    <p className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+                        Everything you need to secure your AI
+                    </p>
+                    <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+                        Security shouldn't be an afterthought. We provide a comprehensive suite of tools to ensure your GenAI products are safe, compliant, and ready for enterprise adoption.
+                    </p>
+                </div>
+                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+                    <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-4">
+                        {features.map((feature) => (
+                            <div key={feature.name} className="flex flex-col">
+                                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-zinc-900 dark:text-zinc-50">
+                                    <feature.icon className="h-5 w-5 flex-none text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
+                                    {feature.name}
+                                </dt>
+                                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-zinc-600 dark:text-zinc-400">
+                                    <p className="flex-auto">{feature.description}</p>
+                                </dd>
+                            </div>
+                        ))}
+                    </dl>
+                </div>
+            </div>
+        </section>
+    );
+}
