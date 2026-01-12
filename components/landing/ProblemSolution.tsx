@@ -36,21 +36,21 @@ export default function ProblemSolution() {
                     </div>
 
                     {/* Card 2 - Highlighted */}
-                    <div className="relative overflow-hidden rounded-2xl bg-indigo-600 p-8 shadow-lg ring-1 ring-indigo-500 dark:bg-indigo-900/20 dark:ring-indigo-500/50 lg:-mt-4 lg:mb-4 lg:z-10">
+                    <div className="relative overflow-hidden rounded-2xl bg-brand-600 p-8 shadow-lg ring-1 ring-brand-500 dark:bg-brand-900/20 dark:ring-brand-500/50 lg:-mt-4 lg:mb-4 lg:z-10">
                         <h3 className="text-lg font-semibold leading-8 text-white">
                             The IronHide Way
                         </h3>
-                        <ul className="mt-4 space-y-3 text-sm leading-6 text-indigo-100">
+                        <ul className="mt-4 space-y-3 text-sm leading-6 text-brand-100">
                             <li className="flex gap-x-3">
-                                <CheckCircle className="h-6 w-5 flex-none text-cyan-300" aria-hidden="true" />
+                                <CheckCircle className="h-6 w-5 flex-none text-brand-300" aria-hidden="true" />
                                 Automated compliance checks in CI/CD
                             </li>
                             <li className="flex gap-x-3">
-                                <CheckCircle className="h-6 w-5 flex-none text-cyan-300" aria-hidden="true" />
+                                <CheckCircle className="h-6 w-5 flex-none text-brand-300" aria-hidden="true" />
                                 One-click audit reports
                             </li>
                             <li className="flex gap-x-3">
-                                <CheckCircle className="h-6 w-5 flex-none text-cyan-300" aria-hidden="true" />
+                                <CheckCircle className="h-6 w-5 flex-none text-brand-300" aria-hidden="true" />
                                 Real-time PII redaction & firewalls
                             </li>
                         </ul>

@@ -32,7 +32,7 @@ export default function WhyUs() {
         <section id="why-us" className="py-24 sm:py-32">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="mx-auto max-w-2xl lg:text-center">
-                    <h2 className="text-base font-semibold leading-7 text-indigo-600 dark:text-indigo-400">Why IronHide?</h2>
+                    <h2 className="text-base font-semibold leading-7 text-brand-600 dark:text-brand-400">Why IronHide?</h2>
                     <p className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
                         Everything you need to secure your AI
                     </p>
@@ -45,7 +45,7 @@ export default function WhyUs() {
                         {features.map((feature) => (
                             <div key={feature.name} className="flex flex-col">
                                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-zinc-900 dark:text-zinc-50">
-                                    <feature.icon className="h-5 w-5 flex-none text-indigo-600 dark:text-indigo-400" aria-hidden="true" />
+                                    <feature.icon className="h-5 w-5 flex-none text-brand-600 dark:text-brand-400" aria-hidden="true" />
                                     {feature.name}
                                 </dt>
                                 <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-zinc-600 dark:text-zinc-400">

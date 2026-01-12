@@ -16,27 +16,27 @@ export default function Home() {
         <Hero />
         <ProblemSolution />
         <WhyUs />
-        <section className="py-16 bg-gradient-to-r from-indigo-600 to-indigo-700 dark:from-indigo-900/50 dark:to-indigo-800/50">
+        <section className="py-16 bg-gradient-to-r from-brand-600 to-brand-700 dark:from-brand-900/50 dark:to-brand-800/50">
           <div className="container mx-auto px-4 text-center md:px-6">
             <Card className="bg-transparent border-none shadow-none">
               <CardContent className="flex flex-col items-center gap-6 pt-6">
                 <h2 className="text-3xl font-bold tracking-tight text-white mb-2">
                   Ready to secure your GenAI infrastructure?
                 </h2>
-                <p className="text-indigo-100 mb-4 max-w-2xl">
+                <p className="text-brand-100 mb-4 max-w-2xl">
                   Join hundreds of fast-moving teams who trust IronHide for their compliance and security needs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 pt-4">
                   <Button
                     size="lg"
-                    className="bg-white text-indigo-600 font-semibold rounded-full px-8 hover:bg-white/90"
+                    className="bg-white text-brand-600 font-semibold rounded-full px-8 hover:bg-white/90"
                     onClick={() => console.log("Get Started Now clicked")}
                   >
                     Get Started Now
                   </Button>
                   <Button
                     size="lg"
-                    className="bg-indigo-500 text-white font-semibold rounded-full px-8 hover:bg-indigo-400"
+                    className="bg-brand-500 text-white font-semibold rounded-full px-8 hover:bg-brand-400"
                     onClick={() => console.log("Contact Sales clicked")}
                   >
                     Contact Sales

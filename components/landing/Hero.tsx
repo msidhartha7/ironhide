@@ -8,7 +8,7 @@ export default function Hero() {
     return (
         <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
             <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-                <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-indigo-200 to-cyan-200 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] dark:from-indigo-900 dark:to-cyan-900" />
+                <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-brand-200 to-brand-300 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] dark:from-brand-900 dark:to-brand-800" />
             </div>
 
             <div className="container mx-auto px-4 md:px-6">
@@ -16,14 +16,14 @@ export default function Hero() {
                     <div className="mb-8 flex justify-center">
                         <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-zinc-600 ring-1 ring-zinc-900/10 hover:ring-zinc-900/20 dark:text-zinc-400 dark:ring-white/10 dark:hover:ring-white/20">
                             Announcing our Series A funding.{" "}
-                            <Link href="#" className="font-semibold text-indigo-600 dark:text-indigo-400">
+                            <Link href="#" className="font-semibold text-brand-600 dark:text-brand-400">
                                 <span className="absolute inset-0" aria-hidden="true" />
                                 Read more <span aria-hidden="true">&rarr;</span>
                             </Link>
                         </div>
                     </div>
                     <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-6xl">
-                        Build GenAI without the <span className="text-indigo-600 dark:text-indigo-400">Compliance Nightmares</span>
+                        Build GenAI without the <span className="text-brand-600 dark:text-brand-400">Compliance Nightmares</span>
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
                         IronHide is the security backbone for next-gen AI. We bake SOC2, GDPR, and ISO compliance directly into your infrastructure, so you can ship faster and safer.
@@ -46,8 +46,8 @@ export default function Hero() {
                         {/* Contextual Visual Representation */}
                         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                             <div className="flex flex-col items-center gap-4 rounded-lg bg-white p-6 shadow-sm dark:bg-black/40 border border-zinc-100 dark:border-zinc-800">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-indigo-100 dark:bg-indigo-900/30">
-                                    <Shield className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 dark:bg-brand-900/30">
+                                    <Shield className="h-6 w-6 text-brand-600 dark:text-brand-400" />
                                 </div>
                                 <div className="text-center">
                                     <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">Automated Security</h3>
@@ -55,8 +55,8 @@ export default function Hero() {
                                 </div>
                             </div>
                             <div className="flex flex-col items-center gap-4 rounded-lg bg-white p-6 shadow-sm dark:bg-black/40 border border-zinc-100 dark:border-zinc-800">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-cyan-100 dark:bg-cyan-900/30">
-                                    <FileCheck className="h-6 w-6 text-cyan-600 dark:text-cyan-400" />
+                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 dark:bg-brand-900/30">
+                                    <FileCheck className="h-6 w-6 text-brand-600 dark:text-brand-400" />
                                 </div>
                                 <div className="text-center">
                                     <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">Compliance Ready</h3>

@@ -11,7 +11,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-5">
                     <div className="md:col-span-2">
                         <Link href="/" className="flex items-center gap-2">
-                            <ShieldCheck className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
+                            <ShieldCheck className="h-6 w-6 text-brand-600 dark:text-brand-400" />
                             <span className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
                                 IronHide
                             </span>
@@ -20,15 +20,15 @@ export default function Footer() {
                             The security backbone for next-generation AI products. Built for compliance, speed, and safety.
                         </p>
                         <div className="mt-6 flex gap-4">
-                            <Link href="#" className="text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <Link href="#" className="text-zinc-400 hover:text-brand-600 dark:hover:text-brand-400">
                                 <span className="sr-only">Twitter</span>
                                 <Twitter className="h-5 w-5" />
                             </Link>
-                            <Link href="#" className="text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <Link href="#" className="text-zinc-400 hover:text-brand-600 dark:hover:text-brand-400">
                                 <span className="sr-only">GitHub</span>
                                 <Github className="h-5 w-5" />
                             </Link>
-                            <Link href="#" className="text-zinc-400 hover:text-indigo-600 dark:hover:text-indigo-400">
+                            <Link href="#" className="text-zinc-400 hover:text-brand-600 dark:hover:text-brand-400">
                                 <span className="sr-only">LinkedIn</span>
                                 <Linkedin className="h-5 w-5" />
                             </Link>
@@ -37,28 +37,28 @@ export default function Footer() {
                     <div>
                         <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Product</h3>
                         <ul className="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">Features</Link></li>
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">Integrations</Link></li>
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">Pricing</Link></li>
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">Changelog</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">Features</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">Integrations</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">Pricing</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">Changelog</Link></li>
                         </ul>
                     </div>
                     <div>
                         <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Resources</h3>
                         <ul className="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">Documentation</Link></li>
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">API Reference</Link></li>
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">Blog</Link></li>
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">Community</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">Documentation</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">API Reference</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">Blog</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">Community</Link></li>
                         </ul>
                     </div>
                     <div>
                         <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">Company</h3>
                         <ul className="mt-4 space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">About</Link></li>
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">Careers</Link></li>
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">Legal</Link></li>
-                            <li><Link href="#" className="hover:text-indigo-600 dark:hover:text-indigo-400">Contact</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">About</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">Careers</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">Legal</Link></li>
+                            <li><Link href="#" className="hover:text-brand-600 dark:hover:text-brand-400">Contact</Link></li>
                         </ul>
                     </div>
                 </div>
