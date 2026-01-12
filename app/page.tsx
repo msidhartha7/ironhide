@@ -1,8 +1,12 @@
+"use client";
+
 import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
 import ProblemSolution from "@/components/landing/ProblemSolution";
 import WhyUs from "@/components/landing/WhyUs";
 import Footer from "@/components/landing/Footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   return (
@@ -12,22 +16,34 @@ export default function Home() {
         <Hero />
         <ProblemSolution />
         <WhyUs />
-        <section className="bg-indigo-600 py-16 dark:bg-indigo-900/50">
+        <section className="py-16 bg-gradient-to-r from-indigo-600 to-indigo-700 dark:from-indigo-900/50 dark:to-indigo-800/50">
           <div className="container mx-auto px-4 text-center md:px-6">
-            <h2 className="text-3xl font-bold tracking-tight text-white mb-6">
-              Ready to secure your GenAI infrastructure?
-            </h2>
-            <p className="text-indigo-100 mb-8 max-w-2xl mx-auto">
-              Join hundreds of fast-moving teams who trust IronHide for their compliance and security needs.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="rounded-full bg-white px-8 py-3 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-                Get Started Now
-              </button>
-              <button className="rounded-full bg-indigo-500 px-8 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400">
-                Contact Sales
-              </button>
-            </div>
+            <Card className="bg-transparent border-none shadow-none">
+              <CardContent className="flex flex-col items-center gap-6 pt-6">
+                <h2 className="text-3xl font-bold tracking-tight text-white mb-2">
+                  Ready to secure your GenAI infrastructure?
+                </h2>
+                <p className="text-indigo-100 mb-4 max-w-2xl">
+                  Join hundreds of fast-moving teams who trust IronHide for their compliance and security needs.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  <Button
+                    size="lg"
+                    className="bg-white text-indigo-600 font-semibold rounded-full px-8 hover:bg-white/90"
+                    onClick={() => console.log("Get Started Now clicked")}
+                  >
+                    Get Started Now
+                  </Button>
+                  <Button
+                    size="lg"
+                    className="bg-indigo-500 text-white font-semibold rounded-full px-8 hover:bg-indigo-400"
+                    onClick={() => console.log("Contact Sales clicked")}
+                  >
+                    Contact Sales
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </main>

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ShieldCheck, Twitter, Github, Linkedin } from "lucide-react";
-import { Button } from "@heroui/react";
+import { Button } from "@/components/ui/button";
 
 export default function Footer() {
     return (
@@ -67,23 +67,15 @@ export default function Footer() {
                         &copy; {new Date().getFullYear()} IronHide, Inc. All rights reserved.
                     </p>
                     <div className="flex gap-4">
-                        <Button
-                            as={Link}
-                            href="#"
-                            size="sm"
-                            variant="light"
-                            className="text-zinc-600 dark:text-zinc-400"
-                        >
-                            Privacy Policy
+                        <Button asChild variant="ghost" size="sm" className="text-zinc-600 dark:text-zinc-400">
+                            <Link href="#">
+                                Privacy Policy
+                            </Link>
                         </Button>
-                        <Button
-                            as={Link}
-                            href="#"
-                            size="sm"
-                            variant="light"
-                            className="text-zinc-600 dark:text-zinc-400"
-                        >
-                            Terms of Service
+                        <Button asChild variant="ghost" size="sm" className="text-zinc-600 dark:text-zinc-400">
+                            <Link href="#">
+                                Terms of Service
+                            </Link>
                         </Button>
                     </div>
                 </div>

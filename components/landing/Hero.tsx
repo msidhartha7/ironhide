@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@heroui/react";
+import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Lock, FileCheck } from "lucide-react";
 
 export default function Hero() {
@@ -29,13 +29,10 @@ export default function Hero() {
                         IronHide is the security backbone for next-gen AI. We bake SOC2, GDPR, and ISO compliance directly into your infrastructure, so you can ship faster and safer.
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
-                        <Button
-                            as={Link}
-                            href="#"
-                            size="lg"
-                            className="bg-indigo-600 font-semibold text-white shadow-sm hover:bg-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400"
-                        >
-                            Start Building Securely
+                        <Button asChild size="lg">
+                            <Link href="#">
+                                Start Building Securely
+                            </Link>
                         </Button>
                         <Link href="#" className="flex items-center gap-1 text-sm font-semibold leading-6 text-zinc-900 dark:text-zinc-50">
                             Live Demo <ArrowRight className="h-4 w-4" />

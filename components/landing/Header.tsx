@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@heroui/react";
-import { ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { ArrowUpRight, ShieldCheck } from "lucide-react";
 
 export default function Header() {
     return (
@@ -41,19 +41,11 @@ export default function Header() {
                         Pricing
                     </Link>
                 </nav>
-                <div className="flex items-center gap-4">
-                    <Link
-                        href="#"
-                        className="hidden text-sm font-medium text-zinc-800 hover:text-indigo-600 dark:text-zinc-200 dark:hover:text-indigo-400 md:block transition-colors"
-                    >
-                        Log in
-                    </Link>
-                    <Button
-                        as={Link}
-                        href="#"
-                        color="primary"
-                    >
-                        Get Started
+                <div className="flex m-0 items-center gap-4">
+                    <Button asChild size="lg">
+                        <Link href="#">
+                            Book A Call <ArrowUpRight className="h-4 w-4" />
+                        </Link>
                     </Button>
                 </div>
             </div>
