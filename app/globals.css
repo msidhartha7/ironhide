@@ -149,6 +149,107 @@
     animation: menu-slide 0.5s ease-out forwards;
   }
 
+  /* Soft moving glows for glass surfaces */
+  @keyframes glow-drift {
+    0% {
+      transform: translate3d(var(--x-start), var(--y-start), 0) scale(var(--scale, 1));
+      opacity: 0.45;
+    }
+    50% {
+      opacity: 0.25;
+    }
+    100% {
+      transform: translate3d(var(--x-end), var(--y-end), 0) scale(var(--scale, 1));
+      opacity: 0.1;
+    }
+  }
+
+  .header-glow {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(32px);
+    mix-blend-mode: screen;
+    animation: glow-drift var(--duration, 16s) ease-in-out infinite alternate;
+  }
+
+  .glow-a {
+    --x-start: -16%;
+    --y-start: -22%;
+    --x-end: 14%;
+    --y-end: 18%;
+    --scale: 1.15;
+    --duration: 14s;
+  }
+
+  .glow-b {
+    --x-start: 68%;
+    --y-start: -28%;
+    --x-end: 32%;
+    --y-end: 24%;
+    --scale: 0.95;
+    --duration: 18s;
+  }
+
+  .glow-c {
+    --x-start: 26%;
+    --y-start: 42%;
+    --x-end: 52%;
+    --y-end: -12%;
+    --scale: 0.85;
+    --duration: 20s;
+  }
+
+  /* Hero drifting background orbs */
+  @keyframes orb-drift {
+    0% {
+      transform: translate3d(var(--x-start), var(--y-start), 0) scale(var(--scale, 1));
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.25;
+    }
+    100% {
+      transform: translate3d(var(--x-end), var(--y-end), 0) scale(var(--scale, 1));
+      opacity: 0.12;
+    }
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    mix-blend-mode: screen;
+    animation: orb-drift var(--duration, 22s) ease-in-out infinite alternate;
+    will-change: transform, opacity;
+  }
+
+  .orb-one {
+    --x-start: -18%;
+    --y-start: -6%;
+    --x-end: 12%;
+    --y-end: 16%;
+    --scale: 1.15;
+    --duration: 18s;
+  }
+
+  .orb-two {
+    --x-start: 62%;
+    --y-start: -12%;
+    --x-end: 38%;
+    --y-end: 24%;
+    --scale: 1.05;
+    --duration: 21s;
+  }
+
+  .orb-three {
+    --x-start: 28%;
+    --y-start: 38%;
+    --x-end: 48%;
+    --y-end: 4%;
+    --scale: 0.95;
+    --duration: 24s;
+  }
+
   @keyframes menu-slide-out {
     from {
       transform: translateY(0);

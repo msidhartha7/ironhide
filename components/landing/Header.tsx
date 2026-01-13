@@ -17,7 +17,16 @@ export default function Header() {
         <>
             <header className="fixed top-6 left-0 right-0 z-50">
                 <div className="mx-auto flex max-w-6xl items-center justify-center px-4 md:px-6">
-                    <div className="glass-panel relative flex h-16 w-full items-center justify-between rounded-2xl bg-night-900/70 px-4 md:px-6">
+                    <div className="glass-panel relative flex h-16 w-full items-center justify-between overflow-hidden rounded-2xl bg-night-900/70 px-4 md:px-6">
+                        <div
+                            aria-hidden
+                            className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl"
+                        >
+                            <span className="header-glow glow-a h-40 w-40 bg-brand-400/35 blur-3xl" />
+                            <span className="header-glow glow-b h-52 w-52 bg-cyan-300/30 blur-3xl" />
+                            <span className="header-glow glow-c h-36 w-36 bg-indigo-400/25 blur-3xl" />
+                        </div>
+
                         <Link href="/" className="flex items-center gap-2">
                             <ScanFace className="h-7 w-7 text-brand-400 drop-shadow-glow" />
                             <span className="text-xl font-semibold tracking-tight text-white">
@@ -52,15 +61,16 @@ export default function Header() {
                             </Button>
                         </div>
 
-                        <button
-                            type="button"
+                        <Button
+                            variant="outline"
+                            size="icon"
                             onClick={() => setIsMenuOpen(true)}
                             aria-label="Open menu"
                             aria-expanded={isMenuOpen}
-                            className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/15 bg-night-800/70 text-white shadow-lg ring-2 ring-brand-400/60 transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-night-800 md:hidden"
+                            className="flex h-12 w-12 items-center justify-center rounded-xl bg-night-800/70 text-white shadow-lg transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-night-800 md:hidden"
                         >
                             <Menu className="h-6 w-6" />
-                        </button>
+                        </Button>
                     </div>
                 </div>
             </header>
@@ -87,14 +97,15 @@ export default function Header() {
                                 <span className="text-2xl font-semibold tracking-tight">IronHide</span>
                             </Link>
 
-                            <button
-                                type="button"
+                            <Button
+                                variant="outline"
+                                size="icon"
                                 onClick={() => setIsMenuOpen(false)}
                                 aria-label="Close menu"
-                                className="group flex h-12 w-12 items-center justify-center rounded-xl border border-amber-300/90 bg-night-800/70 text-white shadow-lg ring-2 ring-amber-300/70 transition hover:scale-[1.02] hover:border-amber-200 hover:bg-night-800"
+                                className="group flex h-12 w-12 items-center justify-center rounded-xl bg-night-800/70 text-white shadow-lg transition hover:scale-[1.02] hover:border-amber-200 hover:bg-night-800"
                             >
                                 <X className="h-6 w-6 text-gray-200 group-hover:text-white" />
-                            </button>
+                            </Button>
                         </div>
 
                         <div className="mt-10 flex flex-col items-center gap-8 text-center text-lg font-semibold text-white">
