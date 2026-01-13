@@ -3,8 +3,10 @@ import { XCircle, CheckCircle } from "lucide-react";
 export default function ProblemSolution() {
     return (
         <section id="features" className="relative overflow-hidden bg-night-950 py-24">
-            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night-900/40 via-night-950/75 to-night-950" />
-            <div className="container mx-auto px-4 md:px-6">
+            <div className="absolute inset-0 -z-20 bg-gradient-to-b from-night-950 via-night-950 to-black" aria-hidden />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night-900/40 via-night-950/75 to-night-950" aria-hidden />
+            <div className="pointer-events-none absolute inset-0 -z-[5] bg-black/35" aria-hidden />
+            <div className="container relative z-10 mx-auto px-4 md:px-6">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                         Stop worrying about compliance.

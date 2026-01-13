@@ -30,8 +30,10 @@ const features = [
 export default function WhyUs() {
     return (
         <section id="why-us" className="relative bg-night-950 py-24 sm:py-32">
-            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night-900/30 via-night-950/70 to-night-950" />
-            <div className="container mx-auto px-4 md:px-6">
+            <div className="absolute inset-0 -z-20 bg-gradient-to-b from-night-950 via-night-950 to-black" aria-hidden />
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night-900/30 via-night-950/70 to-night-950" aria-hidden />
+            <div className="pointer-events-none absolute inset-0 -z-[5] bg-black/35" aria-hidden />
+            <div className="container relative z-10 mx-auto px-4 md:px-6">
                 <div className="mx-auto max-w-2xl lg:text-center">
                     <h2 className="text-base font-semibold leading-7 text-brand-300">Why IronHide?</h2>
                     <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">

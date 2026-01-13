@@ -30,8 +30,12 @@ export default function Hero() {
             <div className="absolute inset-0 -z-10 bg-hero-radial" />
             <div className="absolute inset-0 -z-20 bg-gradient-to-b from-night-950 to-black" />
             <div className="absolute inset-x-0 bottom-[-200px] -z-10 h-[500px] bg-hero-glow" />
+            <div
+                className="pointer-events-none absolute inset-0 -z-[5] bg-black/40"
+                aria-hidden
+            />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-2 sm:mt-20">
+            <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 mt-2 sm:mt-20">
                 <div className="mx-auto max-w-4xl text-center">
                     <div className="mb-6 flex justify-center sm:mb-8">
                         <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 backdrop-blur">
@@ -40,8 +44,8 @@ export default function Hero() {
                     </div>
 
                     <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-                        Real Identity for{" "}
-                        <span className="text-brand-300">AI Agents</span>
+                        Identity-First Authorization for{" "}
+                        <span className="text-brand-300">Agent Systems</span>
                     </h1>
 
                     <p className="mx-auto mt-6 max-w-2xl text-lg leading-7 text-white/70 sm:text-xl sm:leading-8">
