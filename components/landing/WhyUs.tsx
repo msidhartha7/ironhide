@@ -20,7 +20,7 @@ const features = [
         icon: ShieldAlert,
     },
     {
-        name: 'Compliance Certified',
+        name: 'Compliance Assistance',
         description:
             'Automatically generating the evidence you need for SOC2, ISO 27001, and HIPAA audits.',
         icon: BadgeCheck,

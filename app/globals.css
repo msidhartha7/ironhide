@@ -250,6 +250,48 @@
     --duration: 24s;
   }
 
+  /* Hero morphing gradient mesh */
+  .hero-morph-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: -5;
+  }
+
+  .hero-morph {
+  width: clamp(30rem, 48vw, 52rem);
+  height: clamp(30rem, 48vw, 52rem);
+  border-radius: 46%;
+  background:
+    radial-gradient(46% 46% at 28% 32%, rgba(122, 169, 255, 0.32), rgba(74, 139, 255, 0)),
+    radial-gradient(42% 42% at 68% 34%, rgba(74, 139, 255, 0.38), rgba(47, 123, 255, 0)),
+    radial-gradient(54% 54% at 38% 70%, rgba(47, 123, 255, 0.26), rgba(22, 167, 255, 0)),
+    radial-gradient(38% 38% at 70% 68%, rgba(22, 167, 255, 0.22), rgba(4, 9, 21, 0));
+  mix-blend-mode: screen;
+  filter: blur(34px);
+  opacity: 0.7;
+  animation: hero-mesh-spin 46s linear infinite;
+  transform: translateZ(0);
+  }
+
+  @keyframes hero-mesh-spin {
+    0% {
+      transform: rotate(0deg) scale(1.05);
+      filter: blur(30px);
+    }
+    50% {
+      transform: rotate(180deg) scale(1.05);
+      filter: blur(31px);
+    }
+    100% {
+      transform: rotate(360deg) scale(1.05);
+      filter: blur(30px);
+    }
+  }
+
   @keyframes menu-slide-out {
     from {
       transform: translateY(0);

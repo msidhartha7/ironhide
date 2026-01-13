@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ShieldCheck, Twitter, Github, Linkedin } from "lucide-react";
+import { ScanFace, Twitter, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-5">
                     <div className="md:col-span-2">
                         <Link href="/" className="flex items-center gap-2">
-                            <ShieldCheck className="h-6 w-6 text-brand-300" />
+                            <ScanFace className="h-6 w-6 text-brand-300" />
                             <span className="text-xl font-bold tracking-tight text-white">
                                 IronHide
                             </span>
@@ -20,15 +20,15 @@ export default function Footer() {
                             The security backbone for next-generation AI products. Built for compliance, speed, and safety.
                         </p>
                         <div className="mt-6 flex gap-4">
-                            <Link href="#" className="text-white/50 transition hover:text-white">
+                            <Link href="https://x.com/m_sidhartha07" className="text-white/50 transition hover:text-white">
                                 <span className="sr-only">Twitter</span>
                                 <Twitter className="h-5 w-5" />
                             </Link>
-                            <Link href="#" className="text-white/50 transition hover:text-white">
+                            <Link href="https://github.com/privyy-io" className="text-white/50 transition hover:text-white">
                                 <span className="sr-only">GitHub</span>
                                 <Github className="h-5 w-5" />
                             </Link>
-                            <Link href="#" className="text-white/50 transition hover:text-white">
+                            <Link href="https://www.linkedin.com/in/mallicksidhartha7/" className="text-white/50 transition hover:text-white">
                                 <span className="sr-only">LinkedIn</span>
                                 <Linkedin className="h-5 w-5" />
                             </Link>

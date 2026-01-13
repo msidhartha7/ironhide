@@ -4,10 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
     ArrowUpRight,
-    Bot,
     Calendar,
-    Cloud,
-    Cpu,
     Database,
     Eye,
     Figma,
@@ -22,6 +19,9 @@ import {
 export default function Hero() {
     return (
         <section className="relative overflow-hidden bg-night-950 pt-28 pb-20 sm:pt-16 sm:pb-24 lg:pt-28 lg:pb-28">
+            <div className="hero-morph-layer">
+                <div className="hero-morph" />
+            </div>
             <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden">
                 <span className="hero-orb orb-one h-64 w-64 bg-brand-400/30" />
                 <span className="hero-orb orb-two h-72 w-72 bg-cyan-300/25" />
@@ -31,7 +31,7 @@ export default function Hero() {
             <div className="absolute inset-0 -z-20 bg-gradient-to-b from-night-950 to-black" />
             <div className="absolute inset-x-0 bottom-[-200px] -z-10 h-[500px] bg-hero-glow" />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-2 sm:mt-20">
                 <div className="mx-auto max-w-4xl text-center">
                     <div className="mb-6 flex justify-center sm:mb-8">
                         <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 backdrop-blur">
