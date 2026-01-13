@@ -35,8 +35,7 @@ export default function ProblemSolution() {
                         </ul>
                     </div>
 
-                    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 p-8 shadow-[0_25px_80px_-35px_rgba(47,123,255,0.9)] ring-1 ring-white/15 lg:-mt-4 lg:-mb-4 lg:z-10">
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.2),transparent_35%)]" />
+                    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 p-8 shadow-[0_18px_70px_-28px_rgba(47,123,255,0.85),0_0_55px_-30px_rgba(47,123,255,0.6)] ring-1 ring-white/15 lg:-mt-4 lg:-mb-4 lg:z-10">
                         <h3 className="text-lg font-semibold leading-8 text-white">
                             The IronHide Way
                         </h3>

@@ -25,14 +25,6 @@ export default function Header() {
             <header className="fixed top-6 left-0 right-0 z-50">
                 <div className="mx-auto flex max-w-6xl items-center justify-center px-4 md:px-6">
                     <div className="glass-panel relative flex h-16 w-full items-center justify-between overflow-hidden rounded-2xl bg-night-900/70 px-4 md:px-6">
-                        <div
-                            aria-hidden
-                            className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl"
-                        >
-                            <span className="header-glow glow-a h-40 w-40 bg-brand-400/35 blur-3xl" />
-                            <span className="header-glow glow-b h-52 w-52 bg-cyan-300/30 blur-3xl" />
-                            <span className="header-glow glow-c h-36 w-36 bg-indigo-400/25 blur-3xl" />
-                        </div>
 
                         <Link href="/" className="flex items-center gap-2">
                             <ScanFace className="h-7 w-7 text-brand-400 drop-shadow-glow" />

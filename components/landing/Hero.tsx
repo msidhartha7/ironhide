@@ -72,7 +72,7 @@ export default function Hero() {
                                     key={item.label}
                                     className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/2 px-4 py-3 text-left backdrop-blur"
                                 >
-                                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5">
+                                    <div className="flex items-center justify-center bg-white/5 rounded-lg">
                                         {item.icon}
                                     </div>
                                     <span className="text-sm font-medium text-white/90">
