@@ -5,17 +5,23 @@ import { Button } from "@/components/ui/button";
 import {
     ArrowUpRight,
     Bot,
+    Calendar,
     Cloud,
     Cpu,
     Database,
     Eye,
+    Figma,
     Lock,
+    NotebookIcon,
+    Sheet,
     ShieldCheck,
+    Slack,
+    Snowflake,
 } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden bg-night-950 pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
+        <section className="relative overflow-hidden bg-night-950 pt-28 pb-20 sm:pt-16 sm:pb-24 lg:pt-28 lg:pb-28">
             <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden">
                 <span className="hero-orb orb-one h-64 w-64 bg-brand-400/30" />
                 <span className="hero-orb orb-two h-72 w-72 bg-cyan-300/25" />
@@ -88,116 +94,119 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="relative mx-auto mt-24 max-w-5xl sm:mt-32">
-                    <div className="glass-panel relative overflow-hidden rounded-3xl border-white/10 bg-white/5 p-6 sm:p-8">
-                        <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-transparent" />
+                <ArchitectureDiagram />
+            </div>
+        </section>
+    );
+}
 
-                        <div className="relative grid gap-6 lg:grid-cols-[1.05fr_auto_1.05fr] lg:items-center">
-                            <div className="flex flex-col gap-4 lg:gap-6">
-                                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
-                                    <div className="mb-3 flex items-center justify-between text-sm text-white/70">
-                                        <span className="font-semibold text-white">Models</span>
-                                        <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
-                                            LLMs
-                                        </span>
-                                    </div>
-                                    <div className="grid grid-cols-3 gap-3">
-                                        {["OpenAI", "Anthropic", "Meta"].map((label) => (
-                                            <div
-                                                key={label}
-                                                className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-xs font-semibold text-white/80 shadow-inner"
-                                            >
-                                                {label}
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+function ArchitectureDiagram() {
+    return <div className="relative mx-auto mt-24 max-w-5xl sm:mt-32">
+        <div className="glass-panel relative overflow-hidden rounded-3xl border-white/10 bg-white/5 p-6 sm:p-8">
+            <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-transparent" />
 
-                                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
-                                    <div className="mb-3 flex items-center justify-between text-sm text-white/70">
-                                        <span className="font-semibold text-white">Agents</span>
-                                        <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
-                                            Identities
-                                        </span>
-                                    </div>
-                                    <div className="grid grid-cols-2 gap-3">
-                                        <div className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80">
-                                            Internal
-                                        </div>
-                                        <div className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80">
-                                            Customer
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="relative mx-auto hidden flex-col items-center justify-center gap-3 lg:flex">
-                                <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
-                                <div className="rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 px-10 py-8 text-center shadow-[0_25px_60px_-25px_rgba(47,123,255,0.8)] ring-1 ring-white/20">
-                                    <p className="text-xs uppercase tracking-[0.2em] text-white/70">
-                                        IronHide
-                                    </p>
-                                    <p className="mt-1 text-2xl font-bold text-white">Gateway</p>
-                                    <p className="mt-2 text-sm text-white/80">
-                                        AuthN / RBAC • Guardrails • Tool Management
-                                    </p>
-                                </div>
-                                <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
-                            </div>
-
-                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
-                                <div className="mb-3 flex items-center justify-between text-sm text-white/70">
-                                    <span className="font-semibold text-white">Tools</span>
-                                    <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
-                                        Integrations
-                                    </span>
-                                </div>
-                                <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
-                                    {[
-                                        { label: "Calendar", icon: <Cloud className="h-4 w-4" /> },
-                                        { label: "AWS", icon: <Database className="h-4 w-4" /> },
-                                        { label: "Drive", icon: <Cloud className="h-4 w-4" /> },
-                                        { label: "Notion", icon: <Cpu className="h-4 w-4" /> },
-                                        { label: "Slack", icon: <Bot className="h-4 w-4" /> },
-                                        { label: "Gmail", icon: <Database className="h-4 w-4" /> },
-                                        { label: "HubSpot", icon: <Cloud className="h-4 w-4" /> },
-                                        { label: "Stripe", icon: <Cpu className="h-4 w-4" /> },
-                                    ].map((item) => (
-                                        <div
-                                            key={item.label}
-                                            className="group relative flex h-14 flex-col items-center justify-center gap-1 rounded-xl border border-white/10 bg-white/5 text-[11px] font-semibold uppercase tracking-wide text-white/70"
-                                        >
-                                            <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/5">
-                                                {item.icon}
-                                            </span>
-                                            <span className="pointer-events-none absolute left-1/2 top-full z-10 -translate-x-1/2 translate-y-1 rounded-md bg-black/60 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white opacity-0 shadow-lg ring-1 ring-white/10 transition duration-150 group-hover:translate-y-0 group-hover:opacity-100">
-                                                {item.label}
-                                            </span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
+            <div className="relative grid gap-6 lg:grid-cols-[1.05fr_auto_1.05fr] lg:items-center">
+                <div className="flex flex-col gap-4 lg:gap-6">
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
+                        <div className="mb-3 flex items-center justify-between text-sm text-white/70">
+                            <span className="font-semibold text-white">Models</span>
+                            <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
+                                LLMs
+                            </span>
                         </div>
+                        <div className="grid grid-cols-3 gap-3">
+                            {["OpenAI", "Anthropic", "Meta"].map((label) => (
+                                <div
+                                    key={label}
+                                    className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-xs font-semibold text-white/80 shadow-inner"
+                                >
+                                    {label}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
 
-                        <div className="relative mt-8 flex flex-col items-center gap-4 lg:mt-6 lg:hidden">
-                            <div className="rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 px-10 py-8 text-center shadow-[0_25px_60px_-25px_rgba(47,123,255,0.8)] ring-1 ring-white/20">
-                                <p className="text-xs uppercase tracking-[0.2em] text-white/70">
-                                    IronHide
-                                </p>
-                                <p className="mt-1 text-2xl font-bold text-white">Gateway</p>
-                                <p className="mt-2 text-sm text-white/80">
-                                    AuthN / ACL • Guardrails • Tool Management
-                                </p>
+                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
+                        <div className="mb-3 flex items-center justify-between text-sm text-white/70">
+                            <span className="font-semibold text-white">Agents</span>
+                            <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
+                                Identities
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-2 gap-3">
+                            <div className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80">
+                                Internal
                             </div>
-                            <div className="flex items-center gap-3 text-[13px] font-medium text-white/60">
-                                <span className="h-px w-10 bg-white/15" />
-                                Securing access between models, agents, and tools
-                                <span className="h-px w-10 bg-white/15" />
+                            <div className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80">
+                                Customer
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div className="relative mx-auto flex-col items-center justify-center gap-3 lg:flex">
+                    <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
+                    <div className="rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 px-10 py-8 text-center shadow-[0_25px_60px_-25px_rgba(47,123,255,0.8)] ring-1 ring-white/20">
+                        <p className="text-xs uppercase tracking-[0.2em] text-white/70">
+                            IronHide
+                        </p>
+                        <p className="mt-1 text-2xl font-bold text-white">Gateway</p>
+                        <p className="mt-2 text-sm text-white/80">
+                            AuthN / RBAC • Guardrails • Tool Management
+                        </p>
+                    </div>
+                    <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
+                    <div className="mb-3 flex items-center justify-between text-sm text-white/70">
+                        <span className="font-semibold text-white">Tools</span>
+                        <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
+                            Integrations
+                        </span>
+                    </div>
+                    <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
+                        {[
+                            { label: "Calendar", icon: <Calendar className="h-4 w-4" /> },
+                            { label: "AWS", icon: <Database className="h-4 w-4" /> },
+                            { label: "Snowflake", icon: <Snowflake className="h-4 w-4" /> },
+                            { label: "Notion", icon: <NotebookIcon className="h-4 w-4" /> },
+                            { label: "Slack", icon: <Slack className="h-4 w-4" /> },
+                            { label: "Sheet", icon: <Sheet className="h-4 w-4" /> },
+                            { label: "Figma", icon: <Figma className="h-4 w-4" /> },
+                        ].map((item) => (
+                            <div
+                                key={item.label}
+                                className="group relative flex h-14 flex-col items-center justify-center gap-1 rounded-xl border border-white/10 bg-white/5 text-[11px] font-semibold uppercase tracking-wide text-white/70"
+                            >
+                                <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/5">
+                                    {item.icon}
+                                </span>
+                                <span className="pointer-events-none absolute left-1/2 top-full z-10 -translate-x-1/2 translate-y-1 rounded-md bg-black/60 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white opacity-0 shadow-lg ring-1 ring-white/10 transition duration-150 group-hover:translate-y-0 group-hover:opacity-100">
+                                    {item.label}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
-        </section>
-    );
+
+            {/* <div className="relative mt-8 flex flex-col items-center gap-4 lg:mt-6 lg:hidden">
+                <div className="rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 px-10 py-8 text-center shadow-[0_25px_60px_-25px_rgba(47,123,255,0.8)] ring-1 ring-white/20">
+                    <p className="text-xs uppercase tracking-[0.2em] text-white/70">
+                        IronHide
+                    </p>
+                    <p className="mt-1 text-2xl font-bold text-white">Gateway</p>
+                    <p className="mt-2 text-sm text-white/80">
+                        AuthN / ACL • Guardrails • Tool Management
+                    </p>
+                </div>
+                <div className="flex items-center gap-3 text-[13px] font-medium text-white/60">
+                    <span className="h-px w-10 bg-white/15" />
+                    Securing access between models, agents, and tools
+                    <span className="h-px w-10 bg-white/15" />
+                </div>
+            </div> */}
+        </div>
+    </div>;
 }
