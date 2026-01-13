@@ -133,4 +133,34 @@
   .glass-panel {
     @apply bg-white/5 border border-white/10 backdrop-blur-2xl shadow-[0_15px_60px_-25px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.08)];
   }
+
+  @keyframes menu-slide {
+    from {
+      transform: translateY(-24px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .menu-slide {
+    animation: menu-slide 0.5s ease-out forwards;
+  }
+
+  @keyframes menu-slide-out {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-24px);
+      opacity: 0;
+    }
+  }
+
+  .menu-slide-out {
+    animation: menu-slide-out 0.5s ease-in forwards;
+  }
 }

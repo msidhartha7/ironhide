@@ -66,8 +66,17 @@ export default function Header() {
             </header>
 
             {isMenuOpen && (
-                <div className="fixed inset-0 z-[60] flex items-start justify-center bg-[#040915]/80 px-4 pt-8 backdrop-blur-2xl">
-                    <div className="glass-panel relative w-full max-w-xl overflow-hidden rounded-[28px] border-white/15 bg-gradient-to-b from-[#111a30]/95 via-[#0d1527]/95 to-[#0a1220]/95 px-6 py-8 shadow-[0_25px_80px_-30px_rgba(0,0,0,0.75)]">
+                <div
+                    className="fixed inset-0 z-[60] flex items-start justify-center bg-[#040915]/35 px-4 pt-6"
+                    onClick={() => setIsMenuOpen(false)}
+                    aria-hidden
+                >
+                    <div
+                        className="menu-slide glass-panel relative w-full max-w-xl overflow-hidden rounded-[20px] border-white/15 bg-white/10 px-6 py-8 shadow-[0_25px_80px_-30px_rgba(0,0,0,0.55)]"
+                        onClick={(e) => e.stopPropagation()}
+                        role="dialog"
+                        aria-modal="true"
+                    >
                         <div className="flex items-center justify-between">
                             <Link
                                 href="/"
