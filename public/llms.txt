@@ -1,0 +1,4 @@
+# LLM crawling instructions for IronHide
+User-agent: *
+Allow: /
+Sitemap: https://ironhide.ai/sitemap.xml

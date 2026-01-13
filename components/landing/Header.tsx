@@ -38,9 +38,9 @@ export default function Header() {
                             <Link href="#" className="transition-colors hover:text-white">
                                 Home
                             </Link>
-                            <Link href="#features" className="transition-colors hover:text-white">
+                            {/* <Link href="#features" className="transition-colors hover:text-white">
                                 Compare
-                            </Link>
+                            </Link> */}
                             <Link href="#features" className="transition-colors hover:text-white">
                                 Features
                             </Link>
@@ -116,13 +116,13 @@ export default function Header() {
                             >
                                 Home
                             </Link>
-                            <Link
+                            {/* <Link
                                 href="#features"
                                 className="transition hover:text-white/80"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Compare
-                            </Link>
+                            </Link> */}
                             <Link
                                 href="#features"
                                 className="transition hover:text-white/80"
