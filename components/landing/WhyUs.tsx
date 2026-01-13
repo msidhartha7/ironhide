@@ -22,7 +22,7 @@ const features = [
     {
         name: 'Compliance Assistance',
         description:
-            'Automatically generating the evidence you need for SOC2, ISO 27001, and HIPAA audits.',
+            'Automatically generate the evidence you need for SOC2, ISO 27001, and HIPAA audits.',
         icon: BadgeCheck,
     },
 ];
@@ -48,7 +48,7 @@ export default function WhyUs() {
                         {features.map((feature) => (
                             <div
                                 key={feature.name}
-                                className="flex flex-col rounded-2xl border border-white/10 bg-night-900/50 p-6 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.85)]"
+                                className="flex flex-col rounded-2xl border border-white/20 bg-night-900/50 p-6 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.85)]"
                             >
                                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
                                     <feature.icon className="h-5 w-5 flex-none text-brand-300" aria-hidden="true" />

@@ -45,7 +45,7 @@ export default function Hero() {
 
                     <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
                         Identity-First Authorization for{" "}
-                        <span className="text-brand-300">Agent Systems</span>
+                        <span className="text-brand-300">Agentic Systems</span>
                     </h1>
 
                     <p className="mx-auto mt-6 max-w-2xl text-lg leading-7 text-white/70 sm:text-xl sm:leading-8">
@@ -90,7 +90,7 @@ export default function Hero() {
                             variant="outline"
                             className="h-12 rounded-2xl border border-brand-500/10 h-16 bg-gradient-to-r from-brand-900 to-brand-800 px-8 text-base font-semibold text-white shadow-[0_15px_40px_-15px_rgba(47,123,255,0.65)] transition hover:brightness-110"
                         >
-                            <Link href="#">
+                            <Link href="https://calendly.com/sidhartha-privyy/30min">
                                 Get Early Access
                                 <ArrowUpRight className="ml-2 h-5 w-5" />
                             </Link>
@@ -194,23 +194,6 @@ function ArchitectureDiagram() {
                     </div>
                 </div>
             </div>
-
-            {/* <div className="relative mt-8 flex flex-col items-center gap-4 lg:mt-6 lg:hidden">
-                <div className="rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 px-10 py-8 text-center shadow-[0_25px_60px_-25px_rgba(47,123,255,0.8)] ring-1 ring-white/20">
-                    <p className="text-xs uppercase tracking-[0.2em] text-white/70">
-                        IronHide
-                    </p>
-                    <p className="mt-1 text-2xl font-bold text-white">Gateway</p>
-                    <p className="mt-2 text-sm text-white/80">
-                        AuthN / ACL • Guardrails • Tool Management
-                    </p>
-                </div>
-                <div className="flex items-center gap-3 text-[13px] font-medium text-white/60">
-                    <span className="h-px w-10 bg-white/15" />
-                    Securing access between models, agents, and tools
-                    <span className="h-px w-10 bg-white/15" />
-                </div>
-            </div> */}
         </div>
     </div>;
 }

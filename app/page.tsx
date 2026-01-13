@@ -29,18 +29,29 @@ export default function Home() {
                 <div className="flex flex-col gap-4 pt-4 sm:flex-row">
                   <Button
                     size="lg"
-                    className="h-12 rounded-xl bg-gradient-to-r from-brand-500 to-brand-400 px-8 text-base font-semibold text-white shadow-[0_15px_40px_-15px_rgba(47,123,255,0.6)] transition hover:brightness-110"
-                    onClick={() => console.log("Get Started Now clicked")}
+                    variant="outline"
+                    className="h-12 min-w-[180px] rounded-xl bg-gradient-to-r from-brand-500 to-brand-400 px-8 text-base font-semibold text-white shadow-[0_15px_40px_-15px_rgba(47,123,255,0.6)] transition hover:brightness-110"
+                    onClick={() =>
+                      window.open(
+                        "https://calendly.com/sidhartha-privyy/30min",
+                        "_blank",
+                      )
+                    }
                   >
-                    Get Started Now
+                    Get Early Access
                   </Button>
                   <Button
                     size="lg"
-                    variant="outline"
-                    className="h-12 rounded-xl border-white/20 bg-white/5 px-8 text-base font-semibold text-white backdrop-blur transition hover:border-white/30 hover:bg-white/10"
-                    onClick={() => console.log("Contact Sales clicked")}
+                    variant="secondary"
+                    className="h-12 min-w-[180px] rounded-xl border-white/20 bg-white/5 px-8 text-base font-semibold text-white backdrop-blur transition hover:border-white/30 hover:bg-white/10"
+                    onClick={() =>
+                      window.open(
+                        "https://calendly.com/sidhartha-privyy/30min",
+                        "_blank",
+                      )
+                    }
                   >
-                    Contact Sales
+                    Book A Call
                   </Button>
                 </div>
               </CardContent>

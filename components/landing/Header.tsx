@@ -55,7 +55,7 @@ export default function Header() {
                                 size="lg"
                                 className="h-11 rounded-xl border border-white/20 bg-night-800/80 px-4 text-sm font-semibold text-white shadow-lg backdrop-blur-lg transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-night-800"
                             >
-                                <Link href="#">
+                                <Link href="https://calendly.com/sidhartha-privyy/30min">
                                     Book A Call <ArrowUpRight className="ml-2 h-4 w-4" />
                                 </Link>
                             </Button>
@@ -145,7 +145,7 @@ export default function Header() {
                                 size="lg"
                                 className="h-12 min-w-[180px] rounded-2xl border border-white/15 bg-night-900 text-base font-semibold text-white shadow-lg shadow-black/40 ring-1 ring-white/10 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-night-800"
                             >
-                                <Link href="#" onClick={() => setIsMenuOpen(false)}>
+                                <Link href="https://calendly.com/sidhartha-privyy/30min" onClick={() => setIsMenuOpen(false)}>
                                     Book A Call <ArrowUpRight className="ml-2 h-4 w-4" />
                                 </Link>
                             </Button>
