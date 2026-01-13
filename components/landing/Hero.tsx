@@ -111,7 +111,7 @@ function ArchitectureDiagram() {
 
             <div className="relative grid gap-6 lg:grid-cols-[1.05fr_auto_1.05fr] lg:items-center">
                 <div className="flex flex-col gap-4 lg:gap-6">
-                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
+                    <div className="rounded-2xl border border-cyan-300/50 bg-white/5 p-4 shadow-lg">
                         <div className="mb-3 flex items-center justify-between text-sm text-white/70">
                             <span className="font-semibold text-white">Models</span>
                             <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
@@ -122,7 +122,7 @@ function ArchitectureDiagram() {
                             {["OpenAI", "Anthropic", "Meta"].map((label) => (
                                 <div
                                     key={label}
-                                    className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-xs font-semibold text-white/80 shadow-inner"
+                                    className="flex h-16 items-center justify-center rounded-xl border border-cyan-300/70 bg-white/5 text-xs font-semibold text-white/80 shadow-inner"
                                 >
                                     {label}
                                 </div>
@@ -130,7 +130,7 @@ function ArchitectureDiagram() {
                         </div>
                     </div>
 
-                    <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
+                    <div className="rounded-2xl border border-purple-300/50 bg-white/5 p-4 shadow-lg">
                         <div className="mb-3 flex items-center justify-between text-sm text-white/70">
                             <span className="font-semibold text-white">Agents</span>
                             <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
@@ -138,10 +138,10 @@ function ArchitectureDiagram() {
                             </span>
                         </div>
                         <div className="grid grid-cols-2 gap-3">
-                            <div className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80">
+                            <div className="flex h-16 items-center justify-center rounded-xl border border-purple-200/60 bg-white/5 text-sm font-semibold text-white/80">
                                 Internal
                             </div>
-                            <div className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80">
+                            <div className="flex h-16 items-center justify-center rounded-xl border border-purple-200/60 bg-white/5 text-sm font-semibold text-white/80">
                                 Customer
                             </div>
                         </div>
@@ -150,7 +150,7 @@ function ArchitectureDiagram() {
 
                 <div className="relative mx-auto flex-col items-center justify-center gap-3 lg:flex">
                     <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
-                    <div className="rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 px-10 py-8 text-center shadow-[0_25px_60px_-25px_rgba(47,123,255,0.8)] ring-1 ring-white/20">
+                    <div className="rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 px-10 py-8 text-center shadow-[0_25px_60px_-25px_rgba(47,123,255,0.8)] ring-1 ring-brand-200/70">
                         <p className="text-xs uppercase tracking-[0.2em] text-white/70">
                             IronHide
                         </p>
@@ -162,7 +162,7 @@ function ArchitectureDiagram() {
                     <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
                 </div>
 
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
+                <div className="rounded-2xl border border-emerald-300/50 bg-white/5 p-4 shadow-lg">
                     <div className="mb-3 flex items-center justify-between text-sm text-white/70">
                         <span className="font-semibold text-white">Tools</span>
                         <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
@@ -181,7 +181,7 @@ function ArchitectureDiagram() {
                         ].map((item) => (
                             <div
                                 key={item.label}
-                                className="group relative flex h-14 flex-col items-center justify-center gap-1 rounded-xl border border-white/10 bg-white/5 text-[11px] font-semibold uppercase tracking-wide text-white/70"
+                                className="group relative flex h-14 flex-col items-center justify-center gap-1 rounded-xl border border-emerald-200/60 bg-white/5 text-[11px] font-semibold uppercase tracking-wide text-white/70"
                             >
                                 <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/5">
                                     {item.icon}
