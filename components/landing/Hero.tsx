@@ -25,12 +25,6 @@ export default function Hero() {
                     <div className="mb-6 flex justify-center sm:mb-8">
                         <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 backdrop-blur">
                             <span className="text-white/80">Coming Soon</span>
-                            {/* <span className="flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5">
-                                <span className="flex h-5 w-5 items-center justify-center rounded-[6px] bg-[#f26522] text-[11px] font-semibold text-white">
-                                    Y
-                                </span>
-                                <span className="text-white/90">Combinator</span>
-                            </span> */}
                         </div>
                     </div>
 
@@ -61,7 +55,7 @@ export default function Hero() {
                             ].map((item) => (
                                 <div
                                     key={item.label}
-                                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left backdrop-blur"
+                                    className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/2 px-4 py-3 text-left backdrop-blur"
                                 >
                                     <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5">
                                         {item.icon}
@@ -74,11 +68,11 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    <div className="mt-10 flex items-center justify-center sm:mt-12">
+                    <div className="mt-12 flex items-center justify-center sm:mt-16">
                         <Button
                             asChild
                             size="lg"
-                            className="h-12 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-400 px-8 text-base font-semibold text-white shadow-[0_15px_40px_-15px_rgba(47,123,255,0.6)] transition hover:brightness-110"
+                            className="h-12 rounded-2xl border border-brand/50 h-16 bg-gradient-to-r from-brand-500 to-brand-400 px-8 text-base font-semibold text-white shadow-[0_15px_40px_-15px_rgba(47,123,255,0.6)] transition hover:brightness-110"
                         >
                             <Link href="#">
                                 Get Early Access
@@ -139,7 +133,7 @@ export default function Hero() {
                                     </p>
                                     <p className="mt-1 text-2xl font-bold text-white">Gateway</p>
                                     <p className="mt-2 text-sm text-white/80">
-                                        AuthN / ACL • Guardrails • Tool Management
+                                        AuthN / RBAC • Guardrails • Tool Management
                                     </p>
                                 </div>
                                 <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
@@ -165,12 +159,14 @@ export default function Hero() {
                                     ].map((item) => (
                                         <div
                                             key={item.label}
-                                            className="flex h-14 flex-col items-center justify-center gap-1 rounded-xl border border-white/10 bg-white/5 text-[11px] font-semibold uppercase tracking-wide text-white/70"
+                                            className="group relative flex h-14 flex-col items-center justify-center gap-1 rounded-xl border border-white/10 bg-white/5 text-[11px] font-semibold uppercase tracking-wide text-white/70"
                                         >
                                             <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/5">
                                                 {item.icon}
                                             </span>
-                                            {item.label}
+                                            <span className="pointer-events-none absolute left-1/2 top-full z-10 -translate-x-1/2 translate-y-1 rounded-md bg-black/60 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-white opacity-0 shadow-lg ring-1 ring-white/10 transition duration-150 group-hover:translate-y-0 group-hover:opacity-100">
+                                                {item.label}
+                                            </span>
                                         </div>
                                     ))}
                                 </div>

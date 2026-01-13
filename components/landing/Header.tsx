@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Fingerprint } from "lucide-react";
+import { ArrowUpRight, ScanFace } from "lucide-react";
 
 export default function Header() {
     return (
@@ -10,7 +10,7 @@ export default function Header() {
             <div className="mx-auto flex max-w-6xl items-center justify-center px-4 md:px-6">
                 <div className="glass-panel relative flex h-16 w-full items-center justify-between rounded-2xl px-4 md:px-6">
                     <Link href="/" className="flex items-center gap-2">
-                        <Fingerprint className="h-7 w-7 text-brand-400 drop-shadow-glow" />
+                        <ScanFace className="h-7 w-7 text-brand-400 drop-shadow-glow" />
                         <span className="text-xl font-semibold tracking-tight text-white">
                             IronHide
                         </span>
