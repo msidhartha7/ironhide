@@ -122,9 +122,9 @@
   body {
     @apply text-foreground;
     background:
-      radial-gradient(1400px circle at 18% 18%, rgba(58, 106, 255, 0.22), rgba(4, 9, 21, 0)),
-      radial-gradient(1200px circle at 82% 12%, rgba(22, 167, 255, 0.18), rgba(4, 9, 21, 0)),
-      radial-gradient(900px circle at 50% 60%, rgba(20, 46, 110, 0.35), rgba(4, 9, 21, 0)),
+      radial-gradient(1400px circle at 18% 18%, rgba(58, 106, 255, 0.16), rgba(4, 9, 21, 0)),
+      radial-gradient(1200px circle at 82% 12%, rgba(22, 167, 255, 0.14), rgba(4, 9, 21, 0)),
+      radial-gradient(900px circle at 50% 60%, rgba(20, 46, 110, 0.25), rgba(4, 9, 21, 0)),
       #040915;
   }
 }

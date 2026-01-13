@@ -2,8 +2,8 @@ import { XCircle, CheckCircle } from "lucide-react";
 
 export default function ProblemSolution() {
     return (
-        <section id="features" className="relative overflow-hidden py-24">
-            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white/5 via-transparent to-transparent" />
+        <section id="features" className="relative overflow-hidden bg-night-950 py-24">
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night-900/40 via-night-950/75 to-night-950" />
             <div className="container mx-auto px-4 md:px-6">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -15,7 +15,7 @@ export default function ProblemSolution() {
                 </div>
 
                 <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.8)]">
+                    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-night-900/50 p-8 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.85)]">
                         <h3 className="text-lg font-semibold leading-8 text-white">The Old Way</h3>
                         <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
                             <li className="flex gap-x-3">
@@ -54,7 +54,7 @@ export default function ProblemSolution() {
                         </ul>
                     </div>
 
-                    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-8 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.8)]">
+                    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-night-900/50 p-8 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.85)]">
                         <h3 className="text-lg font-semibold leading-8 text-white">The Result</h3>
                         <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
                             <li className="flex gap-x-3">

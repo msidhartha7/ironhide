@@ -17,7 +17,7 @@ export default function Hero() {
     return (
         <section className="relative overflow-hidden bg-night-950 pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
             <div className="absolute inset-0 -z-10 bg-hero-radial" />
-            <div className="absolute inset-0 -z-20 bg-gradient-to-b from-night-900/40 via-night-950 to-night-950" />
+            <div className="absolute inset-0 -z-20 bg-gradient-to-b from-night-950 to-night-800" />
             <div className="absolute inset-x-0 bottom-[-200px] -z-10 h-[500px] bg-hero-glow" />
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
@@ -72,7 +72,7 @@ export default function Hero() {
                         <Button
                             asChild
                             size="lg"
-                            className="h-12 rounded-2xl border border-brand/50 h-16 bg-gradient-to-r from-brand-500 to-brand-400 px-8 text-base font-semibold text-white shadow-[0_15px_40px_-15px_rgba(47,123,255,0.6)] transition hover:brightness-110"
+                            className="h-12 rounded-2xl border border-brand-500/60 h-16 bg-gradient-to-r from-brand-600 to-brand-500 px-8 text-base font-semibold text-white shadow-[0_15px_40px_-15px_rgba(47,123,255,0.65)] transition hover:brightness-110"
                         >
                             <Link href="#">
                                 Get Early Access
