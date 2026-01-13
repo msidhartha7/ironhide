@@ -35,8 +35,8 @@ export default function WhyUs() {
             <div className="pointer-events-none absolute inset-0 -z-[5] bg-black/35" aria-hidden />
             <div className="container relative z-10 mx-auto px-4 md:px-6">
                 <div className="mx-auto max-w-2xl lg:text-center">
-                    <h2 className="text-base font-semibold leading-7 text-brand-300">Why IronHide?</h2>
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                    <h2 className="text-5xl font-semibold leading-7 text-brand-300">Why IronHide?</h2>
+                    <p className="mt-12 text-3xl font-bold tracking-tight text-white sm:text-4xl">
                         Everything you need to secure your AI
                     </p>
                     <p className="mt-6 text-lg leading-8 text-white/70">
