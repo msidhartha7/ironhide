@@ -8,9 +8,16 @@ import { ArrowUpRight, Menu, ScanFace, X } from "lucide-react";
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const openMenu = () => setIsMenuOpen(true);
+    const closeMenu = () => setIsMenuOpen(false);
+
     useEffect(() => {
-        document.body.classList.toggle("overflow-hidden", isMenuOpen);
-        return () => document.body.classList.remove("overflow-hidden");
+        if (!isMenuOpen) return;
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.body.style.overflow = previousOverflow;
+        };
     }, [isMenuOpen]);
 
     return (
@@ -64,7 +71,7 @@ export default function Header() {
                         <Button
                             variant="outline"
                             size="icon"
-                            onClick={() => setIsMenuOpen(true)}
+                            onClick={openMenu}
                             aria-label="Open menu"
                             aria-expanded={isMenuOpen}
                             className="flex h-12 w-12 items-center justify-center rounded-xl bg-night-800/70 text-white shadow-lg transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-night-800 md:hidden"
@@ -75,84 +82,72 @@ export default function Header() {
                 </div>
             </header>
 
-            {isMenuOpen && (
+            <div
+                className={`fixed inset-0 z-[60] flex items-start justify-center px-4 pt-6 transition-opacity duration-200 ${
+                    isMenuOpen ? "bg-night-950/70 opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                }`}
+                onClick={closeMenu}
+                aria-hidden={!isMenuOpen}
+            >
                 <div
-                    className="fixed inset-0 z-[60] flex items-start justify-center bg-night-950/70 px-4 pt-6"
-                    onClick={() => setIsMenuOpen(false)}
-                    aria-hidden
+                    className={`${isMenuOpen ? "menu-slide" : "menu-slide-out"} glass-panel relative w-full max-w-xl overflow-hidden rounded-[20px] border-white/15 bg-night-900/85 px-6 py-8 shadow-[0_25px_80px_-30px_rgba(0,0,0,0.6)] will-change-transform`}
+                    onClick={(e) => e.stopPropagation()}
+                    role="dialog"
+                    aria-modal="true"
                 >
-                    <div
-                        className="menu-slide glass-panel relative w-full max-w-xl overflow-hidden rounded-[20px] border-white/15 bg-night-900/85 px-6 py-8 shadow-[0_25px_80px_-30px_rgba(0,0,0,0.6)]"
-                        onClick={(e) => e.stopPropagation()}
-                        role="dialog"
-                        aria-modal="true"
-                    >
-                        <div className="flex items-center justify-between">
-                            <Link
-                                href="/"
-                                className="flex items-center gap-2 text-white transition hover:text-white/90"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                <ScanFace className="h-8 w-8 text-brand-400 drop-shadow-glow" />
-                                <span className="text-2xl font-semibold tracking-tight">IronHide</span>
-                            </Link>
+                    <div className="flex items-center justify-between">
+                        <Link
+                            href="/"
+                            className="flex items-center gap-2 text-white transition hover:text-white/90"
+                            onClick={closeMenu}
+                        >
+                            <ScanFace className="h-8 w-8 text-brand-400 drop-shadow-glow" />
+                            <span className="text-2xl font-semibold tracking-tight">IronHide</span>
+                        </Link>
 
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                onClick={() => setIsMenuOpen(false)}
-                                aria-label="Close menu"
-                                className="group flex h-12 w-12 items-center justify-center rounded-xl bg-night-800/70 text-white shadow-lg transition hover:scale-[1.02] hover:border-amber-200 hover:bg-night-800"
-                            >
-                                <X className="h-6 w-6 text-gray-200 group-hover:text-white" />
-                            </Button>
-                        </div>
+                        <Button
+                            variant="outline"
+                            size="icon"
+                            onClick={closeMenu}
+                            aria-label="Close menu"
+                            className="group flex h-12 w-12 items-center justify-center rounded-xl bg-night-800/70 text-white shadow-lg transition hover:scale-[1.02] hover:border-amber-200 hover:bg-night-800"
+                        >
+                            <X className="h-6 w-6 text-gray-200 group-hover:text-white" />
+                        </Button>
+                    </div>
 
-                        <div className="mt-10 flex flex-col items-center gap-8 text-center text-lg font-semibold text-white">
-                            <Link
-                                href="#"
-                                className="transition hover:text-white/80"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Home
-                            </Link>
-                            {/* <Link
-                                href="#features"
-                                className="transition hover:text-white/80"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Compare
-                            </Link> */}
-                            <Link
-                                href="#features"
-                                className="transition hover:text-white/80"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                Features
-                            </Link>
-                            <Link
-                                href="#why-us"
-                                className="transition hover:text-white/80"
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                How It Works
-                            </Link>
-                        </div>
+                    <div className="mt-10 flex flex-col items-center gap-8 text-center text-lg font-semibold text-white">
+                        <Link href="#" className="transition hover:text-white/80" onClick={closeMenu}>
+                            Home
+                        </Link>
+                        {/* <Link
+                            href="#features"
+                            className="transition hover:text-white/80"
+                            onClick={closeMenu}
+                        >
+                            Compare
+                        </Link> */}
+                        <Link href="#features" className="transition hover:text-white/80" onClick={closeMenu}>
+                            Features
+                        </Link>
+                        <Link href="#why-us" className="transition hover:text-white/80" onClick={closeMenu}>
+                            How It Works
+                        </Link>
+                    </div>
 
-                        <div className="mt-12 flex justify-center">
-                            <Button
-                                asChild
-                                size="lg"
-                                className="h-12 min-w-[180px] rounded-2xl border border-white/15 bg-night-900 text-base font-semibold text-white shadow-lg shadow-black/40 ring-1 ring-white/10 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-night-800"
-                            >
-                                <Link href="https://calendly.com/sidhartha-privyy/30min" onClick={() => setIsMenuOpen(false)}>
-                                    Book A Call <ArrowUpRight className="ml-2 h-4 w-4" />
-                                </Link>
-                            </Button>
-                        </div>
+                    <div className="mt-12 flex justify-center">
+                        <Button
+                            asChild
+                            size="lg"
+                            className="h-12 min-w-[180px] rounded-2xl border border-white/15 bg-night-900 text-base font-semibold text-white shadow-lg shadow-black/40 ring-1 ring-white/10 transition hover:-translate-y-0.5 hover:border-white/25 hover:bg-night-800"
+                        >
+                            <Link href="https://calendly.com/sidhartha-privyy/30min" onClick={closeMenu}>
+                                Book A Call <ArrowUpRight className="ml-2 h-4 w-4" />
+                            </Link>
+                        </Button>
                     </div>
                 </div>
-            )}
+            </div>
         </>
     );
 }

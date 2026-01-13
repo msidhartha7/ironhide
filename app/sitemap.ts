@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { PAGES } from "./[slug]/page";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ironhide.ai";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ironhide.privyy.io";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return {
       url: `${baseUrl}${path}`,
       lastModified,
-      changeFrequency: "weekly",
+      changeFrequency: "hourly",
     } satisfies MetadataRoute.Sitemap[number];
   });
 

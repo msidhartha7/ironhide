@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ironhide.ai";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ironhide.privyy.io";
 
 export const defaultTitle =
   "IronHide | Identity-first authorization for agentic systems";
