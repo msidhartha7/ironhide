@@ -20,17 +20,17 @@ export default function Hero() {
             <div className="absolute inset-0 -z-20 bg-gradient-to-b from-night-900/40 via-night-950 to-night-950" />
             <div className="absolute inset-x-0 bottom-[-200px] -z-10 h-[500px] bg-hero-glow" />
 
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-24">
                 <div className="mx-auto max-w-4xl text-center">
                     <div className="mb-6 flex justify-center sm:mb-8">
-                        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 backdrop-blur">
-                            <span className="text-white/80">Backed by</span>
-                            <span className="flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5">
+                        <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 backdrop-blur">
+                            <span className="text-white/80">Coming Soon</span>
+                            {/* <span className="flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5">
                                 <span className="flex h-5 w-5 items-center justify-center rounded-[6px] bg-[#f26522] text-[11px] font-semibold text-white">
                                     Y
                                 </span>
                                 <span className="text-white/90">Combinator</span>
-                            </span>
+                            </span> */}
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="relative mx-auto mt-16 max-w-5xl sm:mt-20">
+                <div className="relative mx-auto mt-24 max-w-5xl sm:mt-32">
                     <div className="glass-panel relative overflow-hidden rounded-3xl border-white/10 bg-white/5 p-6 sm:p-8">
                         <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-transparent" />
 
