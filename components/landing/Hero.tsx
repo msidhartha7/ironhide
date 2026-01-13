@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Lock, FileCheck } from "lucide-react";
+import { Shield, Lock, FileCheck } from "lucide-react";
 
 export default function Hero() {
     return (
@@ -11,32 +11,28 @@ export default function Hero() {
                 <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-brand-200 to-brand-300 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] dark:from-brand-900 dark:to-brand-800" />
             </div>
 
-            <div className="container mx-auto px-4 md:px-6">
+            <div className="container mx-auto px-4 md:px-6 mt-20">
                 <div className="mx-auto max-w-4xl text-center">
                     <div className="mb-8 flex justify-center">
-                        <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-zinc-600 ring-1 ring-zinc-900/10 hover:ring-zinc-900/20 dark:text-zinc-400 dark:ring-white/10 dark:hover:ring-white/20">
-                            Announcing our Series A funding.{" "}
-                            <Link href="#" className="font-semibold text-brand-600 dark:text-brand-400">
-                                <span className="absolute inset-0" aria-hidden="true" />
-                                Read more <span aria-hidden="true">&rarr;</span>
-                            </Link>
+                        <div className="relative inline-flex items-center justify-center rounded-full p-[2px]">
+                            <div className="absolute inset-0 rounded-full" />
+                            <div className="relative rounded-full border-[0.5px] border-brand-500 bg-white/90 dark:bg-zinc-900/90 px-3 py-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
+                                Launching soon
+                            </div>
                         </div>
                     </div>
-                    <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-6xl">
-                        Build GenAI without the <span className="text-brand-600 dark:text-brand-400">Compliance Nightmares</span>
+                    <h1 className="text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+                        Real Identity for <span className="text-brand-600 dark:text-brand-400">AI Agents</span>
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                        IronHide is the security backbone for next-gen AI. We bake SOC2, GDPR, and ISO compliance directly into your infrastructure, so you can ship faster and safer.
+                        Give your agents real human like identity and access, to tools, LLMs and data.
                     </p>
                     <div className="mt-10 flex items-center justify-center gap-x-6">
-                        <Button asChild size="lg">
+                        <Button asChild size="lg" className="h-12">
                             <Link href="#">
-                                Start Building Securely
+                                Get Early Access
                             </Link>
                         </Button>
-                        <Link href="#" className="flex items-center gap-1 text-sm font-semibold leading-6 text-zinc-900 dark:text-zinc-50">
-                            Live Demo <ArrowRight className="h-4 w-4" />
-                        </Link>
                     </div>
                 </div>
 

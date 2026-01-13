@@ -8,7 +8,7 @@ export default function Header() {
     return (
         <header className="fixed top-6 left-0 right-0 z-50 mx-auto max-w-5xl px-4 md:px-6">
             <div className="
-                relative flex h-14 items-center justify-between rounded-md px-4
+                relative flex h-16 items-center justify-between rounded-lg px-4
                 bg-white/10 dark:bg-zinc-900/10
                 backdrop-blur-xl backdrop-saturate-150
                 ring-1 ring-white/20 dark:ring-white/10

@@ -10,17 +10,17 @@ const config: Config = {
         extend: {
             colors: {
                 brand: {
-                    50: "#ecfeff", // lightest cyan
-                    100: "#cffafe",
-                    200: "#a5f3fc",
-                    300: "#67e8f9",
-                    400: "#22d3ee",
-                    500: "#06b6d4", // base cyan
-                    600: "#0891b2", // primary (deep cyan)
-                    700: "#0e7490", // darker variant
-                    800: "#155e75",
-                    900: "#164e63",
-                    950: "#083344", // darkest cyan
+                    50: "#e6f5ff", // lightest blue
+                    100: "#ccebff",
+                    200: "#99d6ff",
+                    300: "#66c2ff",
+                    400: "#33adff",
+                    500: "#0099ff", // base blue
+                    600: "#0088e6",
+                    700: "#0077cc",
+                    800: "#0066b3",
+                    900: "#005599",
+                    950: "#003d73", // darkest blue
                 },
             },
         },
