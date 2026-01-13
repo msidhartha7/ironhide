@@ -34,16 +34,16 @@ export default function Header() {
                         </Link>
 
                         <nav className="hidden items-center gap-8 text-sm font-medium text-white/70 md:flex">
-                            <Link href="#" className="transition-colors hover:text-white">
+                            <Link href="#" className="w-24 text-center transition-colors hover:text-white">
                                 Home
                             </Link>
                             {/* <Link href="#features" className="transition-colors hover:text-white">
                                 Compare
                             </Link> */}
-                            <Link href="#features" className="transition-colors hover:text-white">
+                            <Link href="#features" className="w-24 text-center transition-colors hover:text-white">
                                 Features
                             </Link>
-                            <Link href="#why-us" className="transition-colors hover:text-white">
+                            <Link href="#why-us" className="w-24 text-center transition-colors hover:text-white">
                                 How It Works
                             </Link>
                         </nav>
