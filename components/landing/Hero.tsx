@@ -2,93 +2,197 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Shield, Lock, FileCheck } from "lucide-react";
+import {
+    ArrowUpRight,
+    Bot,
+    Cloud,
+    Cpu,
+    Database,
+    Eye,
+    Lock,
+    ShieldCheck,
+} from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-28">
-            <div className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-                <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-brand-200 to-brand-300 opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] dark:from-brand-900 dark:to-brand-800" />
-            </div>
+        <section className="relative overflow-hidden bg-night-950 pt-28 pb-20 sm:pt-32 sm:pb-24 lg:pt-36 lg:pb-28">
+            <div className="absolute inset-0 -z-10 bg-hero-radial" />
+            <div className="absolute inset-0 -z-20 bg-gradient-to-b from-night-900/40 via-night-950 to-night-950" />
+            <div className="absolute inset-x-0 bottom-[-200px] -z-10 h-[500px] bg-hero-glow" />
 
-            <div className="container mx-auto px-4 md:px-6 mt-20">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
-                    <div className="mb-8 flex justify-center">
-                        <div className="relative inline-flex items-center justify-center rounded-full p-[2px]">
-                            <div className="absolute inset-0 rounded-full" />
-                            <div className="relative rounded-full border-[0.5px] border-brand-500 bg-white/90 dark:bg-zinc-900/90 px-3 py-1 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-                                Launching soon
-                            </div>
+                    <div className="mb-6 flex justify-center sm:mb-8">
+                        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/80 backdrop-blur">
+                            <span className="text-white/80">Backed by</span>
+                            <span className="flex items-center gap-1 rounded-full bg-white/10 px-2 py-0.5">
+                                <span className="flex h-5 w-5 items-center justify-center rounded-[6px] bg-[#f26522] text-[11px] font-semibold text-white">
+                                    Y
+                                </span>
+                                <span className="text-white/90">Combinator</span>
+                            </span>
                         </div>
                     </div>
-                    <h1 className="text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
-                        Real Identity for <span className="text-brand-600 dark:text-brand-400">AI Agents</span>
+
+                    <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+                        Real Identity for{" "}
+                        <span className="text-brand-300">AI Agents</span>
                     </h1>
-                    <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-                        Give your agents real human like identity and access, to tools, LLMs and data.
+
+                    <p className="mx-auto mt-6 max-w-2xl text-lg leading-7 text-white/70 sm:text-xl sm:leading-8">
+                        Give your agents real human-like identity and access to tools, LLMs and data.
                     </p>
-                    <div className="mt-10 flex items-center justify-center gap-x-6">
-                        <Button asChild size="lg" className="h-12">
+
+                    <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
+                            {[
+                                {
+                                    icon: <Lock className="h-5 w-5 text-brand-300" />,
+                                    label: "Unified Zero-Trust Authorization",
+                                },
+                                {
+                                    icon: <ShieldCheck className="h-5 w-5 text-brand-300" />,
+                                    label: "Real-Time Guardrails & Compliance",
+                                },
+                                {
+                                    icon: <Eye className="h-5 w-5 text-brand-300" />,
+                                    label: "Complete Observability & Auditability",
+                                },
+                            ].map((item) => (
+                                <div
+                                    key={item.label}
+                                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-left backdrop-blur"
+                                >
+                                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5">
+                                        {item.icon}
+                                    </div>
+                                    <span className="text-sm font-medium text-white/90">
+                                        {item.label}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="mt-10 flex items-center justify-center sm:mt-12">
+                        <Button
+                            asChild
+                            size="lg"
+                            className="h-12 rounded-2xl bg-gradient-to-r from-brand-500 to-brand-400 px-8 text-base font-semibold text-white shadow-[0_15px_40px_-15px_rgba(47,123,255,0.6)] transition hover:brightness-110"
+                        >
                             <Link href="#">
                                 Get Early Access
+                                <ArrowUpRight className="ml-2 h-5 w-5" />
                             </Link>
                         </Button>
                     </div>
                 </div>
 
-                <div className="mt-16 sm:mt-24 relative">
-                    <div className="absolute -inset-4 rounded-xl bg-zinc-200/50 blur-lg dark:bg-zinc-800/50 lg:-inset-10" />
-                    <div className="relative rounded-xl border border-zinc-200 bg-white/50 p-4 shadow-2xl backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-900/50 lg:p-10">
-                        {/* Contextual Visual Representation */}
-                        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-                            <div className="flex flex-col items-center gap-4 rounded-lg bg-white p-6 shadow-sm dark:bg-black/40 border border-zinc-100 dark:border-zinc-800">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 dark:bg-brand-900/30">
-                                    <Shield className="h-6 w-6 text-brand-600 dark:text-brand-400" />
+                <div className="relative mx-auto mt-16 max-w-5xl sm:mt-20">
+                    <div className="glass-panel relative overflow-hidden rounded-3xl border-white/10 bg-white/5 p-6 sm:p-8">
+                        <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-transparent" />
+
+                        <div className="relative grid gap-6 lg:grid-cols-[1.05fr_auto_1.05fr] lg:items-center">
+                            <div className="flex flex-col gap-4 lg:gap-6">
+                                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
+                                    <div className="mb-3 flex items-center justify-between text-sm text-white/70">
+                                        <span className="font-semibold text-white">Models</span>
+                                        <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
+                                            LLMs
+                                        </span>
+                                    </div>
+                                    <div className="grid grid-cols-3 gap-3">
+                                        {["OpenAI", "Anthropic", "Meta"].map((label) => (
+                                            <div
+                                                key={label}
+                                                className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-xs font-semibold text-white/80 shadow-inner"
+                                            >
+                                                {label}
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                                <div className="text-center">
-                                    <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">Automated Security</h3>
-                                    <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">Real-time threat detection for LLM prompts and outputs.</p>
+
+                                <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
+                                    <div className="mb-3 flex items-center justify-between text-sm text-white/70">
+                                        <span className="font-semibold text-white">Agents</span>
+                                        <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
+                                            Identities
+                                        </span>
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-3">
+                                        <div className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80">
+                                            Internal
+                                        </div>
+                                        <div className="flex h-16 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-semibold text-white/80">
+                                            Customer
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="flex flex-col items-center gap-4 rounded-lg bg-white p-6 shadow-sm dark:bg-black/40 border border-zinc-100 dark:border-zinc-800">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-100 dark:bg-brand-900/30">
-                                    <FileCheck className="h-6 w-6 text-brand-600 dark:text-brand-400" />
+
+                            <div className="relative mx-auto hidden flex-col items-center justify-center gap-3 lg:flex">
+                                <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
+                                <div className="rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 px-10 py-8 text-center shadow-[0_25px_60px_-25px_rgba(47,123,255,0.8)] ring-1 ring-white/20">
+                                    <p className="text-xs uppercase tracking-[0.2em] text-white/70">
+                                        IronHide
+                                    </p>
+                                    <p className="mt-1 text-2xl font-bold text-white">Gateway</p>
+                                    <p className="mt-2 text-sm text-white/80">
+                                        AuthN / ACL • Guardrails • Tool Management
+                                    </p>
                                 </div>
-                                <div className="text-center">
-                                    <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">Compliance Ready</h3>
-                                    <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">Pre-configured controls for SOC2, HIPAA, and GDPR.</p>
-                                </div>
+                                <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
                             </div>
-                            <div className="flex flex-col items-center gap-4 rounded-lg bg-white p-6 shadow-sm dark:bg-black/40 border border-zinc-100 dark:border-zinc-800">
-                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900/30">
-                                    <Lock className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+
+                            <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg">
+                                <div className="mb-3 flex items-center justify-between text-sm text-white/70">
+                                    <span className="font-semibold text-white">Tools</span>
+                                    <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-wide text-white/60">
+                                        Integrations
+                                    </span>
                                 </div>
-                                <div className="text-center">
-                                    <h3 className="font-semibold text-zinc-900 dark:text-zinc-50">Data Privacy</h3>
-                                    <p className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">PII redaction and secure data handling pipelines.</p>
+                                <div className="grid grid-cols-3 gap-3 sm:grid-cols-4">
+                                    {[
+                                        { label: "Calendar", icon: <Cloud className="h-4 w-4" /> },
+                                        { label: "AWS", icon: <Database className="h-4 w-4" /> },
+                                        { label: "Drive", icon: <Cloud className="h-4 w-4" /> },
+                                        { label: "Notion", icon: <Cpu className="h-4 w-4" /> },
+                                        { label: "Slack", icon: <Bot className="h-4 w-4" /> },
+                                        { label: "Gmail", icon: <Database className="h-4 w-4" /> },
+                                        { label: "HubSpot", icon: <Cloud className="h-4 w-4" /> },
+                                        { label: "Stripe", icon: <Cpu className="h-4 w-4" /> },
+                                    ].map((item) => (
+                                        <div
+                                            key={item.label}
+                                            className="flex h-14 flex-col items-center justify-center gap-1 rounded-xl border border-white/10 bg-white/5 text-[11px] font-semibold uppercase tracking-wide text-white/70"
+                                        >
+                                            <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-white/5">
+                                                {item.icon}
+                                            </span>
+                                            {item.label}
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
 
-                        {/* Abstract visual for code/infrastructure */}
-                        <div className="mt-8 overflow-hidden rounded-lg border border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-black">
-                            <div className="flex items-center gap-2 border-b border-zinc-200 bg-white px-4 py-2 dark:border-zinc-800 dark:bg-zinc-900">
-                                <div className="h-3 w-3 rounded-full bg-red-400" />
-                                <div className="h-3 w-3 rounded-full bg-yellow-400" />
-                                <div className="h-3 w-3 rounded-full bg-green-400" />
+                        <div className="relative mt-8 flex flex-col items-center gap-4 lg:mt-6 lg:hidden">
+                            <div className="rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 px-10 py-8 text-center shadow-[0_25px_60px_-25px_rgba(47,123,255,0.8)] ring-1 ring-white/20">
+                                <p className="text-xs uppercase tracking-[0.2em] text-white/70">
+                                    IronHide
+                                </p>
+                                <p className="mt-1 text-2xl font-bold text-white">Gateway</p>
+                                <p className="mt-2 text-sm text-white/80">
+                                    AuthN / ACL • Guardrails • Tool Management
+                                </p>
                             </div>
-                            <div className="p-4 font-mono text-xs text-zinc-600 dark:text-zinc-400 sm:text-sm">
-                                <p><span className="text-purple-600 dark:text-purple-400">const</span> <span className="text-blue-600 dark:text-blue-400">ironHide</span> = <span className="text-yellow-600 dark:text-yellow-400">require</span>(<span className="text-green-600 dark:text-green-400">'@ironhide/core'</span>);</p>
-                                <p className="mt-2 text-zinc-400 dark:text-zinc-500">// Initialize with compliance standard</p>
-                                <p><span className="text-blue-600 dark:text-blue-400">ironHide</span>.<span className="text-yellow-600 dark:text-yellow-400">configure</span>({'{'}</p>
-                                <p className="pl-4">mode: <span className="text-green-600 dark:text-green-400">'strict'</span>,</p>
-                                <p className="pl-4">standards: [<span className="text-green-600 dark:text-green-400">'SOC2'</span>, <span className="text-green-600 dark:text-green-400">'GDPR'</span>],</p>
-                                <p className="pl-4">monitoring: <span className="text-purple-600 dark:text-purple-400">true</span></p>
-                                <p>{'}'});</p>
-                                <p className="mt-2"><span className="text-green-500">✓ Security layer initialized successfully</span></p>
+                            <div className="flex items-center gap-3 text-[13px] font-medium text-white/60">
+                                <span className="h-px w-10 bg-white/15" />
+                                Securing access between models, agents, and tools
+                                <span className="h-px w-10 bg-white/15" />
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

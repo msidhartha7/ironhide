@@ -29,26 +29,30 @@ const features = [
 
 export default function WhyUs() {
     return (
-        <section id="why-us" className="py-24 sm:py-32">
+        <section id="why-us" className="relative py-24 sm:py-32">
+            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-white/5 to-transparent" />
             <div className="container mx-auto px-4 md:px-6">
                 <div className="mx-auto max-w-2xl lg:text-center">
-                    <h2 className="text-base font-semibold leading-7 text-brand-600 dark:text-brand-400">Why IronHide?</h2>
-                    <p className="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+                    <h2 className="text-base font-semibold leading-7 text-brand-300">Why IronHide?</h2>
+                    <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
                         Everything you need to secure your AI
                     </p>
-                    <p className="mt-6 text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+                    <p className="mt-6 text-lg leading-8 text-white/70">
                         Security shouldn't be an afterthought. We provide a comprehensive suite of tools to ensure your GenAI products are safe, compliant, and ready for enterprise adoption.
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-                    <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-4">
+                    <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-8 lg:max-w-none lg:grid-cols-4">
                         {features.map((feature) => (
-                            <div key={feature.name} className="flex flex-col">
-                                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-zinc-900 dark:text-zinc-50">
-                                    <feature.icon className="h-5 w-5 flex-none text-brand-600 dark:text-brand-400" aria-hidden="true" />
+                            <div
+                                key={feature.name}
+                                className="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.8)]"
+                            >
+                                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
+                                    <feature.icon className="h-5 w-5 flex-none text-brand-300" aria-hidden="true" />
                                     {feature.name}
                                 </dt>
-                                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-zinc-600 dark:text-zinc-400">
+                                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-white/70">
                                     <p className="flex-auto">{feature.description}</p>
                                 </dd>
                             </div>
