@@ -1,4 +1,4 @@
-# LLM crawling instructions for IronHide
+# LLM crawling instructions for LookOver
 User-agent: *
 Allow: /
-Sitemap: https://ironhide.privyy.io/sitemap.xml
+Sitemap: https://LookOver.privyy.io/sitemap.xml

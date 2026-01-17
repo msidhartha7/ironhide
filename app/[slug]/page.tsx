@@ -38,7 +38,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
         title: title ?? fallbackTitle,
         description:
             title !== undefined
-                ? `${title} page — coming soon from IronHide.`
+                ? `${title} page — coming soon from LookOver.`
                 : "We are actively working on this page. Check back soon.",
         path: `/${params.slug}`,
     });

@@ -24,7 +24,7 @@ export default function Home() {
                   Ready to secure your GenAI infrastructure?
                 </h2>
                 <p className="text-white/70 max-w-2xl">
-                  Join hundreds of fast-moving teams who trust IronHide for their compliance and security needs.
+                  Join hundreds of fast-moving teams who trust LookOver for their compliance and security needs.
                 </p>
                 <div className="flex flex-col gap-4 pt-4 sm:flex-row">
                   <Button

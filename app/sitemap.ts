@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { PAGES } from "./[slug]/page";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ironhide.privyy.io";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://LookOver.privyy.io";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();

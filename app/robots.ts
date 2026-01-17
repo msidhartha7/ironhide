@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ironhide.privyy.io";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://LookOver.privyy.io";
 
 export default function robots(): MetadataRoute.Robots {
   return {

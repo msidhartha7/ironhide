@@ -1,19 +1,30 @@
 import type { Metadata } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ironhide.privyy.io";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://LookOver.privyy.io";
 
 export const defaultTitle =
-  "IronHide | Identity-first authorization for agentic systems";
+  "LookOver | Identity-first authorization for agentic systems";
 export const defaultDescription =
   "Give your agents real human-like identity and access to tools, LLMs and data.";
 export const defaultKeywords = [
-  "IronHide",
+  "LookOver",
   "identity-first authorization",
   "agentic systems",
   "AI security",
   "zero trust",
   "guardrails",
   "access control",
+  "audit trails",
+  "audit trails for ai agents",
+  "audit trails for ai",
+  "audit trails for ai systems",
+  "audit trails for ai applications",
+  "audit trails for ai products",
+  "audit trails for ai services",
+  "audit trails for ai infrastructure",
+  "audit trails for ai platforms",
+  "audit trails for ai frameworks",
+  "audit trails for ai libraries",
 ];
 
 type BuildMetadataOptions = {
@@ -37,11 +48,11 @@ export function buildMetadata({
     metadataBase,
     title: {
       default: title,
-      template: "%s | IronHide",
+      template: "%s | LookOver",
     },
     description,
     keywords,
-    applicationName: "IronHide",
+    applicationName: "LookOver",
     alternates: {
       canonical,
     },

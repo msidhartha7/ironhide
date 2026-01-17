@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { ScanFace, Twitter, Github, Linkedin } from "lucide-react";
+import { Twitter, Github, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Logo } from "../Logo";
 
 export default function Footer() {
     return (
@@ -13,10 +14,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-5">
                     <div className="md:col-span-2">
                         <Link href="/" className="flex items-center gap-2">
-                            <ScanFace className="h-6 w-6 text-brand-300" />
-                            <span className="text-xl font-bold tracking-tight text-white">
-                                IronHide
-                            </span>
+                            <Logo size={64} className="h-12 w-12" priority />
                         </Link>
                         <p className="mt-4 max-w-xs text-sm text-white/70">
                             The security backbone for next-generation AI products. Built for compliance, speed, and safety.
@@ -66,7 +64,7 @@ export default function Footer() {
                 </div>
                 <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
                     <p className="text-sm text-white/60">
-                        &copy; {new Date().getFullYear()} IronHide, Inc. All rights reserved.
+                        &copy; {new Date().getFullYear()} LookOver, Inc. All rights reserved.
                     </p>
                     <div className="flex gap-4">
                         <Button

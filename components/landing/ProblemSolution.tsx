@@ -12,7 +12,7 @@ export default function ProblemSolution() {
                         Stop worrying about compliance.
                     </h2>
                     <p className="mt-4 text-lg text-white/70">
-                        Traditional security reviews slow down innovation. IronHide automates the boring stuff so you can focus on building.
+                        Traditional security reviews slow down innovation. LookOver automates the boring stuff so you can focus on building.
                     </p>
                 </div>
 
@@ -22,35 +22,35 @@ export default function ProblemSolution() {
                         <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
                             <li className="flex gap-x-3">
                                 <XCircle className="h-6 w-5 flex-none text-red-400" aria-hidden="true" />
-                                Manual security reviews taking weeks
+                                Manual Security Reviews Taking Weeks
                             </li>
                             <li className="flex gap-x-3">
                                 <XCircle className="h-6 w-5 flex-none text-red-400" aria-hidden="true" />
-                                Complex compliance paperwork
+                                Complex Compliance Paperwork
                             </li>
                             <li className="flex gap-x-3">
                                 <XCircle className="h-6 w-5 flex-none text-red-400" aria-hidden="true" />
-                                Risk of data leaks in LLMs
+                                Risk of Data Leaks in LLMs
                             </li>
                         </ul>
                     </div>
 
                     <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 p-8 shadow-[0_18px_70px_-28px_rgba(47,123,255,0.85),0_0_55px_-30px_rgba(47,123,255,0.6)] ring-1 ring-white/15 lg:-mt-4 lg:-mb-4 lg:z-10">
                         <h3 className="text-lg font-semibold leading-8 text-white">
-                            The IronHide Way
+                            The LookOver Way
                         </h3>
                         <ul className="mt-4 space-y-3 text-sm leading-6 text-white/90">
                             <li className="flex gap-x-3">
                                 <CheckCircle className="h-6 w-5 flex-none text-white" aria-hidden="true" />
-                                Automated compliance checks in CI/CD
+                                Audit Trails for Compliance
                             </li>
                             <li className="flex gap-x-3">
                                 <CheckCircle className="h-6 w-5 flex-none text-white" aria-hidden="true" />
-                                One-click audit reports
+                                One-click Audit Reports
                             </li>
                             <li className="flex gap-x-3">
                                 <CheckCircle className="h-6 w-5 flex-none text-white" aria-hidden="true" />
-                                Real-time PII redaction & firewalls
+                                Real-time PII Redaction & Firewalls
                             </li>
                         </ul>
                     </div>
@@ -60,15 +60,15 @@ export default function ProblemSolution() {
                         <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
                             <li className="flex gap-x-3">
                                 <CheckCircle className="h-6 w-5 flex-none text-emerald-300" aria-hidden="true" />
-                                Ship 3x faster
+                                Ship Faster
                             </li>
                             <li className="flex gap-x-3">
                                 <CheckCircle className="h-6 w-5 flex-none text-emerald-300" aria-hidden="true" />
-                                Enterprise-ready from Day 1
+                                Enterprise-Ready from Day One
                             </li>
                             <li className="flex gap-x-3">
                                 <CheckCircle className="h-6 w-5 flex-none text-emerald-300" aria-hidden="true" />
-                                Sleep better at night
+                                Sleep Better at Night
                             </li>
                         </ul>
                     </div>

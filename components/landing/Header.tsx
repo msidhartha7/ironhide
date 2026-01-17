@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/Logo";
 import { ArrowUpRight, Menu, ScanFace, X } from "lucide-react";
 
 export default function Header() {
@@ -27,9 +28,9 @@ export default function Header() {
                     <div className="glass-panel relative flex h-16 w-full items-center justify-between overflow-hidden rounded-2xl bg-night-900/70 px-4 md:px-6">
 
                         <Link href="/" className="flex items-center gap-2">
-                            <ScanFace className="h-7 w-7 text-brand-400 drop-shadow-glow" />
+                            <Logo size={64} className="h-12 w-12" priority />
                             <span className="hidden text-xl font-semibold tracking-tight text-white md:inline">
-                                IronHide
+                                LookOver
                             </span>
                         </Link>
 
@@ -94,7 +95,7 @@ export default function Header() {
                             onClick={closeMenu}
                         >
                             <ScanFace className="h-8 w-8 text-brand-400 drop-shadow-glow" />
-                            <span className="text-2xl font-semibold tracking-tight">IronHide</span>
+                            <span className="text-2xl font-semibold tracking-tight">LookOver</span>
                         </Link>
 
                         <Button

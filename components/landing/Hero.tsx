@@ -44,12 +44,12 @@ export default function Hero() {
                     </div>
 
                     <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-                        Identity-First Authorization for{" "}
-                        <span className="text-brand-300">Agentic Systems</span>
+                        The Audit Trail for{" "}
+                        <span className="text-brand-300">AI Agents</span>
                     </h1>
 
                     <p className="mx-auto mt-6 max-w-2xl text-lg leading-7 text-white/70 sm:text-xl sm:leading-8">
-                        Give your agents real human-like identity and access to tools, LLMs and data.
+                    A flight recorder for AI Agents, capturing every action, tool call, and human intervention in a tamper-proof audit trail.
                     </p>
 
                     <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
@@ -61,7 +61,7 @@ export default function Hero() {
                                 },
                                 {
                                     icon: <ShieldCheck className="h-5 w-5 text-brand-300" />,
-                                    label: "Real-Time Guardrails & Compliance",
+                                    label: "Real-Time Guardrails",
                                 },
                                 {
                                     icon: <Eye className="h-5 w-5 text-brand-300" />,
@@ -152,7 +152,7 @@ function ArchitectureDiagram() {
                     <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
                     <div className="rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 px-10 py-8 text-center shadow-[0_25px_60px_-25px_rgba(47,123,255,0.8)] ring-1 ring-brand-200/70">
                         <p className="text-xs uppercase tracking-[0.2em] text-white/70">
-                            IronHide
+                            LookOver
                         </p>
                         <p className="mt-1 text-2xl font-bold text-white">Gateway</p>
                         <p className="mt-2 text-sm text-white/80">

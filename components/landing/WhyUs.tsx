@@ -35,12 +35,12 @@ export default function WhyUs() {
             <div className="pointer-events-none absolute inset-0 -z-[5] bg-black/35" aria-hidden />
             <div className="container relative z-10 mx-auto px-4 md:px-6">
                 <div className="mx-auto max-w-2xl lg:text-center">
-                    <h2 className="text-5xl font-semibold leading-7 text-brand-300">Why IronHide?</h2>
+                    <h2 className="text-5xl font-semibold leading-7 text-brand-300">Why LookOver?</h2>
                     <p className="mt-12 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                        Everything you need to secure your AI
+                        Everything you need to secure your AI Agents
                     </p>
                     <p className="mt-6 text-lg leading-8 text-white/70">
-                        Security shouldn't be an afterthought. We provide a comprehensive suite of tools to ensure your GenAI products are safe, compliant, and ready for enterprise adoption.
+                        Security shouldn't be an afterthought. We provide a comprehensive suite of tools to ensure your AI Agents are safe, compliant, and ready for enterprise adoption.
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

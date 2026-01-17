@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Script from "next/script";
 
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
-const ALLOWED_HOSTNAME = "ironhide.privyy.io";
+const ALLOWED_HOSTNAME = "LookOver.privyy.io";
 
 export function GoogleAnalytics() {
   const [enabled, setEnabled] = useState(false);
