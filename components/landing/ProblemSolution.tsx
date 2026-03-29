@@ -2,44 +2,41 @@ import { XCircle, CheckCircle } from "lucide-react";
 
 export default function ProblemSolution() {
     return (
-        <section id="features" className="relative overflow-hidden bg-night-950 py-24">
-            <div className="absolute inset-0 -z-20 bg-gradient-to-b from-night-950 via-night-950 to-black" aria-hidden />
-            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night-900/40 via-night-950/75 to-night-950" aria-hidden />
-            <div className="pointer-events-none absolute inset-0 -z-[5] bg-black/35" aria-hidden />
+        <section id="features" className="relative overflow-hidden bg-slate-50 py-24">
             <div className="container relative z-10 mx-auto px-4 md:px-6">
                 <div className="mx-auto max-w-2xl text-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                    <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                         Stop worrying about compliance.
                     </h2>
-                    <p className="mt-4 text-lg text-white/70">
+                    <p className="mt-4 text-lg text-slate-500">
                         Traditional security reviews slow down innovation. LookOver automates the boring stuff so you can focus on building.
                     </p>
                 </div>
 
                 <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-night-900/50 p-8 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.85)]">
-                        <h3 className="text-lg font-semibold leading-8 text-white">The Old Way</h3>
-                        <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
+                    <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+                        <h3 className="text-lg font-semibold leading-8 text-slate-800">The Old Way</h3>
+                        <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-500">
                             <li className="flex gap-x-3">
-                                <XCircle className="h-6 w-5 flex-none text-red-400" aria-hidden="true" />
+                                <XCircle className="h-6 w-5 flex-none text-red-500" aria-hidden="true" />
                                 Manual Security Reviews Taking Weeks
                             </li>
                             <li className="flex gap-x-3">
-                                <XCircle className="h-6 w-5 flex-none text-red-400" aria-hidden="true" />
+                                <XCircle className="h-6 w-5 flex-none text-red-500" aria-hidden="true" />
                                 Complex Compliance Paperwork
                             </li>
                             <li className="flex gap-x-3">
-                                <XCircle className="h-6 w-5 flex-none text-red-400" aria-hidden="true" />
+                                <XCircle className="h-6 w-5 flex-none text-red-500" aria-hidden="true" />
                                 Risk of Data Leaks in LLMs
                             </li>
                         </ul>
                     </div>
 
-                    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 p-8 shadow-[0_18px_70px_-28px_rgba(47,123,255,0.85),0_0_55px_-30px_rgba(47,123,255,0.6)] ring-1 ring-white/15 lg:-mt-4 lg:-mb-4 lg:z-10">
+                    <div className="relative overflow-hidden rounded-2xl bg-blue-600 p-8 shadow-[0_12px_40px_-12px_rgba(29,78,216,0.4)] ring-1 ring-blue-500/20 lg:-mt-4 lg:-mb-4 lg:z-10">
                         <h3 className="text-lg font-semibold leading-8 text-white">
                             The LookOver Way
                         </h3>
-                        <ul className="mt-4 space-y-3 text-sm leading-6 text-white/90">
+                        <ul className="mt-4 space-y-3 text-sm leading-6 text-blue-100">
                             <li className="flex gap-x-3">
                                 <CheckCircle className="h-6 w-5 flex-none text-white" aria-hidden="true" />
                                 Audit Trails for Compliance
@@ -55,19 +52,19 @@ export default function ProblemSolution() {
                         </ul>
                     </div>
 
-                    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-night-900/50 p-8 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.85)]">
-                        <h3 className="text-lg font-semibold leading-8 text-white">The Result</h3>
-                        <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
+                    <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+                        <h3 className="text-lg font-semibold leading-8 text-slate-800">The Result</h3>
+                        <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-500">
                             <li className="flex gap-x-3">
-                                <CheckCircle className="h-6 w-5 flex-none text-emerald-300" aria-hidden="true" />
+                                <CheckCircle className="h-6 w-5 flex-none text-emerald-500" aria-hidden="true" />
                                 Ship Faster
                             </li>
                             <li className="flex gap-x-3">
-                                <CheckCircle className="h-6 w-5 flex-none text-emerald-300" aria-hidden="true" />
+                                <CheckCircle className="h-6 w-5 flex-none text-emerald-500" aria-hidden="true" />
                                 Enterprise-Ready from Day One
                             </li>
                             <li className="flex gap-x-3">
-                                <CheckCircle className="h-6 w-5 flex-none text-emerald-300" aria-hidden="true" />
+                                <CheckCircle className="h-6 w-5 flex-none text-emerald-500" aria-hidden="true" />
                                 Sleep Better at Night
                             </li>
                         </ul>

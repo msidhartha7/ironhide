@@ -29,17 +29,14 @@ const features = [
 
 export default function WhyUs() {
     return (
-        <section id="why-us" className="relative bg-night-950 py-24 sm:py-32">
-            <div className="absolute inset-0 -z-20 bg-gradient-to-b from-night-950 via-night-950 to-black" aria-hidden />
-            <div className="absolute inset-0 -z-10 bg-gradient-to-b from-night-900/30 via-night-950/70 to-night-950" aria-hidden />
-            <div className="pointer-events-none absolute inset-0 -z-[5] bg-black/35" aria-hidden />
+        <section id="why-us" className="relative bg-white py-24 sm:py-32">
             <div className="container relative z-10 mx-auto px-4 md:px-6">
                 <div className="mx-auto max-w-2xl lg:text-center">
-                    <h2 className="text-5xl font-semibold leading-7 text-brand-300">Why LookOver?</h2>
-                    <p className="mt-12 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                    <h2 className="text-5xl font-semibold leading-7 text-blue-600">Why LookOver?</h2>
+                    <p className="mt-12 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                         Everything you need to secure your AI Agents
                     </p>
-                    <p className="mt-6 text-lg leading-8 text-white/70">
+                    <p className="mt-6 text-lg leading-8 text-slate-500">
                         Security shouldn't be an afterthought. We provide a comprehensive suite of tools to ensure your AI Agents are safe, compliant, and ready for enterprise adoption.
                     </p>
                 </div>
@@ -48,13 +45,15 @@ export default function WhyUs() {
                         {features.map((feature) => (
                             <div
                                 key={feature.name}
-                                className="flex flex-col rounded-2xl border border-white/20 bg-night-900/50 p-6 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.85)]"
+                                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
                             >
-                                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-                                    <feature.icon className="h-5 w-5 flex-none text-brand-300" aria-hidden="true" />
+                                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-slate-900">
+                                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50">
+                                        <feature.icon className="h-5 w-5 flex-none text-blue-600" aria-hidden="true" />
+                                    </div>
                                     {feature.name}
                                 </dt>
-                                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-white/70">
+                                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-slate-500">
                                     <p className="flex-auto">{feature.description}</p>
                                 </dd>
                             </div>
