@@ -2,7 +2,7 @@ import { XCircle, CheckCircle } from "lucide-react";
 
 export default function ProblemSolution() {
     return (
-        <section id="features" className="relative overflow-hidden bg-slate-50 py-24">
+        <section id="features" className="relative overflow-hidden bg-slate-50 bg-grid py-24">
             <div className="container relative z-10 mx-auto px-4 md:px-6">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
@@ -14,7 +14,7 @@ export default function ProblemSolution() {
                 </div>
 
                 <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+                    <div className="relative overflow-hidden rounded-2xl bg-white p-8 shadow-sm glow-border">
                         <h3 className="text-lg font-semibold leading-8 text-slate-800">The Old Way</h3>
                         <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-500">
                             <li className="flex gap-x-3">
@@ -52,7 +52,7 @@ export default function ProblemSolution() {
                         </ul>
                     </div>
 
-                    <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+                    <div className="relative overflow-hidden rounded-2xl bg-white p-8 shadow-sm glow-border">
                         <h3 className="text-lg font-semibold leading-8 text-slate-800">The Result</h3>
                         <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-500">
                             <li className="flex gap-x-3">

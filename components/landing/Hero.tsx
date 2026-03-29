@@ -68,7 +68,7 @@ export default function Hero() {
                             ].map((item) => (
                                 <div
                                     key={item.label}
-                                    className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 text-left shadow-sm"
+                                    className="flex items-center gap-3 rounded-xl bg-white px-4 py-3 text-left shadow-sm glow-border"
                                 >
                                     <div className="flex items-center justify-center bg-blue-50 rounded-lg p-1">
                                         {item.icon}
@@ -104,7 +104,7 @@ export default function Hero() {
 
 function ArchitectureDiagram() {
     return <div className="relative mx-auto mt-24 max-w-5xl sm:mt-32">
-        <div className="glass-panel relative overflow-hidden rounded-3xl border-slate-200/80 bg-white/90 p-6 sm:p-8 shadow-[0_8px_40px_-12px_rgba(15,23,42,0.12)]">
+        <div className="glass-panel relative overflow-hidden rounded-3xl bg-white/90 p-6 sm:p-8">
             <div className="absolute inset-0 bg-gradient-to-b from-slate-50/50 via-transparent to-transparent" />
 
             <div className="relative grid gap-6 lg:grid-cols-[1.05fr_auto_1.05fr] lg:items-center">

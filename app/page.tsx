@@ -16,9 +16,9 @@ export default function Home() {
         <Hero />
         <ProblemSolution />
         <WhyUs />
-        <section className="py-16 bg-slate-50">
+        <section className="py-16 bg-slate-50 bg-grid">
           <div className="container mx-auto px-4 md:px-6">
-            <Card className="border border-slate-200 bg-white shadow-sm">
+            <Card className="bg-white shadow-sm glow-border">
               <CardContent className="flex flex-col items-center gap-6 pt-8 pb-10 text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                   Ready to secure your GenAI infrastructure?

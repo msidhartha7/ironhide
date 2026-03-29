@@ -45,7 +45,7 @@ export default function WhyUs() {
                         {features.map((feature) => (
                             <div
                                 key={feature.name}
-                                className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+                                className="flex flex-col rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow glow-border"
                             >
                                 <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-slate-900">
                                     <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50">
