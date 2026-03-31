@@ -24,7 +24,7 @@ import Footer from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
-const CALENDLY = "https://calendly.com/sidhartha-privyy/30min";
+const CALENDLY = "https://calendly.com/sidhartha-investorsync/15min";
 
 export default function AuditIn2MinsPage() {
     return (
