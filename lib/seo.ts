@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lookover.io";
 
 export const defaultTitle =
-  "LookOver | Identity-first authorization for agentic systems";
+  "LookOver | AI Agent Audit Trails & Compliance";
 export const defaultDescription =
-  "Give your agents real human-like identity and access to tools, LLMs and data.";
+  "Tamper-proof audit trails for AI agents in minutes. SOC2 & HIPAA compliance reports on demand. No complex setup.";
 export const defaultKeywords = [
   "LookOver",
   "identity-first authorization",
@@ -61,11 +61,13 @@ export function buildMetadata({
       description,
       url,
       type: "website",
+      images: [{ url: "/logo.svg", width: 1200, height: 630 }],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description,
+      images: ["/logo.svg"],
     },
     robots: {
       index: true,

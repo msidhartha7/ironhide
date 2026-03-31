@@ -6,7 +6,9 @@ const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lookover.io";
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
-  const routes = ["", ...Object.keys(PAGES)].map((slug) => {
+  const staticRoutes = ["audit-in-2-mins"];
+
+  const routes = ["", ...Object.keys(PAGES), ...staticRoutes].map((slug) => {
     const path = slug ? `/${slug}` : "/";
     return {
       url: `${baseUrl}${path}`,
