@@ -88,7 +88,7 @@ export default function Hero() {
                             variant="outline"
                             className="h-16 rounded-2xl border border-blue-600 bg-blue-600 px-8 text-base font-semibold text-white shadow-[0_8px_24px_-8px_rgba(29,78,216,0.4)] transition hover:bg-blue-700 hover:border-blue-700"
                         >
-                            <Link href="https://calendly.com/sidhartha-privyy/30min">
+                            <Link href="https://calendly.com/sidhartha-investorsync/15min">
                                 Get Early Access
                                 <ArrowUpRight className="ml-2 h-5 w-5" />
                             </Link>

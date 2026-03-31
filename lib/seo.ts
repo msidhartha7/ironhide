@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://LookOver.privyy.io";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lookover.io";
 
 export const defaultTitle =
   "LookOver | Identity-first authorization for agentic systems";

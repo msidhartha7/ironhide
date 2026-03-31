@@ -33,7 +33,7 @@ export default function Home() {
                     className="h-12 min-w-[180px] rounded-xl bg-blue-600 border-blue-600 px-8 text-base font-semibold text-white shadow-[0_8px_24px_-8px_rgba(29,78,216,0.4)] transition hover:bg-blue-700 hover:border-blue-700"
                     onClick={() =>
                       window.open(
-                        "https://calendly.com/sidhartha-privyy/30min",
+                        "https://calendly.com/sidhartha-investorsync/15min",
                         "_blank",
                       )
                     }
@@ -46,7 +46,7 @@ export default function Home() {
                     className="h-12 min-w-[180px] rounded-xl border border-slate-200 bg-white px-8 text-base font-semibold text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
                     onClick={() =>
                       window.open(
-                        "https://calendly.com/sidhartha-privyy/30min",
+                        "https://calendly.com/sidhartha-investorsync/15min",
                         "_blank",
                       )
                     }
