@@ -22,11 +22,11 @@ export default function Footer() {
                                 <span className="sr-only">Twitter</span>
                                 <Twitter className="h-5 w-5" />
                             </Link>
-                            <Link href="https://github.com/privyy-io" className="text-slate-400 transition hover:text-slate-700">
+                            <Link href="https://github.com/privyyio" className="text-slate-400 transition hover:text-slate-700">
                                 <span className="sr-only">GitHub</span>
                                 <Github className="h-5 w-5" />
                             </Link>
-                            <Link href="https://www.linkedin.com/in/mallicksidhartha7/" className="text-slate-400 transition hover:text-slate-700">
+                            <Link href="https://www.linkedin.com/company/lookover-io" className="text-slate-400 transition hover:text-slate-700">
                                 <span className="sr-only">LinkedIn</span>
                                 <Linkedin className="h-5 w-5" />
                             </Link>
