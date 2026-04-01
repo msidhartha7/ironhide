@@ -10,6 +10,7 @@ export type BlogPost = {
   tags: string[];
   readTime: number; // minutes
   content: string; // markdown/HTML string rendered via dangerouslySetInnerHTML or a renderer
+  coverImage?: string; // optional path relative to /public
 };
 
 // ---------------------------------------------------------------------------
@@ -17,6 +18,95 @@ export type BlogPost = {
 // ---------------------------------------------------------------------------
 
 const posts: BlogPost[] = [
+  {
+    slug: "eu-ai-act-high-risk-classification",
+    title: "Your AI Agent Is Probably High-Risk. You Just Don't Know It Yet.",
+    excerpt:
+      "125 days until the EU AI Act applies to production AI systems — and most teams deploying agents haven't done the one thing they need to do first: check if they're classified as high-risk under Annex III.",
+    publishedAt: "2026-03-30",
+    author: {
+      name: "Lookover Team",
+      role: "Policy & Compliance",
+    },
+    tags: ["EU AI Act", "Compliance", "Agentic AI", "Risk"],
+    readTime: 8,
+    coverImage: "/blog/eu-ai-act-high-risk-classification.png",
+    content: `
+<h2>The Deadline That Most Engineering Teams Are Ignoring</h2>
+<p>On August 2, 2026, the EU AI Act's obligations for high-risk AI systems come into full effect. That is approximately 125 days from now. By that date, any AI system classified as high-risk under the Act must have completed a conformity assessment, maintained technical documentation, implemented human oversight measures, and established logging and audit trail infrastructure sufficient to satisfy regulators.</p>
+<p>Most enterprise teams deploying AI agents in 2026 have not done the one thing that determines whether any of those obligations apply to them: they have not checked whether their systems are classified as high-risk under Annex III.</p>
+<p>"Enforcement" here is not hypothetical. The Act establishes national market surveillance authorities in every EU member state with the power to request documentation, suspend non-compliant systems, and issue fines of up to €30 million or 6% of global annual turnover — whichever is higher. The legal exposure is real. The compliance window is closing.</p>
+<p>This post is not a comprehensive legal guide. It is a technical briefing for the CTOs, security engineers, and compliance leads who need to determine, right now, whether their agents are in scope — and what being in scope actually demands of their infrastructure.</p>
+
+<h2>What Annex III Actually Covers</h2>
+<p>Article 6 of the EU AI Act establishes that an AI system is high-risk if it falls within the domains listed in Annex III. The eight Annex III categories are precise and broader than most teams assume:</p>
+<ul>
+  <li><strong>Biometrics and facial recognition</strong> — systems that identify, categorize, or verify natural persons based on biometric data.</li>
+  <li><strong>Critical infrastructure management</strong> — systems used as safety components in water, gas, heating, electricity, and digital infrastructure.</li>
+  <li><strong>Education and vocational training</strong> — systems that determine access to educational institutions or evaluate students.</li>
+  <li><strong>Employment and worker management</strong> — systems used in recruitment, candidate screening, performance evaluation, promotion, or termination decisions.</li>
+  <li><strong>Access to essential services</strong> — systems involved in creditworthiness evaluation, insurance pricing, public benefits eligibility, or emergency service dispatch.</li>
+  <li><strong>Law enforcement</strong> — systems used by competent authorities for risk assessment of individuals, polygraph-equivalent tools, and crime prediction systems.</li>
+  <li><strong>Migration and border control</strong> — systems used to assess asylum claims, visa applications, and border crossing risk.</li>
+  <li><strong>Administration of justice</strong> — systems that assist judicial authorities in researching and interpreting facts and law, or applying the law to specific cases.</li>
+</ul>
+<p>Article 3(1) defines an AI system broadly: anything that "generates outputs such as predictions, recommendations, decisions or content that influence real or virtual environments." That definition is intentionally wide. An agent that recommends candidates for a job posting, scores loan applications, flags transactions as potentially fraudulent, or determines a customer's insurance tier is an AI system generating outputs that influence real decisions. The question is not whether your agent is an "AI system" — it almost certainly is. The question is which Annex III category it touches.</p>
+
+<h2>Concrete Examples: Which Agents Fall Where</h2>
+<p>Abstract category names obscure the practical mapping. Here is how common enterprise AI agent deployments map to Annex III:</p>
+
+<h3>HR Screening and Talent Agents → Employment and Worker Management</h3>
+<p>Any agent that parses resumes, ranks candidates, schedules interviews based on profile scoring, or flags employees for performance review is operating squarely within Annex III category 4. This includes agents integrated into ATS platforms, Workday automations, or custom recruitment pipelines. The category applies whether the agent makes a final decision or merely generates a ranked shortlist that a human reviews — recommendations that meaningfully influence real decisions are in scope.</p>
+
+<h3>Loan Decisioning and Credit Agents → Access to Essential Services</h3>
+<p>Any agent that evaluates creditworthiness, generates a credit score input, determines loan eligibility, or prices insurance risk is in Annex III category 5. This captures fintech lenders, embedded credit products, and any bank or insurance company using AI to pre-qualify applicants. The "essential services" framing is explicit: credit and insurance are enumerated by name in the Act's recitals.</p>
+
+<h3>Fraud Detection Agents in Regulated Sectors → Law Enforcement-Adjacent</h3>
+<p>This is where teams most often miscalculate their exposure. Annex III category 6 (law enforcement) applies to systems used by "competent authorities" — meaning public law enforcement agencies. A fraud detection agent operated by a private bank is not directly in this category. However, the Act also captures systems used by private entities "on behalf of" law enforcement, and financial institutions subject to AML obligations occupy ambiguous territory here. More directly, fraud detection agents that produce risk scores influencing access to accounts or services may fall into category 5 (essential services) regardless of the law enforcement framing.</p>
+
+<h3>Student Assessment and Admissions Agents → Education and Vocational Training</h3>
+<p>Any agent that evaluates exam submissions, generates student performance assessments, or ranks applicants for educational programs is in Annex III category 3. This includes agents used by EdTech platforms, universities automating admissions screening, and corporate L&D tools that gate employees' advancement based on training performance.</p>
+
+<h2>How Article 6 Determines High-Risk Status</h2>
+<p>Falling within an Annex III domain does not automatically make a system high-risk — Article 6 applies two additional tests that narrow the scope.</p>
+<p>The first is the <strong>"safety component" or "standalone product" test</strong>. An AI system is high-risk if it is either: (a) a safety component of a product already subject to EU harmonization legislation (machinery, medical devices, civil aviation, etc.), or (b) the AI system itself is a standalone product subject to third-party conformity assessment under that same harmonization legislation. This catches AI embedded in regulated physical products but is less relevant for most software-only agent deployments.</p>
+<p>The second and more practically significant path is the direct Annex III classification. If your system operates in one of the eight domains and meets the domain-specific criteria, it is high-risk regardless of the product test. Article 6(2) makes this independent path explicit.</p>
+<p>One important limiting principle: Article 6(3) provides that an AI system intended to perform a narrow procedural task, review decisions already made by humans, detect decision-making patterns, or perform preparatory tasks may be excluded from high-risk classification even if it operates in an Annex III domain. This exclusion is narrow and fact-specific. An agent that merely reformats data for human review is meaningfully different from one that generates a risk score that a human rubber-stamps. The distinction requires careful legal analysis — but it is a real out for systems that genuinely function as decision-support infrastructure with meaningful human review.</p>
+
+<h2>What High-Risk Classification Actually Requires</h2>
+<p>If your system is high-risk, the obligations are substantive. They are not checkbox compliance — they require real infrastructure investment.</p>
+
+<h3>Conformity Assessment</h3>
+<p>Before deploying a high-risk system, you must complete a conformity assessment demonstrating that the system meets the Act's requirements. For most systems, this is self-assessment — but it must be documented and auditable. The assessment must be updated whenever the system undergoes a substantial modification.</p>
+
+<h3>Technical Documentation</h3>
+<p>Article 11 and Annex IV define the required technical documentation: a general description of the system and its intended purpose, a description of the development process including training data and methodology, information on human oversight measures, a description of the risk management process, and the results of testing performed before deployment. This documentation must be maintained and made available to national authorities on request.</p>
+
+<h3>Human Oversight Measures</h3>
+<p>Article 14 requires that high-risk systems be designed to allow natural persons to effectively oversee the system's operation during its use. This means the system must be interpretable enough that a human can understand what it is doing, intervene when necessary, and override its outputs. For autonomous agents, this is a design constraint: fully automated decisions with no human review mechanism are non-compliant for high-risk classifications.</p>
+
+<h3>Logging and Audit Trail Obligations</h3>
+<p>Article 12 requires that high-risk AI systems automatically log events throughout their operation with a level of detail sufficient to identify situations giving rise to risks. The logs must allow for post-market monitoring, incident reconstruction, and demonstration of compliance with oversight requirements. Critically, the logs must capture enough information to determine what the system did, when, on what input, and with what output — for the lifetime of the system or at minimum several years post-deployment.</p>
+
+<h2>The Identity Gap That Makes Compliance Impossible</h2>
+<p>Here is the practical problem that most teams will encounter when they begin their conformity assessment: they cannot answer the most basic audit question — <em>what did this agent do and why?</em></p>
+<p>Article 12's logging obligations are not satisfied by application-level logs that record "the agent processed a request and returned a result." They require attribution: which agent instance acted, on which input, producing which output, at which timestamp, under whose authorization. For multi-agent systems — where an orchestrator delegates to sub-agents that invoke tools — the attribution chain must be complete across every step of every workflow.</p>
+<p>Most production agent deployments today fail this requirement structurally, not just operationally. Agents operate under shared service accounts that make per-agent attribution impossible. Tool calls are not logged independently of the agent's self-reported output. Workflow chains have no cryptographic integrity linking each step to the next. There is no way to reconstruct what happened in a specific agent invocation six months after the fact.</p>
+<p>This is the identity gap. It is not a documentation problem — it is an infrastructure problem. Satisfying Article 12 requires per-agent identity, infrastructure-level logging of every tool call and resource access, and an immutable audit trail that survives the agent's runtime. It requires knowing not just that your agent accessed a dataset, but which agent instance, under what authorization scope, at what exact time, producing what specific output.</p>
+<p>This is precisely the infrastructure that identity-first authorization for AI agents provides: a stable, verifiable identity for each agent, an authorization layer that controls and records every action the agent takes, and an audit trail that gives you the complete, attributable record that high-risk compliance demands.</p>
+
+<h2>The First Thing to Do Today</h2>
+<p>Before technical documentation, before conformity assessment, before any of the downstream obligations — the first step is a straightforward mapping exercise.</p>
+<ol>
+  <li><strong>Enumerate every AI agent running in production.</strong> Not just the flagship product agents — the internal automation agents, the data pipeline agents, the HR tooling integrations, the customer-facing decisioning systems.</li>
+  <li><strong>Map each agent to Annex III categories.</strong> For each agent, ask: what domain does this system operate in? Does it generate outputs that influence decisions about individuals in one of the eight categories? If yes, flag it for high-risk analysis.</li>
+  <li><strong>Apply the Article 6(3) exclusion test.</strong> For each flagged system, assess whether it genuinely performs only preparatory or procedural tasks with meaningful human review. Document the reasoning either way.</li>
+  <li><strong>Assess your current logging and identity infrastructure against Article 12.</strong> Can you answer, for each flagged agent, "what did this system do and why" for any specific invocation in the past 12 months? If not, that gap is your highest-priority technical remediation.</li>
+</ol>
+<p>The 125-day window is real. The fines are real. The national authorities conducting market surveillance are operational. The teams that will be ready in August 2026 are the ones starting this mapping exercise now — not the week before the deadline.</p>
+<p>If your agents are in scope and your audit infrastructure is not, the answer is not to slow down your AI deployment. It is to build the identity and authorization layer that makes your agents governable. That is a solvable engineering problem. It just needs to start today.</p>
+    `.trim(),
+  },
   {
     slug: "why-every-ai-agent-needs-an-identity",
     title: "Why Every AI Agent Needs an Identity",
