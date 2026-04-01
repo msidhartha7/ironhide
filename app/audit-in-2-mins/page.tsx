@@ -210,7 +210,7 @@ function ArchitectureDiagram() {
                         <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent" />
                         <div className="rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 px-10 py-8 text-center shadow-[0_25px_60px_-25px_rgba(47,123,255,0.8)] ring-1 ring-brand-200/70">
                             <p className="text-xs uppercase tracking-[0.2em] text-white/70">
-                                LookOver
+                                Lookover
                             </p>
                             <p className="mt-1 text-2xl font-bold text-white">Gateway</p>
                             <p className="mt-2 text-sm text-white/80">
@@ -269,13 +269,13 @@ function ProblemSolutionVariant() {
                         From zero to audit-ready in minutes.
                     </h2>
                     <p className="mt-4 text-lg text-white/70">
-                        Setting up audit trails used to mean weeks of engineering work. LookOver makes it a 2-minute task so your team can stay focused on shipping.
+                        Setting up audit trails used to mean weeks of engineering work. Lookover makes it a 2-minute task so your team can stay focused on shipping.
                     </p>
                 </div>
 
                 <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-night-900/50 p-8 shadow-[0_20px_60px_-35px_rgba(0,0,0,0.85)]">
-                        <h3 className="text-lg font-semibold leading-8 text-white">Without LookOver</h3>
+                        <h3 className="text-lg font-semibold leading-8 text-white">Without Lookover</h3>
                         <ul className="mt-4 space-y-3 text-sm leading-6 text-white/70">
                             <li className="flex gap-x-3">
                                 <XCircle className="h-6 w-5 flex-none text-red-400" aria-hidden="true" />
@@ -294,7 +294,7 @@ function ProblemSolutionVariant() {
 
                     <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-brand-500 to-brand-400 p-8 shadow-[0_18px_70px_-28px_rgba(47,123,255,0.85),0_0_55px_-30px_rgba(47,123,255,0.6)] ring-1 ring-white/15 lg:-mt-4 lg:-mb-4 lg:z-10">
                         <h3 className="text-lg font-semibold leading-8 text-white">
-                            With LookOver
+                            With Lookover
                         </h3>
                         <ul className="mt-4 space-y-3 text-sm leading-6 text-white/90">
                             <li className="flex gap-x-3">
@@ -375,7 +375,7 @@ function WhyUsVariant() {
                         Trusted for years.
                     </p>
                     <p className="mt-6 text-lg leading-8 text-white/70">
-                        LookOver is designed for teams that move fast and need enterprise-grade auditability from day one — not bolted on six months later.
+                        Lookover is designed for teams that move fast and need enterprise-grade auditability from day one — not bolted on six months later.
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

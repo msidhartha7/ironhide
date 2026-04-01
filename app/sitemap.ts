@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { PAGES } from "./[slug]/page";
+import { getAllPosts } from "@/lib/blog";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lookover.io";
 
@@ -8,7 +9,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticRoutes = ["audit-in-2-mins"];
 
-  const routes = ["", ...Object.keys(PAGES), ...staticRoutes].map((slug) => {
+  // Top-level and [slug] placeholder routes
+  const slugRoutes = ["", ...Object.keys(PAGES), ...staticRoutes].map((slug) => {
     const path = slug ? `/${slug}` : "/";
     return {
       url: `${baseUrl}${path}`,
@@ -17,5 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     } satisfies MetadataRoute.Sitemap[number];
   });
 
-  return routes;
+  // Individual blog post routes
+  const blogPostRoutes = getAllPosts().map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: new Date(post.publishedAt),
+    changeFrequency: "weekly",
+  } satisfies MetadataRoute.Sitemap[number]));
+
+  return [...slugRoutes, ...blogPostRoutes];
 }

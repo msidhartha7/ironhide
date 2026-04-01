@@ -32,7 +32,7 @@ export default function WhyUs() {
         <section id="why-us" className="relative bg-white py-24 sm:py-32">
             <div className="container relative z-10 mx-auto px-4 md:px-6">
                 <div className="mx-auto max-w-2xl lg:text-center">
-                    <h2 className="text-5xl font-semibold leading-7 text-blue-600">Why LookOver?</h2>
+                    <h2 className="text-5xl font-semibold leading-7 text-blue-600">Why Lookover?</h2>
                     <p className="mt-12 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                         Everything you need to secure your AI Agents
                     </p>

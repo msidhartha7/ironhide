@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lookover.io";
 
 export const defaultTitle =
-  "LookOver | AI Agent Audit Trails & Compliance";
+  "Lookover | AI Agent Audit Trails & Compliance";
 export const defaultDescription =
   "Tamper-proof audit trails for AI agents in minutes. SOC2 & HIPAA compliance reports on demand. No complex setup.";
 export const defaultKeywords = [
-  "LookOver",
+  "Lookover",
   "identity-first authorization",
   "agentic systems",
   "AI security",
@@ -48,11 +48,11 @@ export function buildMetadata({
     metadataBase,
     title: {
       default: title,
-      template: "%s | LookOver",
+      template: "%s | Lookover",
     },
     description,
     keywords,
-    applicationName: "LookOver",
+    applicationName: "Lookover",
     alternates: {
       canonical,
     },

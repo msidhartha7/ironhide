@@ -150,7 +150,7 @@ function ArchitectureDiagram() {
                     <div className="h-16 w-px bg-gradient-to-b from-transparent via-slate-300 to-transparent" />
                     <div className="rounded-2xl bg-blue-600 px-10 py-8 text-center shadow-[0_12px_32px_-8px_rgba(29,78,216,0.4)] ring-1 ring-blue-500/30">
                         <p className="text-xs uppercase tracking-[0.2em] text-blue-200">
-                            LookOver
+                            Lookover
                         </p>
                         <p className="mt-1 text-2xl font-bold text-white">Gateway</p>
                         <p className="mt-2 text-sm text-blue-100">

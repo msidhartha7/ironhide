@@ -10,7 +10,7 @@ export const PAGES: Record<string, string> = {
     changelog: "Changelog",
     documentation: "Documentation",
     "api-reference": "API Reference",
-    blog: "Blog",
+    // "blog" is intentionally omitted — the real /blog route is at app/blog/
     community: "Community",
     about: "About",
     careers: "Careers",
@@ -38,7 +38,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
         title: title ?? fallbackTitle,
         description:
             title !== undefined
-                ? `${title} page — coming soon from LookOver.`
+                ? `${title} page — coming soon from Lookover.`
                 : "We are actively working on this page. Check back soon.",
         path: `/${params.slug}`,
     });

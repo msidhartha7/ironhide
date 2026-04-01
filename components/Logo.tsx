@@ -10,7 +10,7 @@ export function Logo({ size = 36, className = "", priority = false }: LogoProps)
     return (
         <Image
             src="/logo.svg"
-            alt="LookOver logo"
+            alt="Lookover logo"
             width={size}
             height={size}
             className={`drop-shadow-glow ${className}`.trim()}

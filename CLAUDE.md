@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-LookOver is a marketing/landing page for an identity-first authorization platform for agentic AI systems. The product helps enterprises secure their GenAI infrastructure with identity management, access control, and audit trails.
+Lookover is a marketing/landing page for an identity-first authorization platform for agentic AI systems. The product helps enterprises secure their GenAI infrastructure with identity management, access control, and audit trails.
 
 ## Commands
 

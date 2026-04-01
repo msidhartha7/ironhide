@@ -30,7 +30,7 @@ export default function Header() {
                         <Link href="/" className="flex items-center gap-2">
                             <Logo size={64} className="h-12 w-12" priority />
                             <span className="hidden text-xl font-semibold tracking-tight text-slate-900 md:inline">
-                                LookOver
+                                Lookover
                             </span>
                         </Link>
 
@@ -46,6 +46,9 @@ export default function Header() {
                             </Link>
                             <Link href="#why-us" className="w-24 text-center transition-colors hover:text-slate-900">
                                 How It Works
+                            </Link>
+                            <Link href="/blog" className="w-24 text-center transition-colors hover:text-slate-900">
+                                Blog
                             </Link>
                         </nav>
 
@@ -95,7 +98,7 @@ export default function Header() {
                             onClick={closeMenu}
                         >
                             <ScanFace className="h-8 w-8 text-blue-600" />
-                            <span className="text-2xl font-semibold tracking-tight">LookOver</span>
+                            <span className="text-2xl font-semibold tracking-tight">Lookover</span>
                         </Link>
 
                         <Button
@@ -125,6 +128,9 @@ export default function Header() {
                         </Link>
                         <Link href="#why-us" className="transition hover:text-slate-900" onClick={closeMenu}>
                             How It Works
+                        </Link>
+                        <Link href="/blog" className="transition hover:text-slate-900" onClick={closeMenu}>
+                            Blog
                         </Link>
                     </div>
 

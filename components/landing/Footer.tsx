@@ -62,7 +62,7 @@ export default function Footer() {
                 </div>
                 <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 sm:flex-row">
                     <p className="text-sm text-slate-400">
-                        &copy; {new Date().getFullYear()} LookOver, Inc. All rights reserved.
+                        &copy; {new Date().getFullYear()} Lookover, Inc. All rights reserved.
                     </p>
                     <div className="flex gap-4">
                         <Button

@@ -9,7 +9,7 @@ export default function ProblemSolution() {
                         Stop worrying about compliance.
                     </h2>
                     <p className="mt-4 text-lg text-slate-500">
-                        Traditional security reviews slow down innovation. LookOver automates the boring stuff so you can focus on building.
+                        Traditional security reviews slow down innovation. Lookover automates the boring stuff so you can focus on building.
                     </p>
                 </div>
 
@@ -34,7 +34,7 @@ export default function ProblemSolution() {
 
                     <div className="relative overflow-hidden rounded-2xl bg-blue-600 p-8 shadow-[0_12px_40px_-12px_rgba(29,78,216,0.4)] ring-1 ring-blue-500/20 lg:-mt-4 lg:-mb-4 lg:z-10">
                         <h3 className="text-lg font-semibold leading-8 text-white">
-                            The LookOver Way
+                            The Lookover Way
                         </h3>
                         <ul className="mt-4 space-y-3 text-sm leading-6 text-blue-100">
                             <li className="flex gap-x-3">

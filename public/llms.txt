@@ -1,4 +1,4 @@
-# LLM crawling instructions for LookOver
+# LLM crawling instructions for Lookover
 User-agent: *
 Allow: /
 Sitemap: https://lookover.io/sitemap.xml

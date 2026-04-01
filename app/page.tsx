@@ -4,6 +4,7 @@ import Header from "@/components/landing/Header";
 import Hero from "@/components/landing/Hero";
 import ProblemSolution from "@/components/landing/ProblemSolution";
 import WhyUs from "@/components/landing/WhyUs";
+import ComplianceMatrix from "@/components/landing/ComplianceMatrix";
 import Footer from "@/components/landing/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <ProblemSolution />
         <WhyUs />
+        <ComplianceMatrix />
         <section className="py-16 bg-slate-50 bg-grid">
           <div className="container mx-auto px-4 md:px-6">
             <Card className="bg-white shadow-sm glow-border">
@@ -24,7 +26,7 @@ export default function Home() {
                   Ready to secure your GenAI infrastructure?
                 </h2>
                 <p className="text-slate-500 max-w-2xl">
-                  Join hundreds of fast-moving teams who trust LookOver for their compliance and security needs.
+                  Join hundreds of fast-moving teams who trust Lookover for their compliance and security needs.
                 </p>
                 <div className="flex flex-col gap-4 pt-4 sm:flex-row">
                   <Button

@@ -12,7 +12,7 @@ export const metadata = buildMetadata({
     "SOC2",
     "HIPAA",
     "tamper-proof logs",
-    "LookOver",
+    "Lookover",
   ],
 });
 
