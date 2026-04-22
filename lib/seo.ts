@@ -74,9 +74,9 @@ export function buildMetadata({
       follow: true,
     },
     icons: {
-      icon: "/face-icon.svg",
-      shortcut: "/face-icon.svg",
-      apple: "/face-icon.svg",
+      icon: "/logo.svg",
+      shortcut: "/logo.svg",
+      apple: "/logo.svg",
     },
   };
 }
