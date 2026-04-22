@@ -343,7 +343,7 @@ export default function CompliancePage() {
                 </div>
 
                 {/* Right column — product demo */}
-                <div className="w-full">
+                <div className="hidden w-full md:block">
                   <DemoWidget />
                 </div>
               </div>
