@@ -43,6 +43,7 @@ export function buildMetadata({
   const metadataBase = new URL(siteUrl);
   const url = new URL(path || "/", metadataBase);
   const canonical = url.pathname === "/" ? "/" : url.pathname;
+  const socialImage = "/opengraph-image";
 
   return {
     metadataBase,
@@ -61,13 +62,13 @@ export function buildMetadata({
       description,
       url,
       type: "website",
-      images: [{ url: "/logo.svg", width: 1200, height: 630 }],
+      images: [{ url: socialImage, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/logo.svg"],
+      images: [socialImage],
     },
     robots: {
       index: true,
