@@ -35,7 +35,7 @@ export function BlogCTA() {
             size="default"
             className="rounded-xl border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50"
           >
-            <Link href="/">Learn more</Link>
+            <Link href="/audit-in-2-mins">Start in 2 minutes</Link>
           </Button>
         </div>
       </div>

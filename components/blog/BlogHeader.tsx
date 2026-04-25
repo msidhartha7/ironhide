@@ -11,6 +11,21 @@ type BlogHeaderProps = {
 export function BlogHeader({ post }: BlogHeaderProps) {
   return (
     <div className="mx-auto max-w-3xl">
+      <nav
+        aria-label="Breadcrumb"
+        className="mb-6 flex flex-wrap items-center gap-2 text-sm text-slate-400"
+      >
+        <Link href="/" className="transition-colors hover:text-slate-700">
+          Home
+        </Link>
+        <span aria-hidden>/</span>
+        <Link href="/blog" className="transition-colors hover:text-slate-700">
+          Blog
+        </Link>
+        <span aria-hidden>/</span>
+        <span className="text-slate-500">{post.title}</span>
+      </nav>
+
       {/* Back link */}
       <Link
         href="/blog"

@@ -6,6 +6,8 @@ import Link from "next/link";
 import Header from "@/components/landing/Header";
 import ComplianceMatrix from "@/components/landing/ComplianceMatrix";
 import DemoWidget from "@/components/demo/DemoWidget";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildOrganizationSchema } from "@/lib/schema";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -206,9 +208,11 @@ function CellIcon({ value }: { value: boolean | "partial" }) {
 
 export default function CompliancePage() {
   const [showMobileComparison, setShowMobileComparison] = useState(false);
+  const organizationSchema = buildOrganizationSchema();
 
   return (
     <>
+      <JsonLd data={organizationSchema} />
       {/* ── Keyframe animations ── */}
       <style>{`
         @keyframes log-row-in {
@@ -327,12 +331,12 @@ export default function CompliancePage() {
                         />
                       </svg>
                     </a>
-                    <a
-                      href="#solution"
+                    <Link
+                      href="/audit-in-2-mins"
                       className="cta-btn cta-btn-outline inline-flex h-12 items-center rounded-xl border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-700 hover:border-slate-400"
                     >
-                      See How It Works
-                    </a>
+                      See 2-Minute Setup
+                    </Link>
                   </div>
 
                   {/* Trust strip */}
@@ -1013,6 +1017,17 @@ export default function CompliancePage() {
                     Book a Demo
                   </a>
                 </div>
+
+                <p className="mt-6 text-sm text-slate-400">
+                  Prefer a self-serve walkthrough?{" "}
+                  <Link
+                    href="/audit-in-2-mins"
+                    className="font-medium text-blue-400 transition-colors hover:text-blue-300"
+                  >
+                    Start the 2-minute audit trail setup
+                  </Link>
+                  .
+                </p>
 
                 {/* Compliance strip */}
                 <p className="mt-10 font-mono text-[11px] tracking-widest text-slate-600 uppercase">

@@ -28,6 +28,8 @@ function compileSeoModules() {
       "--esModuleInterop",
       "lib/seo.ts",
       "lib/site-pages.ts",
+      "lib/schema.ts",
+      "lib/blog.ts",
     ],
     {
       cwd: process.cwd(),
@@ -89,4 +91,56 @@ test("sitemap static paths exclude placeholder pages", async () => {
   assert.deepEqual(paths, ["/", "/audit-in-2-mins", "/blog"]);
   assert.equal(paths.includes("/features"), false);
   assert.equal(paths.includes("/pricing"), false);
+});
+
+test("organization schema includes the canonical site identity", async () => {
+  compileSeoModules();
+
+  const { buildOrganizationSchema } = await importCompiledModule("schema.js");
+  const schema = buildOrganizationSchema();
+
+  assert.equal(schema["@type"], "Organization");
+  assert.equal(schema.name, "Lookover");
+  assert.equal(schema.url, "https://lookover.io");
+  assert.equal(schema.logo, "https://lookover.io/logo.svg");
+  assert.equal(Array.isArray(schema.sameAs), true);
+});
+
+test("blog posting schema uses blog metadata and landing page intent", async () => {
+  compileSeoModules();
+
+  const { getPostBySlug } = await importCompiledModule("blog.js");
+  const { buildBlogPostingSchema } = await importCompiledModule("schema.js");
+  const post = getPostBySlug("eu-ai-act-high-risk-classification");
+  const schema = buildBlogPostingSchema(post);
+
+  assert.equal(schema["@type"], "BlogPosting");
+  assert.equal(
+    schema.mainEntityOfPage,
+    "https://lookover.io/blog/eu-ai-act-high-risk-classification",
+  );
+  assert.equal(schema.author.name, "Lookover Team");
+  assert.equal(
+    schema.image,
+    "https://lookover.io/blog/eu-ai-act-high-risk-classification.png",
+  );
+});
+
+test("breadcrumb schema matches the blog page hierarchy", async () => {
+  compileSeoModules();
+
+  const { getPostBySlug } = await importCompiledModule("blog.js");
+  const { buildBreadcrumbSchema } = await importCompiledModule("schema.js");
+  const post = getPostBySlug("why-every-ai-agent-needs-an-identity");
+  const schema = buildBreadcrumbSchema(post);
+  const items = schema.itemListElement;
+
+  assert.equal(schema["@type"], "BreadcrumbList");
+  assert.equal(items.length, 3);
+  assert.equal(items[0].item, "https://lookover.io/");
+  assert.equal(items[1].item, "https://lookover.io/blog");
+  assert.equal(
+    items[2].item,
+    "https://lookover.io/blog/why-every-ai-agent-needs-an-identity",
+  );
 });

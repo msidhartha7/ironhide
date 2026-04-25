@@ -6,8 +6,10 @@ import { BlogHeader } from "@/components/blog/BlogHeader";
 import { BlogContent } from "@/components/blog/BlogContent";
 import { RelatedPosts } from "@/components/blog/RelatedPosts";
 import { BlogCTA } from "@/components/blog/BlogCTA";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
+import { buildBlogPostingSchema, buildBreadcrumbSchema } from "@/lib/schema";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -53,9 +55,13 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   const related = getRelatedPosts(slug, 2);
+  const blogPostingSchema = buildBlogPostingSchema(post);
+  const breadcrumbSchema = buildBreadcrumbSchema(post);
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
+      <JsonLd data={blogPostingSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <Header />
 
       <main className="flex-1 pt-28 pb-20">
