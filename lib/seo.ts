@@ -104,11 +104,12 @@ export const defaultKeywords = [
   "Zero Trust Network Access",
 ];
 
-type BuildMetadataOptions = {
+export type BuildMetadataOptions = {
   title?: string;
   description?: string;
   path?: string;
   keywords?: string[];
+  robots?: Metadata["robots"];
 };
 
 export function buildMetadata({
@@ -116,6 +117,10 @@ export function buildMetadata({
   description = defaultDescription,
   path = "/",
   keywords = defaultKeywords,
+  robots = {
+    index: true,
+    follow: true,
+  },
 }: BuildMetadataOptions = {}): Metadata {
   const metadataBase = new URL(siteUrl);
   const url = new URL(path || "/", metadataBase);
@@ -147,10 +152,7 @@ export function buildMetadata({
       description,
       images: [socialImage],
     },
-    robots: {
-      index: true,
-      follow: true,
-    },
+    robots,
     icons: {
       icon: "/logo.svg",
       shortcut: "/logo.svg",
