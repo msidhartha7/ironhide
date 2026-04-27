@@ -34,20 +34,20 @@ export default function Header() {
                             </span>
                         </Link>
 
-                        <nav className="hidden items-center gap-8 text-sm font-medium text-slate-500 md:flex">
-                            <Link href="#" className="w-24 text-center transition-colors hover:text-slate-900">
+                        <nav className="hidden items-center gap-6 text-sm font-medium text-slate-500 md:flex">
+                            <Link href="/" className="w-20 text-center transition-colors hover:text-slate-900">
                                 Home
                             </Link>
-                            {/* <Link href="#features" className="transition-colors hover:text-slate-900">
-                                Compare
-                            </Link> */}
-                            <Link href="#features" className="w-24 text-center transition-colors hover:text-slate-900">
+                            <Link href="/features" className="w-24 text-center transition-colors hover:text-slate-900">
                                 Features
                             </Link>
-                            <Link href="#why-us" className="w-24 text-center transition-colors hover:text-slate-900">
-                                How It Works
+                            <Link href="/integrations" className="w-24 text-center transition-colors hover:text-slate-900">
+                                Integrations
                             </Link>
-                            <Link href="/blog" className="w-24 text-center transition-colors hover:text-slate-900">
+                            <Link href="/pricing" className="w-20 text-center transition-colors hover:text-slate-900">
+                                Pricing
+                            </Link>
+                            <Link href="/blog" className="w-16 text-center transition-colors hover:text-slate-900">
                                 Blog
                             </Link>
                         </nav>
@@ -113,21 +113,17 @@ export default function Header() {
                     </div>
 
                     <div className="mt-10 flex flex-col items-center gap-8 text-center text-lg font-semibold text-slate-700">
-                        <Link href="#" className="transition hover:text-slate-900" onClick={closeMenu}>
+                        <Link href="/" className="transition hover:text-slate-900" onClick={closeMenu}>
                             Home
                         </Link>
-                        {/* <Link
-                            href="#features"
-                            className="transition hover:text-slate-900"
-                            onClick={closeMenu}
-                        >
-                            Compare
-                        </Link> */}
-                        <Link href="#features" className="transition hover:text-slate-900" onClick={closeMenu}>
+                        <Link href="/features" className="transition hover:text-slate-900" onClick={closeMenu}>
                             Features
                         </Link>
-                        <Link href="#why-us" className="transition hover:text-slate-900" onClick={closeMenu}>
-                            How It Works
+                        <Link href="/integrations" className="transition hover:text-slate-900" onClick={closeMenu}>
+                            Integrations
+                        </Link>
+                        <Link href="/pricing" className="transition hover:text-slate-900" onClick={closeMenu}>
+                            Pricing
                         </Link>
                         <Link href="/blog" className="transition hover:text-slate-900" onClick={closeMenu}>
                             Blog

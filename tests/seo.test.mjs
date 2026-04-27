@@ -46,7 +46,8 @@ async function importCompiledModule(modulePath) {
 test("default metadata uses the shared social image", async () => {
   compileSeoModules();
 
-  const { buildMetadata } = await importCompiledModule("seo.js");
+  const { buildMetadata, defaultTitle, defaultDescription, defaultKeywords } =
+    await importCompiledModule("seo.js");
   const metadata = buildMetadata();
   const openGraphImage = metadata.openGraph?.images?.[0];
   const twitterImage = metadata.twitter?.images?.[0];
@@ -56,6 +57,16 @@ test("default metadata uses the shared social image", async () => {
     "/opengraph-image",
   );
   assert.equal(twitterImage, "/opengraph-image");
+  assert.equal(
+    defaultTitle,
+    "Lookover | AI Agent Audit Trails, Identity, and Compliance",
+  );
+  assert.equal(
+    defaultDescription,
+    "Lookover gives AI teams audit-ready logs, per-agent identity, and compliance evidence for SOC 2, HIPAA, and EU AI Act workflows.",
+  );
+  assert.ok(defaultKeywords.length <= 8);
+  assert.equal(defaultKeywords.includes("AI agent audit trails"), true);
 });
 
 test("placeholder pages are generated as noindex and keep the correct canonical path", async () => {
@@ -64,12 +75,12 @@ test("placeholder pages are generated as noindex and keep the correct canonical 
   const { buildPlaceholderPageMetadata } = await importCompiledModule(
     "site-pages.js",
   );
-  const metadata = buildPlaceholderPageMetadata("features");
+  const metadata = buildPlaceholderPageMetadata("careers");
 
-  assert.equal(metadata.alternates?.canonical, "/features");
+  assert.equal(metadata.alternates?.canonical, "/careers");
   assert.equal(metadata.robots?.index, false);
   assert.equal(metadata.robots?.follow, true);
-  assert.equal(metadata.openGraph?.url?.pathname, "/features");
+  assert.equal(metadata.openGraph?.url?.pathname, "/careers");
 });
 
 test("placeholder route params resolve correctly from promised params", async () => {
@@ -89,9 +100,18 @@ test("sitemap static paths exclude placeholder pages", async () => {
   );
   const paths = getIndexableStaticPaths();
 
-  assert.deepEqual(paths, ["/", "/about", "/audit-in-2-mins", "/blog", "/contact"]);
-  assert.equal(paths.includes("/features"), false);
-  assert.equal(paths.includes("/pricing"), false);
+  assert.deepEqual(paths, [
+    "/",
+    "/about",
+    "/audit-in-2-mins",
+    "/blog",
+    "/contact",
+    "/features",
+    "/integrations",
+    "/pricing",
+  ]);
+  assert.equal(paths.includes("/careers"), false);
+  assert.equal(paths.includes("/legal"), false);
 });
 
 test("organization schema includes the canonical site identity", async () => {
@@ -156,6 +176,16 @@ test("real trust pages are included in the indexable static paths", async () => 
 
   assert.equal(paths.includes("/about"), true);
   assert.equal(paths.includes("/contact"), true);
+});
+
+test("commercial landing pages are no longer placeholder routes", async () => {
+  compileSeoModules();
+
+  const { PLACEHOLDER_PAGES } = await importCompiledModule("site-pages.js");
+
+  assert.equal("features" in PLACEHOLDER_PAGES, false);
+  assert.equal("integrations" in PLACEHOLDER_PAGES, false);
+  assert.equal("pricing" in PLACEHOLDER_PAGES, false);
 });
 
 test("all blog posts use the normalized Lookover author identity", async () => {

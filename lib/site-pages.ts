@@ -2,9 +2,6 @@ import type { Metadata } from "next";
 import { buildMetadata } from "./seo";
 
 export const PLACEHOLDER_PAGES: Record<string, string> = {
-  features: "Features",
-  integrations: "Integrations",
-  pricing: "Pricing",
   changelog: "Changelog",
   documentation: "Documentation",
   "api-reference": "API Reference",
@@ -21,6 +18,9 @@ const INDEXABLE_STATIC_PATHS = [
   "/audit-in-2-mins",
   "/blog",
   "/contact",
+  "/features",
+  "/integrations",
+  "/pricing",
 ] as const;
 
 type SlugParams = Promise<{ slug: string }> | { slug: string };

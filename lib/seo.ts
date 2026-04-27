@@ -3,105 +3,18 @@ import type { Metadata } from "next";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lookover.io";
 
 export const defaultTitle =
-  "Lookover | AI Agent Audit Trails & Compliance";
+  "Lookover | AI Agent Audit Trails, Identity, and Compliance";
 export const defaultDescription =
-  "Tamper-proof audit trails for AI agents in minutes. SOC2 & HIPAA compliance reports on demand. No complex setup.";
+  "Lookover gives AI teams audit-ready logs, per-agent identity, and compliance evidence for SOC 2, HIPAA, and EU AI Act workflows.";
 export const defaultKeywords = [
-  // Brand
   "Lookover",
-
-  // Core product concepts
-  "Identity-First Authorization",
-  "Agentic Systems",
-  "AI Security",
-  "Zero Trust",
-  "Guardrails",
-  "Access Control",
-  "Compliance Observability for AI Agents",
-  "AI Agent Audits",
-  "Active Compliance Intelligence",
-
-  // Audit trails — AI-specific
-  "Audit Trails",
-  "Audit Trails for AI Agents",
-  "Audit Trails for AI",
-  "Audit Trails for AI Systems",
-  "Audit Trails for AI Applications",
-  "Audit Trails for AI Infrastructure",
-  "Audit Trails for AI Platforms",
-  "Tamper-Proof Audit Logs",
-  "Immutable Audit Logs",
-  "AI Agent Activity Logs",
-
-  // IT audit & compliance frameworks
-  "IT Audit",
-  "IT Compliance",
-  "SOC 2 Compliance",
-  "SOC 2 Type II",
-  "HIPAA Compliance",
-  "ISO 27001",
-  "NIST 800-53",
-  "GDPR Compliance",
-  "PCI DSS",
-  "FedRAMP",
-  "CCPA Compliance",
-  "Compliance Automation",
-  "Continuous Compliance",
-  "Compliance as Code",
-  "Compliance Monitoring",
-  "Compliance Reporting",
-  "Compliance Dashboard",
-  "Audit Readiness",
-  "Audit Evidence Collection",
-  "Audit Log Management",
-  "Security Audit",
-  "Cloud Compliance",
-  "Regulatory Compliance",
-  "Risk and Compliance",
-  "GRC",
-  "Governance Risk Compliance",
-
-  // Identity & access management
-  "Identity and Access Management",
-  "IAM",
-  "Privileged Access Management",
-  "PAM",
-  "Role-Based Access Control",
-  "RBAC",
-  "Attribute-Based Access Control",
-  "ABAC",
-  "Least Privilege",
-  "Zero Standing Privileges",
-  "Just-In-Time Access",
-  "Service Account Security",
-  "API Key Management",
-  "Credential Management",
-
-  // AI governance & observability
-  "AI Governance",
-  "AI Observability",
-  "AI Agent Monitoring",
-  "LLM Security",
-  "LLM Observability",
-  "Agentic AI Security",
-  "Multi-Agent Security",
-  "MCP Security",
-  "AI Agent Authorization",
-  "AI Risk Management",
-  "Responsible AI",
-  "AI Policy Enforcement",
-
-  // Security operations
-  "SIEM Integration",
-  "Security Information and Event Management",
-  "Log Management",
-  "Event Logging",
-  "Security Monitoring",
-  "Threat Detection",
-  "Insider Threat Detection",
-  "Data Loss Prevention",
-  "Zero Trust Architecture",
-  "Zero Trust Network Access",
+  "AI agent audit trails",
+  "AI agent identity",
+  "AI agent authorization",
+  "SOC 2 for AI agents",
+  "HIPAA audit logs for AI",
+  "EU AI Act logging",
+  "AI compliance evidence",
 ];
 
 export type BuildMetadataOptions = {
