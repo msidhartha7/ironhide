@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getAllAuthors } from "@/lib/authors";
 import { getAllPosts } from "@/lib/blog";
 import { getIndexableStaticPaths } from "@/lib/site-pages";
 
@@ -22,5 +23,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "weekly",
   } satisfies MetadataRoute.Sitemap[number]));
 
-  return [...staticRoutes, ...blogPostRoutes];
+  const authorRoutes = getAllAuthors().map((author) => ({
+    url: `${baseUrl}/authors/${author.slug}`,
+    lastModified,
+    changeFrequency: "monthly",
+  } satisfies MetadataRoute.Sitemap[number]));
+
+  return [...staticRoutes, ...authorRoutes, ...blogPostRoutes];
 }

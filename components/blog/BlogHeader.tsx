@@ -63,9 +63,12 @@ export function BlogHeader({ post }: BlogHeaderProps) {
           <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
             Author
           </span>
-          <span className="mt-0.5 text-sm font-medium text-slate-700">
+          <Link
+            href={`/authors/${post.author.slug}`}
+            className="mt-0.5 text-sm font-medium text-slate-700 transition-colors hover:text-blue-700"
+          >
             {post.author.name}
-          </span>
+          </Link>
           <span className="text-xs text-slate-400">{post.author.role}</span>
         </div>
 

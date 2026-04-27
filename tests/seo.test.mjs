@@ -26,6 +26,7 @@ function compileSeoModules() {
       "nodenext",
       "--skipLibCheck",
       "--esModuleInterop",
+      "lib/authors.ts",
       "lib/seo.ts",
       "lib/site-pages.ts",
       "lib/schema.ts",
@@ -88,7 +89,7 @@ test("sitemap static paths exclude placeholder pages", async () => {
   );
   const paths = getIndexableStaticPaths();
 
-  assert.deepEqual(paths, ["/", "/audit-in-2-mins", "/blog"]);
+  assert.deepEqual(paths, ["/", "/about", "/audit-in-2-mins", "/blog", "/contact"]);
   assert.equal(paths.includes("/features"), false);
   assert.equal(paths.includes("/pricing"), false);
 });
@@ -143,4 +144,70 @@ test("breadcrumb schema matches the blog page hierarchy", async () => {
     items[2].item,
     "https://lookover.io/blog/why-every-ai-agent-needs-an-identity",
   );
+});
+
+test("real trust pages are included in the indexable static paths", async () => {
+  compileSeoModules();
+
+  const { getIndexableStaticPaths } = await importCompiledModule(
+    "site-pages.js",
+  );
+  const paths = getIndexableStaticPaths();
+
+  assert.equal(paths.includes("/about"), true);
+  assert.equal(paths.includes("/contact"), true);
+});
+
+test("all blog posts use the normalized Lookover author identity", async () => {
+  compileSeoModules();
+
+  const { getAllPosts } = await importCompiledModule("blog.js");
+  const posts = getAllPosts();
+
+  for (const post of posts) {
+    assert.equal(post.author.name, "Lookover Team");
+    assert.equal(post.author.slug, "lookover-team");
+  }
+});
+
+test("compliance posts include primary sources and cluster links", async () => {
+  compileSeoModules();
+
+  const { getPostBySlug } = await importCompiledModule("blog.js");
+
+  const expectations = [
+    {
+      slug: "eu-ai-act-high-risk-classification",
+      source: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj",
+      internal: "/blog/why-every-ai-agent-needs-an-identity",
+    },
+    {
+      slug: "why-every-ai-agent-needs-an-identity",
+      source: "https://doi.org/10.6028/NIST.AI.100-1",
+      internal: "/blog/audit-trails-for-ai-agents-what-soc2-actually-requires",
+    },
+    {
+      slug: "audit-trails-for-ai-agents-what-soc2-actually-requires",
+      source:
+        "https://www.aicpa-cima.com/resources/landing/system-and-organization-controls-soc-suite-of-services",
+      internal: "/blog/zero-trust-for-ai-agents-beyond-the-buzzword",
+    },
+    {
+      slug: "zero-trust-for-ai-agents-beyond-the-buzzword",
+      source: "https://csrc.nist.gov/pubs/sp/800/207/final",
+      internal: "/blog/why-every-ai-agent-needs-an-identity",
+    },
+  ];
+
+  for (const expectation of expectations) {
+    const post = getPostBySlug(expectation.slug);
+
+    assert.ok(post, `expected post ${expectation.slug} to exist`);
+    assert.match(post.content, new RegExp(expectation.source.replaceAll("/", "\\/")));
+    assert.match(post.content, /\/audit-in-2-mins/);
+    assert.match(
+      post.content,
+      new RegExp(expectation.internal.replaceAll("/", "\\/")),
+    );
+  }
 });

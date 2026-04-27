@@ -9,15 +9,19 @@ export const PLACEHOLDER_PAGES: Record<string, string> = {
   documentation: "Documentation",
   "api-reference": "API Reference",
   community: "Community",
-  about: "About",
   careers: "Careers",
   legal: "Legal",
-  contact: "Contact",
   "privacy-policy": "Privacy Policy",
   "terms-of-service": "Terms of Service",
 };
 
-const INDEXABLE_STATIC_PATHS = ["/", "/audit-in-2-mins", "/blog"] as const;
+const INDEXABLE_STATIC_PATHS = [
+  "/",
+  "/about",
+  "/audit-in-2-mins",
+  "/blog",
+  "/contact",
+] as const;
 
 type SlugParams = Promise<{ slug: string }> | { slug: string };
 

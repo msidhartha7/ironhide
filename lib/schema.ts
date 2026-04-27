@@ -1,4 +1,6 @@
 import type { BlogPost } from "./blog";
+import type { AuthorProfile } from "./authors";
+import { getAuthorBySlug } from "./authors";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://lookover.io";
 const siteName = "Lookover";
@@ -8,8 +10,7 @@ function toAbsoluteUrl(path: string) {
   return new URL(path, siteUrl).toString();
 }
 
-function getAuthorUrl(name: string) {
-  const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+function getAuthorUrl(slug: string) {
   return toAbsoluteUrl(`/authors/${slug}`);
 }
 
@@ -30,6 +31,7 @@ export function buildOrganizationSchema() {
 
 export function buildBlogPostingSchema(post: BlogPost) {
   const image = post.coverImage ? toAbsoluteUrl(post.coverImage) : defaultSocialImage;
+  const authorProfile = getAuthorBySlug(post.author.slug);
 
   return {
     "@context": "https://schema.org",
@@ -38,9 +40,10 @@ export function buildBlogPostingSchema(post: BlogPost) {
     description: post.excerpt,
     datePublished: post.publishedAt,
     author: {
-      "@type": "Person",
+      "@type": "Organization",
       name: post.author.name,
-      url: getAuthorUrl(post.author.name),
+      url: getAuthorUrl(post.author.slug),
+      sameAs: authorProfile?.sameAs,
     },
     publisher: {
       "@type": "Organization",
@@ -52,6 +55,17 @@ export function buildBlogPostingSchema(post: BlogPost) {
     },
     image,
     mainEntityOfPage: toAbsoluteUrl(`/blog/${post.slug}`),
+  };
+}
+
+export function buildAuthorSchema(author: AuthorProfile) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: author.name,
+    description: author.shortBio,
+    url: getAuthorUrl(author.slug),
+    sameAs: author.sameAs,
   };
 }
 
