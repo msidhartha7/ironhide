@@ -6,6 +6,8 @@ import Link from "next/link";
 import Header from "@/components/landing/Header";
 import ComplianceMatrix from "@/components/landing/ComplianceMatrix";
 import DemoWidget from "@/components/demo/DemoWidget";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildOrganizationSchema } from "@/lib/schema";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -206,9 +208,11 @@ function CellIcon({ value }: { value: boolean | "partial" }) {
 
 export default function CompliancePage() {
   const [showMobileComparison, setShowMobileComparison] = useState(false);
+  const organizationSchema = buildOrganizationSchema();
 
   return (
     <>
+      <JsonLd data={organizationSchema} />
       {/* ── Keyframe animations ── */}
       <style>{`
         @keyframes log-row-in {
@@ -295,16 +299,16 @@ export default function CompliancePage() {
                   </div>
 
                   <h1 className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
-                    Audit Every Action Your AI Agent Takes.{" "}
+                    AI Agent Audit Trails With Identity and Policy Evidence.{" "}
                     <span className="text-blue-600">
-                      Before Your Auditor Does.
+                      Built for regulated rollout.
                     </span>
                   </h1>
 
                   <p className="mt-6 text-lg leading-relaxed text-slate-500">
-                    Lookover gives engineers, product managers, and CISOs
-                    real-time compliance visibility into every action their AI
-                    agents take — structured, policy-checked, and audit-ready.
+                    Lookover gives engineering, security, and compliance teams
+                    attributable logs, per-agent identity, and policy-checked
+                    evidence for every meaningful action their AI agents take.
                   </p>
 
                   <div className="mt-8 flex flex-wrap gap-3">
@@ -327,12 +331,12 @@ export default function CompliancePage() {
                         />
                       </svg>
                     </a>
-                    <a
-                      href="#solution"
+                    <Link
+                      href="/audit-in-2-mins"
                       className="cta-btn cta-btn-outline inline-flex h-12 items-center rounded-xl border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-700 hover:border-slate-400"
                     >
-                      See How It Works
-                    </a>
+                      See 2-Minute Setup
+                    </Link>
                   </div>
 
                   {/* Trust strip */}
@@ -340,6 +344,17 @@ export default function CompliancePage() {
                     GDPR Art. 30 · SOC2 Type II · EU AI Act · Tamper-proof logs
                     · 5-min SDK setup
                   </p>
+                  <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium text-slate-500">
+                    <Link href="/features" className="transition hover:text-slate-900">
+                      Explore features
+                    </Link>
+                    <Link href="/integrations" className="transition hover:text-slate-900">
+                      Review integrations
+                    </Link>
+                    <Link href="/pricing" className="transition hover:text-slate-900">
+                      See packaging
+                    </Link>
+                  </div>
                 </div>
 
                 {/* Right column — product demo */}
@@ -454,8 +469,8 @@ export default function CompliancePage() {
               <RevealSection delay={200}>
                 <blockquote className="mt-12 border-l-4 border-blue-600 bg-blue-50 py-5 pl-6 pr-6 rounded-r-xl">
                   <p className="text-base font-semibold italic text-slate-700">
-                    "LangSmith tells you what your agent did. Lookover tells you
-                    whether it should have."
+                    &quot;LangSmith tells you what your agent did. Lookover tells
+                    you whether it should have.&quot;
                   </p>
                 </blockquote>
               </RevealSection>
@@ -1014,6 +1029,17 @@ export default function CompliancePage() {
                   </a>
                 </div>
 
+                <p className="mt-6 text-sm text-slate-400">
+                  Prefer a self-serve walkthrough?{" "}
+                  <Link
+                    href="/audit-in-2-mins"
+                    className="font-medium text-blue-400 transition-colors hover:text-blue-300"
+                  >
+                    Start the 2-minute audit trail setup
+                  </Link>
+                  .
+                </p>
+
                 {/* Compliance strip */}
                 <p className="mt-10 font-mono text-[11px] tracking-widest text-slate-600 uppercase">
                   GDPR Art. 30 · SOC2 Type II · EU AI Act · Immutable Logs ·
@@ -1104,19 +1130,19 @@ export default function CompliancePage() {
                 </h3>
                 <ul className="mt-4 space-y-3 text-sm text-slate-500">
                   {[
-                    "Product",
-                    "Compliance",
-                    "Integrations",
-                    "Docs",
-                    "Blog",
+                    { label: "Features", href: "/features" },
+                    { label: "Integrations", href: "/integrations" },
+                    { label: "Pricing", href: "/pricing" },
+                    { label: "Audit In 2 Mins", href: "/audit-in-2-mins" },
+                    { label: "Blog", href: "/blog" },
                   ].map((item) => (
-                    <li key={item}>
-                      <a
-                        href="#"
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
                         className="hover:text-slate-900 transition-colors"
                       >
-                        {item}
-                      </a>
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -1128,14 +1154,19 @@ export default function CompliancePage() {
                   Company
                 </h3>
                 <ul className="mt-4 space-y-3 text-sm text-slate-500">
-                  {["About", "Blog", "Careers", "Contact"].map((item) => (
-                    <li key={item}>
-                      <a
-                        href="#"
+                  {[
+                    { label: "About", href: "/about" },
+                    { label: "Authors", href: "/authors/lookover-team" },
+                    { label: "Blog", href: "/blog" },
+                    { label: "Contact", href: "/contact" },
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
                         className="hover:text-slate-900 transition-colors"
                       >
-                        {item}
-                      </a>
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -1156,20 +1187,20 @@ export default function CompliancePage() {
                     </a>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="/privacy-policy"
                       className="hover:text-slate-900 transition-colors"
                     >
                       Privacy Policy
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
+                    <Link
                       href="/terms-of-service"
                       className="hover:text-slate-900 transition-colors"
                     >
                       Terms of Service
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

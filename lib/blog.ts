@@ -1,9 +1,13 @@
+import type { AuthorSlug } from "./authors";
+import { DEFAULT_AUTHOR_SLUG } from "./authors";
+
 export type BlogPost = {
   slug: string;
   title: string;
   excerpt: string;
   publishedAt: string; // ISO date string e.g. "2026-03-20"
   author: {
+    slug: AuthorSlug;
     name: string;
     role: string;
   };
@@ -25,6 +29,7 @@ const posts: BlogPost[] = [
       "125 days until the EU AI Act applies to production AI systems — and most teams deploying agents haven't done the one thing they need to do first: check if they're classified as high-risk under Annex III.",
     publishedAt: "2026-03-30",
     author: {
+      slug: DEFAULT_AUTHOR_SLUG,
       name: "Lookover Team",
       role: "Policy & Compliance",
     },
@@ -114,7 +119,8 @@ const posts: BlogPost[] = [
       "Autonomous agents can read files, call APIs, and modify databases — all without a human in the loop. Without a stable, verifiable identity attached to each agent, your audit trail is fiction and your blast radius is unlimited.",
     publishedAt: "2026-03-25",
     author: {
-      name: "LookOver Team",
+      slug: DEFAULT_AUTHOR_SLUG,
+      name: "Lookover Team",
       role: "Platform Engineering",
     },
     tags: ["Identity", "Agentic AI", "Zero Trust"],
@@ -180,7 +186,8 @@ const posts: BlogPost[] = [
       "SOC 2 auditors are increasingly asking about AI agent activity — and most companies are not ready. Here is a precise breakdown of what the Trust Services Criteria demand from your AI audit infrastructure.",
     publishedAt: "2026-03-18",
     author: {
-      name: "LookOver Team",
+      slug: DEFAULT_AUTHOR_SLUG,
+      name: "Lookover Team",
       role: "Compliance Engineering",
     },
     tags: ["SOC 2", "Compliance", "Audit Trails"],
@@ -259,7 +266,8 @@ const posts: BlogPost[] = [
       "Zero trust is well-understood for human users and network perimeters. Applying it to AI agents — entities that act autonomously, spawn sub-agents, and operate across trust boundaries — requires a more precise framework.",
     publishedAt: "2026-03-10",
     author: {
-      name: "LookOver Team",
+      slug: DEFAULT_AUTHOR_SLUG,
+      name: "Lookover Team",
       role: "Security Architecture",
     },
     tags: ["Zero Trust", "Security Architecture", "Agentic AI"],
@@ -323,6 +331,53 @@ const posts: BlogPost[] = [
     `.trim(),
   },
 ];
+
+const POST_APPENDICES: Record<string, string> = {
+  "eu-ai-act-high-risk-classification": `
+<h2>Sources</h2>
+<ul>
+  <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener noreferrer">Official text of Regulation (EU) 2024/1689, the EU AI Act</a></li>
+  <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">European Commission overview of the EU AI Act</a></li>
+</ul>
+<h2>Continue the implementation path</h2>
+<p>If your team is in scope, the operational question becomes how to capture attributable actions fast enough to survive an audit window. Start with the <a href="/blog/why-every-ai-agent-needs-an-identity">identity layer every production agent needs</a>, then move into <a href="/audit-in-2-mins">a 2-minute audit trail setup</a> for real event capture.</p>
+  `.trim(),
+  "why-every-ai-agent-needs-an-identity": `
+<h2>Sources</h2>
+<ul>
+  <li><a href="https://doi.org/10.6028/NIST.AI.100-1" target="_blank" rel="noopener noreferrer">NIST AI Risk Management Framework 1.0</a></li>
+  <li><a href="https://airc.nist.gov/airmf-resources/ai-rmf-playbook" target="_blank" rel="noopener noreferrer">NIST AI RMF Playbook</a></li>
+</ul>
+<h2>Where identity turns into evidence</h2>
+<p>Identity is only the start. To turn identity into audit evidence, teams need immutable event capture and scoped authorization decisions. The next step is understanding <a href="/blog/audit-trails-for-ai-agents-what-soc2-actually-requires">what SOC 2 actually expects from AI audit trails</a>, then connecting those controls through <a href="/audit-in-2-mins">the fastest path to production audit logs</a>.</p>
+  `.trim(),
+  "audit-trails-for-ai-agents-what-soc2-actually-requires": `
+<h2>Sources</h2>
+<ul>
+  <li><a href="https://www.aicpa-cima.com/resources/landing/system-and-organization-controls-soc-suite-of-services" target="_blank" rel="noopener noreferrer">AICPA and CIMA SOC reporting overview</a></li>
+  <li><a href="https://trustservices.aicpa.org/" target="_blank" rel="noopener noreferrer">AICPA Trust Services Criteria resources</a></li>
+</ul>
+<h2>Related reading</h2>
+<p>SOC 2 evidence quality depends on the enforcement model behind the logs. If you are still designing the control plane, read <a href="/blog/zero-trust-for-ai-agents-beyond-the-buzzword">how zero-trust principles apply to AI agents</a> and then map that design into <a href="/audit-in-2-mins">a production audit trail rollout</a>.</p>
+  `.trim(),
+  "zero-trust-for-ai-agents-beyond-the-buzzword": `
+<h2>Sources</h2>
+<ul>
+  <li><a href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener noreferrer">NIST SP 800-207: Zero Trust Architecture</a></li>
+  <li><a href="https://www.nist.gov/publications/zero-trust-architecture" target="_blank" rel="noopener noreferrer">NIST publication overview for Zero Trust Architecture</a></li>
+</ul>
+<h2>Build the control plane</h2>
+<p>Zero trust only works when every agent has a stable subject that policy can evaluate. If that layer is still missing, go back to <a href="/blog/why-every-ai-agent-needs-an-identity">the identity model for agent systems</a>, then ship the logging side with <a href="/audit-in-2-mins">a 2-minute audit trail deployment</a>.</p>
+  `.trim(),
+};
+
+for (const post of posts) {
+  const appendix = POST_APPENDICES[post.slug];
+
+  if (appendix) {
+    post.content = `${post.content}\n\n${appendix}`;
+  }
+}
 
 // ---------------------------------------------------------------------------
 // Helper functions
