@@ -6,9 +6,9 @@ import { getAllPosts, getAllTags } from "@/lib/blog";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Blog — AI Security, Identity, and Compliance",
+  title: "Blog - AI Security, Identity, and Compliance",
   description:
-    "Insights on AI agent security, identity management, zero-trust architectures, and compliance for enterprise GenAI infrastructure. Written by the LookOver team.",
+    "Insights on AI agent security, identity management, zero-trust architectures, and compliance for enterprise GenAI infrastructure. Written by the Lookover team.",
   path: "/blog",
   keywords: [
     "AI agent security",
@@ -18,7 +18,7 @@ export const metadata: Metadata = buildMetadata({
     "agentic AI audit trails",
     "AI governance",
     "enterprise AI security",
-    "LookOver blog",
+    "Lookover blog",
   ],
 });
 
@@ -35,7 +35,7 @@ export default function BlogListingPage() {
           {/* Page header */}
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-700">
-              LookOver Blog
+              Lookover Blog
             </div>
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
               Security insights for the{" "}
@@ -43,7 +43,7 @@ export default function BlogListingPage() {
             </h1>
             <p className="mt-4 text-lg text-slate-500">
               Deep dives on AI agent identity, authorization, audit trails, and
-              compliance — written for security architects and engineering leaders
+              compliance - written for security architects and engineering leaders
               building on generative AI.
             </p>
           </div>

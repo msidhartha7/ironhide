@@ -9,13 +9,13 @@ export function BlogCTA() {
     <aside className="mx-auto mt-16 max-w-3xl">
       <div className="glass-panel rounded-2xl px-8 py-8">
         <p className="text-xs font-semibold uppercase tracking-widest text-blue-600">
-          LookOver
+          Lookover
         </p>
         <h3 className="mt-2 text-xl font-bold tracking-tight text-slate-900">
-          Tamper-proof audit trails for your AI agents — in minutes.
+          Tamper-proof audit trails for your AI agents - in minutes.
         </h3>
         <p className="mt-3 text-sm leading-relaxed text-slate-500">
-          LookOver gives every agent a verifiable identity, captures a
+          Lookover gives every agent a verifiable identity, captures a
           complete action log, and generates SOC&nbsp;2 and HIPAA compliance
           reports on demand. No complex setup.
         </p>
@@ -35,7 +35,7 @@ export function BlogCTA() {
             size="default"
             className="rounded-xl border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50"
           >
-            <Link href="/">Learn more</Link>
+            <Link href="/audit-in-2-mins">Start in 2 minutes</Link>
           </Button>
         </div>
       </div>

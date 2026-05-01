@@ -11,6 +11,21 @@ type BlogHeaderProps = {
 export function BlogHeader({ post }: BlogHeaderProps) {
   return (
     <div className="mx-auto max-w-3xl">
+      <nav
+        aria-label="Breadcrumb"
+        className="mb-6 flex flex-wrap items-center gap-2 text-sm text-slate-400"
+      >
+        <Link href="/" className="transition-colors hover:text-slate-700">
+          Home
+        </Link>
+        <span aria-hidden>/</span>
+        <Link href="/blog" className="transition-colors hover:text-slate-700">
+          Blog
+        </Link>
+        <span aria-hidden>/</span>
+        <span className="text-slate-500">{post.title}</span>
+      </nav>
+
       {/* Back link */}
       <Link
         href="/blog"
@@ -48,9 +63,12 @@ export function BlogHeader({ post }: BlogHeaderProps) {
           <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
             Author
           </span>
-          <span className="mt-0.5 text-sm font-medium text-slate-700">
+          <Link
+            href={`/authors/${post.author.slug}`}
+            className="mt-0.5 text-sm font-medium text-slate-700 transition-colors hover:text-blue-700"
+          >
             {post.author.name}
-          </span>
+          </Link>
           <span className="text-xs text-slate-400">{post.author.role}</span>
         </div>
 
