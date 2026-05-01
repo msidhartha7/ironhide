@@ -59,7 +59,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   const breadcrumbSchema = buildBreadcrumbSchema(post);
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-white text-slate-900">
       <JsonLd data={blogPostingSchema} />
       <JsonLd data={breadcrumbSchema} />
       <Header />

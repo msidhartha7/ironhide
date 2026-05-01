@@ -27,7 +27,7 @@ export default function BlogListingPage() {
   const tags = getAllTags();
 
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-white text-slate-900">
       <Header />
 
       <main className="flex-1 pt-28 pb-20">
