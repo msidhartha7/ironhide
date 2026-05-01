@@ -74,7 +74,7 @@ const PROBLEM_CARDS = [
   {
     badge: "FOR CISOs",
     title: "AI agents are operating outside your governance perimeter.",
-    body: "Traditional IAM and DLP tools were built for human actors. AI agents make thousands of autonomous decisions per hour — none of which map cleanly to your existing policy framework. You have visibility gaps you haven't fully scoped yet.",
+    body: "Traditional IAM and DLP tools were built for human actors. AI agents make thousands of autonomous decisions per hour - none of which map cleanly to your existing policy framework. You have visibility gaps you haven't fully scoped yet.",
   },
   {
     badge: "FOR PRODUCT",
@@ -93,7 +93,7 @@ const SOLUTION_ROWS = [
   {
     num: "02",
     title: "Policy Evaluation Engine",
-    body: "Define compliance rules in plain configuration — GDPR data minimization, access scope, retention windows. Lookover evaluates every action against your ruleset in under 2ms.",
+    body: "Define compliance rules in plain configuration - GDPR data minimization, access scope, retention windows. Lookover evaluates every action against your ruleset in under 2ms.",
     snippet: `policy: gdpr_art30\nresult: COMPLIANT\nlatency: 1.4ms`,
   },
   {
@@ -129,7 +129,7 @@ const PERSONA_CARDS = [
   {
     badge: "ENGINEERING",
     title: "The Engineer",
-    body: "You're the one who gets paged when something goes wrong. With Lookover, you ship agents with compliance baked in at the SDK level — structured logs, policy evaluation, and audit trails that don't require a post-mortem to produce.",
+    body: "You're the one who gets paged when something goes wrong. With Lookover, you ship agents with compliance baked in at the SDK level - structured logs, policy evaluation, and audit trails that don't require a post-mortem to produce.",
     gets: "Full action-level visibility. No additional infrastructure.",
   },
   {
@@ -357,7 +357,7 @@ export default function CompliancePage() {
                   </div>
                 </div>
 
-                {/* Right column — product demo */}
+                {/* Right column - product demo */}
                 <div className="hidden w-full md:block">
                   <DemoWidget />
                 </div>
@@ -427,7 +427,7 @@ export default function CompliancePage() {
                   </span>
                 </h2>
                 <p className="mt-4 max-w-2xl text-base leading-relaxed text-slate-500">
-                  Lookover sits between your AI agents and the world —
+                  Lookover sits between your AI agents and the world -
                   intercepting every action, checking it against your compliance
                   policies, and producing structured, tamper-proof audit logs in
                   real time.
@@ -624,7 +624,7 @@ export default function CompliancePage() {
                 </div>
               </RevealSection>
 
-              {/* Stepper — cards with a real connecting line */}
+              {/* Stepper - cards with a real connecting line */}
               <div className="mt-16 grid gap-6 md:grid-cols-3">
                 {[
                   {
@@ -894,7 +894,7 @@ export default function CompliancePage() {
                     eyebrow: "Enterprise rollout",
                     stat: "30,000+",
                     label:
-                      "AI agents deployed at JPMorgan Chase alone. The enterprise wave isn't coming — it's here.",
+                      "AI agents deployed at JPMorgan Chase alone. The enterprise wave isn't coming - it's here.",
                   },
                   {
                     eyebrow: "Regulatory pressure",

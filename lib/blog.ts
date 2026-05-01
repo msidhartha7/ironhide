@@ -327,7 +327,7 @@ const posts: BlogPost[] = [
   <li><strong>Behavioral anomaly detection.</strong> Real-time monitoring against the agent's declared scope. Start with simple heuristics (resource type mismatch, volume anomalies) before investing in ML-based detection.</li>
   <li><strong>Instruction authority model in agent design.</strong> Address prompt injection at the architectural level, not just with input sanitization.</li>
 </ol>
-<p>Zero trust for AI agents is not a product you buy — it is an architecture you design. The agents that operate with this architecture are not just more secure; they are more trustworthy, more governable, and more ready for the enterprise scrutiny that agentic AI systems will increasingly face.</p>
+<p>Zero trust for AI agents is not a product you buy - it is an architecture you design. The agents that operate with this architecture are not just more secure; they are more trustworthy, more governable, and more ready for the enterprise scrutiny that agentic AI systems will increasingly face.</p>
     `.trim(),
   },
   {

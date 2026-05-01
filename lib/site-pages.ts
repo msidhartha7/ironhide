@@ -53,7 +53,7 @@ export function buildPlaceholderPageMetadata(slug: string): Metadata {
 
   return buildMetadata({
     title,
-    description: `${title} page — coming soon from Lookover.`,
+    description: `${title} page - coming soon from Lookover.`,
     path: `/${slug}`,
     robots: {
       index: false,
