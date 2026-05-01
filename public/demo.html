@@ -316,7 +316,7 @@ html,body{width:576px;height:324px;margin:0;padding:0;background:transparent;ove
   <!-- MAIN -->
   <div class="main">
     <div class="topbar">
-      <div><span class="tb-title" id="tt">Agent Operations</span><span class="tb-sub" id="ts2">— live feed</span></div>
+      <div><span class="tb-title" id="tt">Agent Operations</span><span class="tb-sub" id="ts2">- live feed</span></div>
       <div class="tb-right"><span class="badge b-live" id="tb">● LIVE</span></div>
     </div>
     <div class="content">
@@ -360,9 +360,9 @@ html,body{width:576px;height:324px;margin:0;padding:0;background:transparent;ove
             </div>
             <div class="rb">
               <div class="rc" style="border-color:rgba(220,38,38,.3);background:var(--danger-light);">
-                <div class="rc-lbl" style="color:var(--danger);">⚠ Agent Output — Refund #REF-9204</div>
+                <div class="rc-lbl" style="color:var(--danger);">⚠ Agent Output - Refund #REF-9204</div>
                 <div class="rc-amt bad">$12,400.00</div>
-                <div style="font-size:11px;color:var(--danger);margin-top:3px;">Expected: $124.00 — output is 100× inflated</div>
+                <div style="font-size:11px;color:var(--danger);margin-top:3px;">Expected: $124.00 - output is 100× inflated</div>
               </div>
               <div class="rc">
                 <div class="rc-lbl">Task Details</div>
@@ -397,13 +397,13 @@ html,body{width:576px;height:324px;margin:0;padding:0;background:transparent;ove
                   <circle cx="38" cy="38" r="30" fill="none" stroke="#f1f5f9" stroke-width="7"/>
                   <circle cx="38" cy="38" r="30" fill="none" stroke="#059669" stroke-width="7" stroke-dasharray="188" stroke-dashoffset="188" stroke-linecap="round" transform="rotate(-90 38 38)" id="arc" style="transition:stroke-dashoffset 1.4s ease,stroke .5s;"/>
                 </svg>
-                <div class="ring-val ok" id="rv">—</div>
+                <div class="ring-val ok" id="rv">-</div>
               </div>
               <div><div class="rl" id="rl">Scanning...</div><div class="rs2" id="rs2">Loading data</div></div>
             </div>
           </div>
           <div class="ck s2">
-            <div class="ck-hdr">Policy Engine — refund-v2</div>
+            <div class="ck-hdr">Policy Engine - refund-v2</div>
             <div class="pl" id="pl">
               <div class="pc scan"><div class="pd sp"></div>Checking max refund limit...</div>
               <div class="pc scan"><div class="pd sp"></div>Checking ticket reference match...</div>
@@ -436,9 +436,9 @@ html,body{width:576px;height:324px;margin:0;padding:0;background:transparent;ove
 <div class="cta" id="cta">
   <div class="cta-box">
     <div class="cta-sh"><svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.5C16.5 22.15 20 17.25 20 12V6L12 2z" fill="white"/><path d="M9 12l2 2 4-4" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-    <div class="cta-fine">$12,400 non-compliant transaction — blocked before execution</div>
+    <div class="cta-fine">$12,400 non-compliant transaction - blocked before execution</div>
     <h1 class="cta-h">Keep AI agents compliant.<br><em>In real time. At any scale.</em></h1>
-    <p class="cta-p">Lookover monitors every agent action and HITL decision against your compliance policies — blocking violations before they cause fines, damage, or loss of trust.</p>
+    <p class="cta-p">Lookover monitors every agent action and HITL decision against your compliance policies - blocking violations before they cause fines, damage, or loss of trust.</p>
     <div class="cta-url">lookover.io</div>
   </div>
 </div>
@@ -522,7 +522,7 @@ function toast(ico, title, sub, type='', dur=3800) {
 }
 
 const TASKS = [
-  { icon:'📧', name:'Reply to ticket #4821 — Acme Corp', meta:'policy: support-v3 · SLA: 4hr', s:'done' },
+  { icon:'📧', name:'Reply to ticket #4821 - Acme Corp', meta:'policy: support-v3 · SLA: 4hr', s:'done' },
   { icon:'🤝', name:'Onboard j.smith@corp.io', meta:'Role: Admin · Enterprise', s:'done' },
   { icon:'📊', name:'Generate Q2 Summary report', meta:'board@company.com · scheduled', s:'done' },
   { icon:'💳', name:'Process refund #REF-9204', meta:'Amount: $12,400.00 · TechFlow Ltd', s:'err' },
@@ -578,11 +578,11 @@ const LOGS = [
   {ts:'11:47:02.893',lv:'OK',  c:'ok',  msg:'Token count within limits',k:'tokens',v:'1,204'},
   {ts:'11:47:02.921',lv:'ACT', c:'act', msg:'Subtask: verify_customer_identity',k:'status',v:'pass'},
   {ts:'11:47:03.011',lv:'ACT', c:'act', msg:'Subtask: check_policy_limits',k:'status',v:'pass'},
-  {ts:'11:47:03.058',lv:'WARN',c:'warn',msg:'Subtask: calculate_refund_amount — anomaly',k:'amount',v:'$12,400.00'},
-  {ts:'11:47:03.101',lv:'ERR', c:'err', msg:'Subtask: initiate_payment_gateway — BLOCKED',k:'reason',v:'policy_cap_exceeded'},
+  {ts:'11:47:03.058',lv:'WARN',c:'warn',msg:'Subtask: calculate_refund_amount - anomaly',k:'amount',v:'$12,400.00'},
+  {ts:'11:47:03.101',lv:'ERR', c:'err', msg:'Subtask: initiate_payment_gateway - BLOCKED',k:'reason',v:'policy_cap_exceeded'},
   {ts:'11:47:03.207',lv:'ACT', c:'act', msg:'Routing to HITL queue',k:'reviewer',v:'sarah.r'},
   {ts:'11:47:03.995',lv:'WARN',c:'warn',msg:'Human approved without verifying policy cap',k:'approver',v:'sarah.r'},
-  {ts:'11:47:04.012',lv:'ERR', c:'err', msg:'LOOKOVER: policy violation — execution BLOCKED',k:'rule',v:'refund_cap_exceeded'},
+  {ts:'11:47:04.012',lv:'ERR', c:'err', msg:'LOOKOVER: policy violation - execution BLOCKED',k:'rule',v:'refund_cap_exceeded'},
 ];
 let logI = 0;
 function addLog() {
@@ -611,10 +611,10 @@ function setTop(title, sub, badge, bc) {
 }
 
 const POLICY_DATA = [
-  { txt:'Max single refund: $500.00', pass:false, failTxt:'FAIL — $12,400 exceeds cap by 2,380%' },
+  { txt:'Max single refund: $500.00', pass:false, failTxt:'FAIL - $12,400 exceeds cap by 2,380%' },
   { txt:'Ticket reference match', pass:true },
   { txt:'Customer identity verified', pass:true },
-  { txt:'Human approval overrides policy', pass:false, failTxt:'FAIL — approval cannot override cap violation' },
+  { txt:'Human approval overrides policy', pass:false, failTxt:'FAIL - approval cannot override cap violation' },
 ];
 
 async function runCompliance() {
@@ -649,7 +649,7 @@ async function runCompliance() {
 
   const af = $('af');
   const alerts = [
-    { type:'crit', sev:'CRITICAL', t:'Policy violation — refund cap exceeded', s:'$12,400 violates refund-v2 max of $500', ts:'11:47:04' },
+    { type:'crit', sev:'CRITICAL', t:'Policy violation - refund cap exceeded', s:'$12,400 violates refund-v2 max of $500', ts:'11:47:04' },
     { type:'blkd', sev:'BLOCKED',  t:'Transaction halted before gateway call', s:'Lookover intercepted at pre-execution hook', ts:'11:47:04' },
   ];
   for (const a of alerts) {
@@ -662,7 +662,7 @@ async function runCompliance() {
   }
 
   await wait(700);
-  $('fs').textContent = '$12,400 blocked — $0 exposed';
+  $('fs').textContent = '$12,400 blocked - $0 exposed';
 
   await wait(500);
   const el2 = document.createElement('div');
@@ -716,7 +716,7 @@ function boot() {
   $('btnAp').style = '';
   const arc = $('arc');
   arc.style.strokeDashoffset = '188'; arc.style.stroke = '#059669';
-  $('rv').textContent = '—'; $('rv').className = 'ring-val ok';
+  $('rv').textContent = '-'; $('rv').className = 'ring-val ok';
   $('rl').textContent = 'Scanning...'; $('rs2').textContent = 'Loading data';
   $('pl').innerHTML = `
     <div class="pc scan"><div class="pd sp"></div>Checking max refund limit...</div>
@@ -724,7 +724,7 @@ function boot() {
     <div class="pc scan"><div class="pd sp"></div>Verifying customer identity...</div>
     <div class="pc scan"><div class="pd sp"></div>Evaluating human approval authority...</div>`;
   setPanel('pAg'); setNav('ni-ag');
-  setTop('Agent Operations', '— live feed', '● LIVE', 'b-live');
+  setTop('Agent Operations', '- live feed', '● LIVE', 'b-live');
 
   // Progress bar
   const pb = $('prog');
@@ -763,10 +763,10 @@ function boot() {
   // T=8s: cursor drifts to log panel
   after(8000, () => { moveCursor(820, 380); });
 
-  // T=10.5s: error task + anomaly toast — cursor moves to error row, zoom in
+  // T=10.5s: error task + anomaly toast - cursor moves to error row, zoom in
   after(10500, () => {
     const el = addTask(TASKS[3]);
-    addSubTasks(el, SUBTASKS_REF, 550); // stream subtasks — 3rd flags risky, 4th blocked
+    addSubTasks(el, SUBTASKS_REF, 550); // stream subtasks - 3rd flags risky, 4th blocked
     setTimeout(addLog, 600);  // subtask WARN log
     setTimeout(addLog, 1100); // subtask ERR log
     toast('⚠️', 'Anomaly detected', 'Agent output: $12,400.00 on refund task', 'danger');
@@ -790,7 +790,7 @@ function boot() {
   after(13800, () => {
     $('nb-hl').classList.add('on');
     setNav('ni-hl'); setPanel('pHl');
-    setTop('HITL Review', '— awaiting decision', '⚠ ACTION REQUIRED', 'b-warn');
+    setTop('HITL Review', '- awaiting decision', '⚠ ACTION REQUIRED', 'b-warn');
     setTimeout(addLog, 300);
     setTimeout(() => zoomTo(376, 245, 1.85, 820), 600);
   });
@@ -823,7 +823,7 @@ function boot() {
       // immediately Lookover fires
       setTimeout(() => {
         $('nb-ck').classList.add('on');
-        setTop('HITL Review', '— intervention', '🚨 BLOCKED', 'b-crit');
+        setTop('HITL Review', '- intervention', '🚨 BLOCKED', 'b-crit');
         toast('🛡️', 'Lookover intervened', 'Policy violation blocked before payment gateway', 'danger', 5000);
         addLog(); // ERR log
         setTimeout(() => $('blk').classList.add('on'), 700);
@@ -843,11 +843,11 @@ function boot() {
   // T=22.3s: click compliance nav (visual)
   after(22300, () => { clickCursor(); });
 
-  // T=22.5s: switch to compliance — zoom into score ring
+  // T=22.5s: switch to compliance - zoom into score ring
   after(22500, () => {
     $('blk').classList.remove('on');
     setNav('ni-ck'); setPanel('pCk');
-    setTop('Compliance Monitor', '— policy engine', '1 VIOLATION', 'b-crit');
+    setTop('Compliance Monitor', '- policy engine', '1 VIOLATION', 'b-crit');
     runCompliance();
     setTimeout(() => zoomTo(285, 150, 1.8, 800), 400);
   });
@@ -867,18 +867,18 @@ function boot() {
   after(33000, () => { zoomTo(285, 290, 1.85, 800); });
   after(33600, () => { moveCursor(285, 295); });
 
-  // T=36s: status recovers + queued task — zoom out
+  // T=36s: status recovers + queued task - zoom out
   after(36000, () => {
     $('sd').className = 'sd pulse';
     $('st').textContent = 'All compliant';
-    setTop('Compliance Monitor', '— all policies enforced', '✓ COMPLIANT', 'b-ok');
+    setTop('Compliance Monitor', '- all policies enforced', '✓ COMPLIANT', 'b-ok');
     addTask(TASKS[4]);
     toast('✅', 'Agent resumed', 'Correct amount $124.00 processed successfully', 'success', 4000);
     zoomReset(900);
     moveCursor(640, 360); // settle at center
   });
 
-  // T=39s: CTA — show for 4s then auto-loop
+  // T=39s: CTA - show for 4s then auto-loop
   after(39000, () => {
     $('cta').classList.add('on');
     $('replay').classList.add('on');

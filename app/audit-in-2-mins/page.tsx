@@ -106,7 +106,7 @@ function HeroVariant() {
                     </h1>
 
                     <p className="mx-auto mt-6 max-w-2xl text-lg leading-7 text-white/70 sm:text-xl sm:leading-8">
-                        Drop in our SDK, connect your agents, and capture every action, tool call, and LLM interaction in a tamper-proof audit trail — no configuration files required.
+                        Drop in our SDK, connect your agents, and capture every action, tool call, and LLM interaction in a tamper-proof audit trail - no configuration files required.
                     </p>
 
                     <div className="mx-auto mt-10 max-w-3xl sm:mt-12">
@@ -357,7 +357,7 @@ const variantFeatures = [
     {
         name: "Real-Time Alerts",
         description:
-            "Get notified the moment an agent behaves unexpectedly, violates a policy, or accesses sensitive data — before it becomes an incident.",
+            "Get notified the moment an agent behaves unexpectedly, violates a policy, or accesses sensitive data - before it becomes an incident.",
         icon: Timer,
     },
 ];
@@ -375,7 +375,7 @@ function WhyUsVariant() {
                         Trusted for years.
                     </p>
                     <p className="mt-6 text-lg leading-8 text-white/70">
-                        Lookover is designed for teams that move fast and need enterprise-grade auditability from day one — not bolted on six months later.
+                        Lookover is designed for teams that move fast and need enterprise-grade auditability from day one - not bolted on six months later.
                     </p>
                 </div>
                 <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

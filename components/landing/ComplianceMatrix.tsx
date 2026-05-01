@@ -79,7 +79,7 @@ export default function ComplianceMatrix() {
                         EU AI Act &amp; GDPR Coverage
                     </h2>
                     <p className="mt-4 text-lg text-slate-500">
-                        Every agent component mapped to its regulatory obligations — so nothing falls through the cracks.
+                        Every agent component mapped to its regulatory obligations - so nothing falls through the cracks.
                     </p>
                 </div>
 
@@ -131,7 +131,7 @@ export default function ComplianceMatrix() {
                     <p className="text-sm leading-7 text-slate-700">
                         <span className="font-bold text-blue-600">The Golden Rule: </span>
                         <em>
-                            A fully compliant AI agent is not built by adding compliance at the end — it is architected
+                            A fully compliant AI agent is not built by adding compliance at the end - it is architected
                             around compliance from the first line of design documentation. The EU AI Act and GDPR are not
                             constraints on AI innovation; they are the engineering specification for trustworthy AI that
                             users can rely on and regulators can audit.
