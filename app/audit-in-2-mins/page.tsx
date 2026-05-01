@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import Header from "@/components/landing/Header";
 import Footer from "@/components/landing/Footer";
-import { Button } from "@/components/ui/button";
 
 const CALENDLY = "https://calendly.com/sidhartha-investorsync/15min";
 const DOCS = "https://docs.lookover.io";
@@ -147,12 +146,19 @@ const exampleCoverage = [
 
 function CodeBlock({ code, label }: { code: string; label: string }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/45 shadow-[0_20px_60px_-40px_rgba(0,0,0,0.9)]">
-      <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 text-xs uppercase tracking-[0.22em] text-white/50">
-        <span>{label}</span>
-        <span>Python SDK</span>
+    <div className="overflow-hidden rounded-xl border border-slate-800 bg-slate-950 shadow-sm">
+      <div className="flex items-center justify-between border-b border-slate-800 px-4 py-3">
+        <div className="flex items-center gap-2">
+          <span className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
+          <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/70" />
+          <span className="h-2.5 w-2.5 rounded-full bg-green-500/70" />
+        </div>
+        <span className="font-mono text-[11px] uppercase tracking-widest text-slate-500">
+          {label}
+        </span>
+        <span className="font-mono text-[11px] text-slate-600">Python SDK</span>
       </div>
-      <pre className="overflow-x-auto px-4 py-4 text-sm leading-7 text-cyan-100">
+      <pre className="overflow-x-auto px-4 py-4 text-sm leading-7 text-blue-300">
         <code>{code}</code>
       </pre>
     </div>
@@ -161,94 +167,119 @@ function CodeBlock({ code, label }: { code: string; label: string }) {
 
 export default function AuditIn2MinsPage() {
   return (
-    <div className="min-h-screen bg-night-950 text-white">
+    <div className="min-h-screen bg-white font-sans text-slate-900">
       <Header />
       <main>
-        <section className="relative overflow-hidden pb-20 pt-32 sm:pb-24 sm:pt-36">
-          <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,rgba(47,123,255,0.28),transparent_30%),radial-gradient(circle_at_85%_20%,rgba(45,212,191,0.18),transparent_28%),linear-gradient(180deg,#020617_0%,#020617_40%,#000000_100%)]" />
-          <div className="absolute inset-0 -z-10 bg-[linear-gradient(135deg,rgba(255,255,255,0.04),transparent_30%,rgba(255,255,255,0.02)_70%,transparent)]" />
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-              <div className="max-w-3xl">
-                <div className="inline-flex items-center gap-2 rounded-full border border-brand-300/30 bg-brand-400/10 px-4 py-2 text-sm font-medium text-brand-100 backdrop-blur">
-                  <Clock className="h-4 w-4 text-brand-300" />
-                  <span>Python SDK + LangChain + LangGraph + prerun</span>
+
+        {/* ── Hero ────────────────────────────────────────────────── */}
+        <section className="relative overflow-hidden bg-white pt-36 pb-24 sm:pt-44 sm:pb-32">
+          <div className="pointer-events-none absolute inset-0 -z-10">
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-50/60 to-white" />
+            <div
+              className="absolute top-0 left-1/2 -translate-x-1/2 h-[600px] w-[800px] rounded-full opacity-25"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(59,130,246,0.25) 0%, transparent 70%)",
+                filter: "blur(60px)",
+              }}
+            />
+          </div>
+
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+              {/* Left column */}
+              <div className="max-w-xl">
+                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-700">
+                  <Clock className="h-3.5 w-3.5" />
+                  Python SDK + LangChain + LangGraph + prerun
                 </div>
-                <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                  AI agent audit logging
-                  <span className="block text-brand-300">from pip install to first trace in under 2 minutes.</span>
+
+                <h1 className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
+                  AI agent audit logging.{" "}
+                  <span className="text-blue-600">
+                    From pip install to first trace in under 2 minutes.
+                  </span>
                 </h1>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72 sm:text-xl">
-                  The checked SDK is Python-first: install `lookover`, add direct
-                  event capture or a framework listener, and start recording tool
+
+                <p className="mt-6 text-lg leading-relaxed text-slate-500">
+                  The SDK is Python-first: install lookover, add direct event
+                  capture or a framework listener, and start recording tool
                   calls, model inferences, decisions, and human handoffs with
                   compliance context attached.
                 </p>
 
-                <div className="mt-8 grid gap-4 sm:grid-cols-3">
+                <div className="mt-8 grid gap-3 sm:grid-cols-3">
                   {installCommands.map((command) => (
                     <div
                       key={command}
-                      className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 text-sm text-white/80 shadow-[0_16px_40px_-30px_rgba(15,23,42,0.85)]"
+                      className="rounded-xl border border-slate-200 bg-white px-4 py-4 shadow-sm"
                     >
-                      <p className="text-[11px] uppercase tracking-[0.22em] text-white/45">
+                      <p className="font-mono text-[10px] uppercase tracking-widest text-slate-400">
                         Install
                       </p>
-                      <code className="mt-3 block whitespace-pre-wrap font-mono text-cyan-100">
+                      <code className="mt-3 block whitespace-pre-wrap font-mono text-sm text-blue-700">
                         {command}
                       </code>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="h-12 rounded-xl bg-gradient-to-r from-brand-500 to-cyan-400 px-6 text-base font-semibold text-white shadow-[0_18px_50px_-20px_rgba(47,123,255,0.7)] hover:brightness-110"
+                <div className="mt-10 flex flex-wrap gap-3">
+                  <a
+                    href={DOCS}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex h-12 items-center rounded-xl bg-blue-600 px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
                   >
-                    <Link href={DOCS} target="_blank" rel="noreferrer">
-                      Read SDK docs <ArrowUpRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="h-12 rounded-xl border-white/15 bg-white/5 px-6 text-base font-semibold text-white hover:border-white/30 hover:bg-white/10"
+                    Read SDK docs <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </a>
+                  <a
+                    href={CALENDLY}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex h-12 items-center rounded-xl border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:text-slate-900"
                   >
-                    <Link href={CALENDLY} target="_blank" rel="noreferrer">
-                      Book architecture review <ArrowUpRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
+                    Book architecture review <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </a>
                 </div>
 
-                <div className="mt-8 flex flex-wrap gap-5 text-sm text-white/60">
-                  <Link href={PYPI} target="_blank" rel="noreferrer" className="transition hover:text-white">
+                <div className="mt-8 flex flex-wrap gap-5 text-sm text-slate-400">
+                  <Link
+                    href={PYPI}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition hover:text-slate-700"
+                  >
                     View package on PyPI
                   </Link>
-                  <Link href={GITHUB} target="_blank" rel="noreferrer" className="transition hover:text-white">
+                  <Link
+                    href={GITHUB}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="transition hover:text-slate-700"
+                  >
                     Inspect the repository
                   </Link>
                 </div>
               </div>
 
-              <div className="space-y-5">
+              {/* Right column */}
+              <div className="space-y-4">
                 <CodeBlock code={directSnippet} label="Quickstart" />
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <p className="text-xs uppercase tracking-[0.22em] text-white/45">
+                  <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <p className="font-mono text-[10px] uppercase tracking-widest text-slate-400">
                       Captured spans
                     </p>
-                    <p className="mt-3 text-lg font-semibold text-white">
+                    <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-700">
                       Tool calls, model runs, decisions, and human approvals.
                     </p>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                    <p className="text-xs uppercase tracking-[0.22em] text-white/45">
+                  <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <p className="font-mono text-[10px] uppercase tracking-widest text-slate-400">
                       Scanner output
                     </p>
-                    <p className="mt-3 text-lg font-semibold text-white">
+                    <p className="mt-3 text-sm font-semibold leading-relaxed text-slate-700">
                       Findings, readiness score, controls, and evidence before rollout.
                     </p>
                   </div>
@@ -258,19 +289,19 @@ export default function AuditIn2MinsPage() {
           </div>
         </section>
 
-        <section className="relative py-24">
-          <div className="absolute inset-0 -z-20 bg-gradient-to-b from-night-950 via-night-950 to-black" />
-          <div className="container mx-auto px-4 md:px-6">
+        {/* ── Integration Paths ───────────────────────────────────── */}
+        <section className="bg-slate-50 py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">
+              <p className="font-mono text-xs uppercase tracking-widest text-slate-400">
                 Integration Paths
               </p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                 Instrument the stack you already have.
               </h2>
-              <p className="mt-4 text-lg leading-8 text-white/70">
+              <p className="mt-4 text-lg leading-relaxed text-slate-500">
                 The current SDK supports a direct client, LangChain callbacks,
-                LangGraph listeners, and a `prerun` CLI for static governance scans.
+                LangGraph listeners, and a prerun CLI for static governance scans.
               </p>
             </div>
 
@@ -278,15 +309,17 @@ export default function AuditIn2MinsPage() {
               {integrationPaths.map((path) => (
                 <article
                   key={path.title}
-                  className="rounded-[28px] border border-white/10 bg-white/5 p-6 shadow-[0_24px_80px_-50px_rgba(0,0,0,0.95)]"
+                  className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="rounded-2xl border border-brand-300/30 bg-brand-400/10 p-3">
-                      <path.icon className="h-5 w-5 text-brand-200" />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50">
+                      <path.icon className="h-5 w-5 text-blue-600" />
                     </div>
-                    <h3 className="text-xl font-semibold text-white">{path.title}</h3>
+                    <h3 className="text-lg font-bold text-slate-900">
+                      {path.title}
+                    </h3>
                   </div>
-                  <p className="mt-4 text-base leading-7 text-white/70">
+                  <p className="mt-4 text-sm leading-relaxed text-slate-500">
                     {path.description}
                   </p>
                   <div className="mt-5">
@@ -298,50 +331,58 @@ export default function AuditIn2MinsPage() {
           </div>
         </section>
 
-        <section className="py-24">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_1fr_0.9fr]">
-              <article className="rounded-[28px] border border-white/10 bg-white/[0.04] p-7">
+        {/* ── What gets captured + compliance fields ──────────────── */}
+        <section className="bg-white py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-6 lg:grid-cols-3">
+              <article className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <BadgeCheck className="h-5 w-5 text-brand-300" />
-                  <h2 className="text-2xl font-semibold text-white">What gets captured</h2>
+                  <BadgeCheck className="h-5 w-5 text-blue-600" />
+                  <h2 className="text-xl font-bold text-slate-900">What gets captured</h2>
                 </div>
-                <ul className="mt-6 space-y-4 text-sm leading-7 text-white/72">
+                <ul className="mt-6 space-y-4 text-sm leading-7 text-slate-500">
                   {eventTypes.map((item) => (
                     <li key={item} className="flex gap-3">
-                      <CheckCircle className="mt-1 h-4 w-4 flex-none text-emerald-300" />
+                      <CheckCircle className="mt-0.5 h-4 w-4 flex-none text-emerald-500" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </article>
 
-              <article className="rounded-[28px] border border-white/10 bg-white/[0.04] p-7">
+              <article className="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <FileCheck className="h-5 w-5 text-brand-300" />
-                  <h2 className="text-2xl font-semibold text-white">What makes the logs useful later</h2>
+                  <FileCheck className="h-5 w-5 text-blue-600" />
+                  <h2 className="text-xl font-bold text-slate-900">What makes the logs useful later</h2>
                 </div>
-                <ul className="mt-6 space-y-4 text-sm leading-7 text-white/72">
+                <ul className="mt-6 space-y-4 text-sm leading-7 text-slate-500">
                   {complianceFields.map((item) => (
                     <li key={item} className="flex gap-3">
-                      <CheckCircle className="mt-1 h-4 w-4 flex-none text-emerald-300" />
+                      <CheckCircle className="mt-0.5 h-4 w-4 flex-none text-emerald-500" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </article>
 
-              <article className="rounded-[28px] border border-brand-300/20 bg-gradient-to-b from-brand-400/10 to-cyan-400/5 p-7">
+              <article className="rounded-2xl border border-blue-200 bg-blue-50 p-7">
                 <div className="flex items-center gap-3">
-                  <Code2 className="h-5 w-5 text-brand-200" />
-                  <h2 className="text-2xl font-semibold text-white">Example coverage</h2>
+                  <Code2 className="h-5 w-5 text-blue-600" />
+                  <h2 className="text-xl font-bold text-slate-900">Example coverage</h2>
                 </div>
-                <p className="mt-5 text-sm leading-7 text-white/70">
-                  The example set in `lookover/sdk/python/examples` spans the workflows most teams ask about first:
+                <p className="mt-5 text-sm leading-7 text-slate-600">
+                  The example set in{" "}
+                  <code className="rounded bg-blue-100 px-1.5 py-0.5 text-xs text-blue-700">
+                    lookover/sdk/python/examples
+                  </code>{" "}
+                  spans the workflows most teams ask about first:
                 </p>
-                <ul className="mt-5 space-y-3 text-sm leading-7 text-white/80">
+                <ul className="mt-5 space-y-3 text-sm leading-7 text-slate-700">
                   {exampleCoverage.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                      {item}
+                    </li>
                   ))}
                 </ul>
               </article>
@@ -349,76 +390,81 @@ export default function AuditIn2MinsPage() {
           </div>
         </section>
 
-        <section className="py-24">
-          <div className="container mx-auto px-4 md:px-6">
+        {/* ── Rollout Sequence ────────────────────────────────────── */}
+        <section className="bg-slate-50 py-24 sm:py-32">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">
+              <p className="font-mono text-xs uppercase tracking-widest text-slate-400">
                 Rollout Sequence
               </p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
                 The 2-minute path is simple because the primitives already exist.
               </h2>
-              <p className="mt-4 text-lg leading-8 text-white/70">
+              <p className="mt-4 text-lg leading-relaxed text-slate-500">
                 You are not wiring a new logging platform from scratch. You are
                 choosing a supported integration surface, adding metadata, and
                 running a scan before the rollout gets reviewed.
               </p>
             </div>
 
-            <div className="mt-14 grid gap-5 lg:grid-cols-4">
+            <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
               {rolloutSteps.map((item) => (
                 <article
                   key={item.step}
-                  className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6 shadow-[0_24px_80px_-55px_rgba(0,0,0,0.95)]"
+                  className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
-                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-brand-300">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 font-mono text-sm font-bold text-white shadow-md shadow-blue-600/25">
                     {item.step}
+                  </div>
+                  <h3 className="mt-5 text-base font-bold text-slate-900">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-500">
+                    {item.copy}
                   </p>
-                  <h3 className="mt-4 text-xl font-semibold text-white">{item.title}</h3>
-                  <p className="mt-4 text-sm leading-7 text-white/70">{item.copy}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="pb-20 pt-8">
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="rounded-[32px] border border-white/10 bg-gradient-to-r from-white/[0.07] via-brand-400/[0.08] to-cyan-400/[0.08] px-8 py-10 shadow-[0_30px_90px_-60px_rgba(47,123,255,0.9)] sm:px-10">
-              <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-                <div>
-                  <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                    Start with the SDK docs if you are integrating now.
-                  </h2>
-                  <p className="mt-4 max-w-2xl text-lg leading-8 text-white/72">
-                    Book the architecture review instead if your team needs help
-                    with governance fields, rollout sequencing, or mapping the
-                    trace model into a larger enterprise control plane.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-4 sm:flex-row lg:flex-col">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="h-12 rounded-xl bg-gradient-to-r from-brand-500 to-cyan-400 px-6 text-base font-semibold text-white hover:brightness-110"
-                  >
-                    <Link href={DOCS} target="_blank" rel="noreferrer">
-                      Open docs <ArrowUpRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="h-12 rounded-xl border-white/15 bg-white/5 px-6 text-base font-semibold text-white hover:border-white/30 hover:bg-white/10"
-                  >
-                    <Link href={CALENDLY} target="_blank" rel="noreferrer">
-                      Book review <ArrowUpRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
+        {/* ── Final CTA ───────────────────────────────────────────── */}
+        <section className="bg-slate-950 py-24 sm:py-32">
+          <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
+              Start with the SDK docs if you are integrating now.
+            </h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-blue-400 sm:text-5xl">
+              Book the review if you need governance help.
+            </p>
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-400">
+              The architecture review covers governance fields, rollout
+              sequencing, and mapping the trace model into a larger enterprise
+              control plane.
+            </p>
+
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <a
+                href={DOCS}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-12 items-center rounded-xl bg-blue-600 px-8 text-base font-semibold text-white shadow-sm transition hover:bg-blue-700"
+              >
+                Open docs <ArrowUpRight className="ml-2 h-4 w-4" />
+              </a>
+              <a
+                href={CALENDLY}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex h-12 items-center rounded-xl border border-slate-600 bg-transparent px-8 text-base font-semibold text-slate-200 transition hover:border-slate-400 hover:text-white"
+              >
+                Book review <ArrowUpRight className="ml-2 h-4 w-4" />
+              </a>
             </div>
+
+            <p className="mt-10 font-mono text-[11px] uppercase tracking-widest text-slate-600">
+              GDPR Art. 30 · SOC2 Type II · EU AI Act · Tamper-proof logs
+            </p>
           </div>
         </section>
       </main>
