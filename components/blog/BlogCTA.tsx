@@ -25,8 +25,8 @@ export function BlogCTA() {
             size="default"
             className="rounded-xl border border-blue-600 bg-blue-600 px-5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-blue-700"
           >
-            <Link href="https://calendly.com/sidhartha-investorsync/15min" target="_blank">
-              Book a demo <ArrowUpRight className="ml-1.5 h-4 w-4" />
+            <Link href="https://app.lookover.io" target="_blank" rel="noopener noreferrer">
+              Open App <ArrowUpRight className="ml-1.5 h-4 w-4" />
             </Link>
           </Button>
           <Button
@@ -35,7 +35,9 @@ export function BlogCTA() {
             size="default"
             className="rounded-xl border border-slate-200 bg-white px-5 text-sm font-semibold text-slate-700 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50"
           >
-            <Link href="/audit-in-2-mins">Start in 2 minutes</Link>
+            <Link href="https://calendly.com/sidhartha-investorsync/15min" target="_blank" rel="noopener noreferrer">
+              Book a Call
+            </Link>
           </Button>
         </div>
       </div>

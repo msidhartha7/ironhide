@@ -293,11 +293,6 @@ export default function CompliancePage() {
               <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                 {/* Left column */}
                 <div className="max-w-xl">
-                  <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-700">
-                    <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
-                    Early Access
-                  </div>
-
                   <h1 className="text-4xl font-bold leading-tight tracking-tight text-slate-900 sm:text-5xl">
                     AI Agent Audit Trails With Identity and Policy Evidence.{" "}
                     <span className="text-blue-600">
@@ -313,10 +308,12 @@ export default function CompliancePage() {
 
                   <div className="mt-8 flex flex-wrap gap-3">
                     <a
-                      href="#early-access"
+                      href="https://app.lookover.io"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="cta-btn cta-btn-primary inline-flex h-12 items-center rounded-xl bg-blue-600 px-6 text-sm font-semibold text-white"
                     >
-                      Get Early Access
+                      Open App
                       <svg
                         className="ml-2 h-4 w-4"
                         fill="none"
@@ -331,12 +328,14 @@ export default function CompliancePage() {
                         />
                       </svg>
                     </a>
-                    <Link
-                      href="/audit-in-2-mins"
+                    <a
+                      href="https://calendly.com/sidhartha-investorsync/15min"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="cta-btn cta-btn-outline inline-flex h-12 items-center rounded-xl border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-700 hover:border-slate-400"
                     >
-                      See 2-Minute Setup
-                    </Link>
+                      Book a Call
+                    </a>
                   </div>
 
                   {/* Trust strip */}
@@ -981,7 +980,7 @@ export default function CompliancePage() {
           {/* ══════════════════════════════════════════════════════════════════
               SECTION 10 · FINAL CTA
           ═════════════════════════════════════════════════════════════════════ */}
-          <section id="early-access" className="bg-slate-950 py-24 sm:py-32">
+          <section id="cta" className="bg-slate-950 py-24 sm:py-32">
             <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
               <RevealSection>
                 <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
@@ -991,20 +990,19 @@ export default function CompliancePage() {
                   Your compliance posture should be too.
                 </p>
                 <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-400">
-                  Lookover is in early access. We&apos;re onboarding teams
-                  building AI agents who need structured compliance visibility
-                  before their auditor asks for it. Setup takes 5 minutes. The
-                  audit trail starts immediately.
+                  Lookover is live. Open the app now, or book a call if you
+                  want a walkthrough of your agent architecture first. Setup
+                  takes 5 minutes. The audit trail starts immediately.
                 </p>
 
                 <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                   <a
-                    href="https://calendly.com/sidhartha-investorsync/15min"
+                    href="https://app.lookover.io"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cta-btn cta-btn-primary inline-flex h-13 items-center rounded-xl bg-blue-600 px-8 py-3.5 text-base font-semibold text-white"
                   >
-                    Get Early Access
+                    Open App
                     <svg
                       className="ml-2 h-4 w-4"
                       fill="none"
@@ -1025,7 +1023,7 @@ export default function CompliancePage() {
                     rel="noopener noreferrer"
                     className="cta-btn cta-btn-outline inline-flex h-13 items-center rounded-xl border border-slate-600 bg-transparent px-8 py-3.5 text-base font-semibold text-slate-200 hover:border-slate-400 hover:text-white"
                   >
-                    Book a Demo
+                    Book a Call
                   </a>
                 </div>
 

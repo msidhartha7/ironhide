@@ -12,10 +12,16 @@ export const metadata = buildMetadata({
 
 const CONTACT_PATHS = [
   {
+    title: "Open the app",
+    body: "Try Lookover directly. Set up tamper-proof agent audit trails in minutes — no call required.",
+    href: "https://app.lookover.io",
+    label: "Open App — try it now",
+  },
+  {
     title: "Book a product walkthrough",
     body: "Use the live calendar to review your agent architecture, current logging gaps, and the fastest route to an audit-ready rollout.",
     href: "https://calendly.com/sidhartha-investorsync/15min",
-    label: "Open scheduling",
+    label: "Book a Call — talk to the team",
   },
   {
     title: "Review current technical guidance",
@@ -55,7 +61,7 @@ export default function ContactPage() {
         </section>
 
         <section className="container mx-auto mt-16 px-4 md:px-6">
-          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-3">
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
             {CONTACT_PATHS.map((path) => (
               <article
                 key={path.title}
