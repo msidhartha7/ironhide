@@ -46,8 +46,8 @@ Homepage copy should stop implying the product is only available via gated onboa
 
 Expected changes:
 
-- Replace "Get Early Access" language with direct-use language such as "Open App" or equivalent action-first wording
-- Remove or soften the "Early Access" badge if it undermines the new self-serve intent
+- Replace "Get Early Access" button labels with "Open App" (primary CTAs) and "Book a Call" (secondary CTAs) across all aligned surfaces
+- Remove the "Early Access" badge from the hero; do not replace it with alternative badge copy
 - Update the final CTA paragraph so it describes immediate product access plus optional call support, rather than positioning onboarding as the only path
 
 The contact and blog CTA surfaces should also stop making demos the default top action when the page intent is broader than sales qualification.
@@ -63,27 +63,23 @@ Changes:
 - Hero section:
   - Replace the current primary CTA target with `https://app.lookover.io`
   - Replace the secondary CTA with a scheduling CTA to Calendly
-  - Update button labels to reflect direct product access vs. call setup
+  - Primary CTA label: "Open App", href: `https://app.lookover.io`
+  - Secondary CTA label: "Book a Call", href: `https://calendly.com/sidhartha-investorsync/15min`
   - Remove the anchor dependency on `#early-access` for the main conversion path
 - Final CTA section:
-  - Replace the primary Calendly CTA with `https://app.lookover.io`
-  - Keep a separate secondary scheduling CTA
+  - Primary CTA label: "Open App", href: `https://app.lookover.io`
+  - Secondary CTA label: "Book a Call", href: `https://calendly.com/sidhartha-investorsync/15min`
   - Rewrite the supporting copy so it no longer depends on "early access" framing
-  - Consider renaming the section `id` if it remains user-visible in code semantics, though this is optional unless it causes confusion elsewhere
+  - Rename the section `id` from `early-access` to `cta` — the anchor is no longer referenced by the hero after this change, so leaving the old id is dead weight
 
 ### `components/blog/BlogCTA.tsx`
 
-This shared CTA should align with the new conversion hierarchy:
+This shared CTA should align with the new conversion hierarchy. It currently renders a single Calendly button; this change replaces that with two buttons.
 
-- Primary button should open `https://app.lookover.io`
-- Secondary button should either keep the quickstart or become the call CTA based on available space and hierarchy
+- Primary button: label "Open App", href `https://app.lookover.io`, filled/high-emphasis style
+- Secondary button: label "Book a Call", href `https://calendly.com/sidhartha-investorsync/15min`, outline style
 
-Recommended approach:
-
-- Primary: open app
-- Secondary: book a call
-
-This keeps the blog CTA consistent with the homepage's self-serve-first positioning.
+Layout: render buttons inline (side-by-side) on desktop, stacked full-width on mobile — matching the pattern used in the homepage hero section.
 
 ### `app/contact/page.tsx`
 
@@ -91,9 +87,9 @@ The contact page should remain oriented toward conversations, but it should ackn
 
 Recommended adjustment:
 
-- Add or elevate an "Open the app" path among the contact options
-- Keep scheduling available and prominent because the page intent is still contact-oriented
-- Update labels so the distinction between "try now" and "talk to us" is explicit
+- Add an "Open App" link or button at the top of the contact options list, before the scheduling link, so users who already want to try the product can exit quickly
+- Keep the Calendly scheduling option prominent — the page intent is still contact-oriented
+- Label the two options clearly: "Open App — try it now" and "Book a Call — talk to the team" (or equivalent), so the distinction between self-serve and sales is explicit
 
 ## Data and Navigation Flow
 
@@ -105,7 +101,7 @@ The interaction model is simple:
 2. If they want immediate product access, they click the primary CTA and leave for `https://app.lookover.io`.
 3. If they want assistance or a sales/technical walkthrough, they click the call CTA and leave for Calendly.
 
-All outbound links should continue to use standard external link handling where appropriate.
+All outbound links (`https://app.lookover.io` and Calendly) should open in a new tab using `target="_blank" rel="noopener noreferrer"`, consistent with the existing Calendly link behavior on the page.
 
 ## Error Handling and Edge Cases
 
