@@ -1,16 +1,16 @@
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "AI Agent Audit Trails in 2 Minutes",
+  title: "Lookover SDK Quickstart for AI Agent Audit Logging",
   description:
-    "Get tamper-proof AI agent audit logs in 2 minutes. No credit card, no complex setup. SOC2 & HIPAA compliance reports on demand.",
+    "Install the Lookover Python SDK, add LangChain or LangGraph tracing, and run prerun compliance scans before shipping your AI agent.",
   path: "/audit-in-2-mins",
   keywords: [
-    "AI agent audit trails",
-    "audit in 2 minutes",
-    "AI compliance",
-    "SOC2",
-    "HIPAA",
+    "Lookover SDK",
+    "AI agent audit logging SDK",
+    "LangChain audit logs",
+    "LangGraph audit trails",
+    "prerun compliance scan",
     "tamper-proof logs",
     "Lookover",
   ],
