@@ -21,7 +21,7 @@ Internal linking targets:
 - Audit/compliance posts should point to `/audit-in-2-mins` and `/features`.
 
 Gap notes:
-- A dedicated `/solutions/ai-agent-audit-trails` page would give this cluster a cleaner commercial destination than the homepage.
+- Commercial destination now exists at `/solutions/ai-agent-audit-trails`.
 
 ## Primary cluster: AI agent identity and authorization
 
@@ -63,11 +63,10 @@ Internal linking targets:
 - `/pricing` should point back to the framework posts as proof material.
 
 Gap notes:
-- No dedicated landing pages exist yet for:
-  - `SOC 2 for AI agents`
-  - `HIPAA audit logs for AI`
-  - `EU AI Act logging`
-- These should be the next commercial content pages after Sprint 4.
+- Commercial pages now exist for:
+  - `/solutions/soc-2-for-ai-agents`
+  - `/solutions/hipaa-audit-logs-for-ai`
+  - `/solutions/eu-ai-act-logging`
 
 ## Page map summary
 
@@ -77,12 +76,16 @@ Current commercial pages:
 - `/integrations` explains runtime and evidence-system fit.
 - `/pricing` handles packaging and commercial qualification.
 - `/audit-in-2-mins` is the strongest self-serve conversion page.
+- `/solutions/ai-agent-audit-trails` is the core audit-trail landing page.
+- `/solutions/soc-2-for-ai-agents` maps the SOC 2 cluster.
+- `/solutions/hipaa-audit-logs-for-ai` maps the HIPAA cluster.
+- `/solutions/eu-ai-act-logging` maps the EU AI Act cluster.
 
 Next pages to add:
-1. `/solutions/ai-agent-audit-trails`
-2. `/solutions/soc-2-for-ai-agents`
-3. `/solutions/hipaa-audit-logs-for-ai`
-4. `/solutions/eu-ai-act-logging`
+1. `/solutions/ai-agent-authorization`
+2. `/solutions/multi-agent-governance`
+3. `/solutions/regulated-agent-workflows`
+4. `/compare/shared-accounts-vs-agent-identity`
 
 Publishing rule:
 - New posts should support one of the three clusters above.

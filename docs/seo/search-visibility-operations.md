@@ -24,6 +24,10 @@ Primary commercial pages:
 - `/integrations`
 - `/pricing`
 - `/audit-in-2-mins`
+- `/solutions/ai-agent-audit-trails`
+- `/solutions/soc-2-for-ai-agents`
+- `/solutions/hipaa-audit-logs-for-ai`
+- `/solutions/eu-ai-act-logging`
 
 Trust and authority pages:
 - `/about`
@@ -36,6 +40,10 @@ Blog pages:
 - `/blog/why-every-ai-agent-needs-an-identity`
 - `/blog/audit-trails-for-ai-agents-what-soc2-actually-requires`
 - `/blog/zero-trust-for-ai-agents-beyond-the-buzzword`
+- `/blog/ai-agent-audit-trail-implementation-guide`
+- `/blog/shared-service-accounts-vs-ai-agent-identity`
+- `/blog/soc-2-readiness-checklist-for-ai-agents`
+- `/blog/hipaa-audit-log-template-for-ai-agents`
 
 Metrics to record:
 - Clicks

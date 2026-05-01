@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     path: `/blog/${post.slug}`,
     keywords: [
       ...post.tags,
-      "LookOver",
+      "Lookover",
       "AI agent security",
       "identity management",
       "agentic AI",

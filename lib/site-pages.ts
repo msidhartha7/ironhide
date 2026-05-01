@@ -21,6 +21,10 @@ const INDEXABLE_STATIC_PATHS = [
   "/features",
   "/integrations",
   "/pricing",
+  "/solutions/ai-agent-audit-trails",
+  "/solutions/eu-ai-act-logging",
+  "/solutions/hipaa-audit-logs-for-ai",
+  "/solutions/soc-2-for-ai-agents",
 ] as const;
 
 type SlugParams = Promise<{ slug: string }> | { slug: string };

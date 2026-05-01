@@ -109,6 +109,10 @@ test("sitemap static paths exclude placeholder pages", async () => {
     "/features",
     "/integrations",
     "/pricing",
+    "/solutions/ai-agent-audit-trails",
+    "/solutions/eu-ai-act-logging",
+    "/solutions/hipaa-audit-logs-for-ai",
+    "/solutions/soc-2-for-ai-agents",
   ]);
   assert.equal(paths.includes("/careers"), false);
   assert.equal(paths.includes("/legal"), false);
@@ -200,6 +204,20 @@ test("all blog posts use the normalized Lookover author identity", async () => {
   }
 });
 
+test("supporting content exists for the three target clusters", async () => {
+  compileSeoModules();
+
+  const { getAllPosts } = await importCompiledModule("blog.js");
+  const posts = getAllPosts();
+  const slugs = posts.map((post) => post.slug);
+
+  assert.equal(posts.length >= 8, true);
+  assert.equal(slugs.includes("ai-agent-audit-trail-implementation-guide"), true);
+  assert.equal(slugs.includes("shared-service-accounts-vs-ai-agent-identity"), true);
+  assert.equal(slugs.includes("soc-2-readiness-checklist-for-ai-agents"), true);
+  assert.equal(slugs.includes("hipaa-audit-log-template-for-ai-agents"), true);
+});
+
 test("compliance posts include primary sources and cluster links", async () => {
   compileSeoModules();
 
@@ -238,6 +256,41 @@ test("compliance posts include primary sources and cluster links", async () => {
     assert.match(
       post.content,
       new RegExp(expectation.internal.replaceAll("/", "\\/")),
+    );
+  }
+});
+
+test("supporting posts link into the new solution pages", async () => {
+  compileSeoModules();
+
+  const { getPostBySlug } = await importCompiledModule("blog.js");
+
+  const expectations = [
+    {
+      slug: "ai-agent-audit-trail-implementation-guide",
+      target: "/solutions/ai-agent-audit-trails",
+    },
+    {
+      slug: "shared-service-accounts-vs-ai-agent-identity",
+      target: "/features",
+    },
+    {
+      slug: "soc-2-readiness-checklist-for-ai-agents",
+      target: "/solutions/soc-2-for-ai-agents",
+    },
+    {
+      slug: "hipaa-audit-log-template-for-ai-agents",
+      target: "/solutions/hipaa-audit-logs-for-ai",
+    },
+  ];
+
+  for (const expectation of expectations) {
+    const post = getPostBySlug(expectation.slug);
+
+    assert.ok(post, `expected post ${expectation.slug} to exist`);
+    assert.match(
+      post.content,
+      new RegExp(expectation.target.replaceAll("/", "\\/")),
     );
   }
 });
